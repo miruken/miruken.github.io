@@ -1,12 +1,18 @@
 ---
 layout: page
 title: "Change is good!"
+meta_title: "Feeling Responsive Theme Changelog"
 subheadline: "Feeling Responsive Theme Changelog"
 teaser: "History and changelog of Feeling Responsive Theme"
 header:
    image_fullwidth: "header_unsplash_9.jpg"
 permalink: "/changelog/"
 ---
+2015-05-04 // Version 1.2.1
+:   Added `meta_title` to `<head>`. Use it in frontmatter for SEO purposes. 
+
+2015-04-28 // Version 1.2
+:   Put some nice Schema.org-Meta-Data into the video-template for better SEO. If you want to know how to use the data, have a look into the front matter of the [video]({{ site.url }}/design/video/).
 
 2015-03-30 // Version 1.2
 :   Added [alert-include]({{ site.url }}/documentation/#alert-embed-an-alert-in-your-content) and structured Sass-files.
