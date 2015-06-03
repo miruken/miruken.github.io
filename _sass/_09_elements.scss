@@ -97,7 +97,41 @@ button, .button         { letter-spacing: 1px; }
   .button.grey:hover,
   .button.grey:focus      { background-color: $grey-16; }
 
+/* Check-Button
+------------------------------------------------------------------- */
 
+
+.ck-button {
+    margin:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:1px solid #D0D0D0;
+    display: inline-block;
+}
+
+.ck-button label {
+    float:left;
+    font-size: 0.8rem;
+}
+
+.ck-button label span {
+    text-align:center;
+    padding:8px;
+    display:block;
+}
+
+.ck-button label input {
+    position:absolute;
+    top:-20px;
+}
+.ck-button input {
+  visibility: hidden;
+}
+
+.ck-button input:checked + span {
+    background-color:#911;
+    color:#fff;
+}
 
 /* Side-Nav
 ------------------------------------------------------------------- */

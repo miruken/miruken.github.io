@@ -1,0 +1,12 @@
+{
+  "name": "miruken.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/miruken/miruken.github.io",
+  "authors": [
+    "david-ford <poster55@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "foundation": "~5.5.2"
+  }
+}
