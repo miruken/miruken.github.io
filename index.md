@@ -7,7 +7,7 @@
 layout: frontpage
 title: "Miruken – Making JavaScript Inheritance Easy"
 header:
-   image_fullwidth: ""
+   image_fullwidth: "header_drop.jpg"
 widget-1:
     title: "Blog & Portfolio"
     url: 'http://phlow.github.io/feeling-responsive/blog/'
