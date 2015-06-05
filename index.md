@@ -24,11 +24,3 @@ widget-3:
     text: '<em>MirukenJS</em> is an open source project. Grab a copy of our source code or clone it at GitHub and start using it in your project.'
     image: miruken-003.png
 ---
-
-
-<div id="videoModal" class="reveal-modal large" data-reveal="">
-  <div class="flex-video widescreen vimeo" style="display: block;">
-    <iframe width="1280" height="720" src="https://www.youtube.com/embed/3b5zCFSmVvU" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
