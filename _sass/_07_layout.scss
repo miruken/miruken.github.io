@@ -65,10 +65,10 @@ body.video cite { color: #fff; }
 ------------------------------------------------------------------- */
 
 #masthead {
-    background: $primary-color;
+    background: $ci-6;
 }
 #masthead-no-image-header {
-    background: $primary-color;
+    background: $ci-6;
 }
 #masthead-with-text {
     text-align: center;
@@ -82,7 +82,8 @@ body.video cite { color: #fff; }
     height: 175px;
 }
 #masthead-no-image-header #logo img {
-    margin-top: 60px;
+    // margin-top: 60px;
+
 }
 .backstretch {
     background: $ci-6;
@@ -96,7 +97,8 @@ body.video cite { color: #fff; }
         display: none;
     }
     #masthead {
-        height: 200px;
+        // height: 200px;
+        padding: 2% 10%;
     }
     #masthead-with-pattern {
         padding: 15px 0;
@@ -120,10 +122,11 @@ body.video cite { color: #fff; }
 
 @media #{$medium-only} {
     #logo img {
-        margin-top: 60px;
+        // margin-top: 60px;
     }
     #masthead {
-        height: 280px;
+        // height: 280px;
+        padding: 2% 10%;
     }
     #masthead-with-pattern {
         padding: 20px 0;
@@ -133,7 +136,7 @@ body.video cite { color: #fff; }
     }
     #masthead-with-text {
         padding: 60px 0;
-        height: 300px;
+        // height: 300px;
     }
 }
 
@@ -143,10 +146,11 @@ body.video cite { color: #fff; }
 
 @media #{$large-only} {
     #logo img {
-        margin-top: 80px;
+        // margin-top: 80px;
     }
     #masthead {
-        height: 310px;
+        // height: 310px;
+        padding: 2% 10%;
     }
     #masthead-with-pattern {
         padding: 30px 0;
@@ -155,7 +159,7 @@ body.video cite { color: #fff; }
         padding: 30px 0;
     }
     #masthead-with-text {
-        height: 330px;
+        // height: 330px;
         padding: 60px 0;
     }
 }
@@ -166,10 +170,11 @@ body.video cite { color: #fff; }
 
 @media #{$xlarge-up} {
     #logo img {
-        margin-top: 110px;
+        // margin-top: 110px;
     }
     #masthead {
-        height: 380px;
+        // height: 380px;
+        padding: 2% 10%;
     }
     #masthead-with-pattern {
         padding: 45px 0;
@@ -179,7 +184,7 @@ body.video cite { color: #fff; }
     }
     #masthead-with-text {
         padding: 95px 0;
-        height: 400px;
+        // height: 400px;
     }
 }
 

@@ -23,6 +23,7 @@ description: "»Miruken« is a responsive theme for Jekyll based on the fabulous
 #
 url: "https://miruken.github.io"
 #"http://localhost:4000"
+#"https://miruken.github.io"
 baseurl: ""
 
 # This is for the editing function in _/includes/improve_content.html
