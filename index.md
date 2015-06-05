@@ -21,7 +21,7 @@ widget-2:
 widget-3:
     title: "Download Source Code"
     url: 'https://github.com/miruken/mirukenjs'
-    text: '<em>MirukenJS</em> is totally free and licensed under the MIT License. Make it your own and do with it what you want. Grab your copy or clone it at GitHub and start your website with it.'
+    text: '<em>MirukenJS</em> is an open source project. Grab a copy of our source code or clone it at GitHub and start using it in your project.'
     image: miruken-003.png
 ---
 
