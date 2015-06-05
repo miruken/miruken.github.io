@@ -22,7 +22,7 @@ description: "»Miruken« is a responsive theme for Jekyll based on the fabulous
 # This URL is the main adresse. Don't include a slash at the end.
 #
 url: "https://miruken.github.io"
-# "http://localhost:4000"
+#"http://localhost:4000"
 baseurl: ""
 
 # This is for the editing function in _/includes/improve_content.html
