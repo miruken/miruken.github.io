@@ -20,9 +20,9 @@ widget-2:
     video: '<a href="#" data-reveal-id="videoModal"><img src="http://phlow.github.io/feeling-responsive/images/start-video-feeling-responsive-302x182.jpg" width="302" height="182" alt=""></a>'
 widget-3:
     title: "Download Theme"
-    url: 'https://github.com/Phlow/feeling-responsive'
-    text: '<em>Feeling Responsive</em> is totally free and licensed under the MIT License. Make it your own and do with it what you want. Grab your copy or clone it at GitHub and start your website with it. Then tell me via Twitter <a href="http://twitter.com/phlow">@phlow</a>.'
-    image: github-303x182.jpg
+    url: 'https://github.com/miruken/mirukenjs'
+    text: '<em>MirukenJS</em> is totally free and licensed under the MIT License. Make it your own and do with it what you want. Grab your copy or clone it at GitHub and start your website with it.'
+    image: miruken-003.png
 ---
 
 
