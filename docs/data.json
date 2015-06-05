@@ -8,7 +8,9 @@
     "files": {
         "lib\\angular\\ng.js": {
             "name": "lib\\angular\\ng.js",
-            "modules": {},
+            "modules": {
+                "ng": 1
+            },
             "classes": {
                 "miruken.ng.Runner": 1,
                 "miruken.ng.Directive": 1,
@@ -77,6 +79,7 @@
             },
             "classes": {
                 "miruken.mvc.Model": 1,
+                "miruken.mvc.ViewRegion": 1,
                 "miruken.mvc.Controller": 1,
                 "miruken.mvc.MasterDetail": 1,
                 "miruken.mvc.MasterDetailAware": 1
@@ -266,6 +269,7 @@
         "miruken": {
             "name": "miruken",
             "submodules": {
+                "ng": 1,
                 "ioc": 1,
                 "mvc": 1,
                 "validate": 1,
@@ -304,6 +308,7 @@
                 "miruken.ioc.ComponentModelError": 1,
                 "miruken.ioc.IoContainer": 1,
                 "miruken.mvc.Model": 1,
+                "miruken.mvc.ViewRegion": 1,
                 "miruken.mvc.Controller": 1,
                 "miruken.mvc.MasterDetail": 1,
                 "miruken.mvc.MasterDetailAware": 1,
@@ -398,6 +403,7 @@
                 "miruken.$": 1
             },
             "namespaces": {
+                "miruken.ng": 1,
                 "miruken.ioc": 1,
                 "miruken.mvc": 1,
                 "miruken.validate": 1,
@@ -412,6 +418,25 @@
             "line": 1600,
             "description": "Package containing enhancements to the javascript language.",
             "itemtype": "main"
+        },
+        "ng": {
+            "name": "ng",
+            "submodules": {},
+            "classes": {
+                "miruken.ng.Runner": 1,
+                "miruken.ng.Directive": 1,
+                "miruken.ng.UseModelValidation": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "miruken.ng": 1
+            },
+            "module": "miruken",
+            "namespace": "",
+            "file": "lib\\angular\\ng.js",
+            "line": 66,
+            "description": "Package providing [AngularJS](https://angularjs.org) integration.<br/>\nRequires the {{#crossLinkModule \"miruken\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"callback\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"context\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"validate\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"error\"}}{{/crossLinkModule}} and\n{{#crossLinkModule \"ioc\"}}{{/crossLinkModule}} modules."
         },
         "ioc": {
             "name": "ioc",
@@ -461,6 +486,7 @@
             "submodules": {},
             "classes": {
                 "miruken.mvc.Model": 1,
+                "miruken.mvc.ViewRegion": 1,
                 "miruken.mvc.Controller": 1,
                 "miruken.mvc.MasterDetail": 1,
                 "miruken.mvc.MasterDetailAware": 1
@@ -473,7 +499,7 @@
             "module": "miruken",
             "namespace": "",
             "file": "lib\\mvc\\mvc.js",
-            "line": 264,
+            "line": 277,
             "description": "Package providing Model-View-Controller abstractions.<br/>\nRequires the {{#crossLinkModule \"miruken\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"callback\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"context\"}}{{/crossLinkModule}} and \n{{#crossLinkModule \"validate\"}}{{/crossLinkModule}} modules."
         },
         "validate": {
@@ -626,10 +652,11 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "miruken",
+            "submodule": "ng",
             "namespace": "miruken.ng",
             "file": "lib\\angular\\ng.js",
-            "line": 33,
-            "description": "Description goes here",
+            "line": 43,
+            "description": "Marks a class to be called during the run phase of an Angular module setup.<br/>\nSee [Angular Module Loading & Dependencies](https://docs.angularjs.org/guide/module)",
             "is_constructor": 1,
             "extends": "Base"
         },
@@ -642,10 +669,11 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "miruken",
+            "submodule": "ng",
             "namespace": "miruken.ng",
             "file": "lib\\angular\\ng.js",
-            "line": 43,
-            "description": "Description goes here",
+            "line": 58,
+            "description": "Marks a class",
             "is_constructor": 1,
             "extends": "Base"
         },
@@ -658,9 +686,10 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "miruken",
+            "submodule": "ng",
             "namespace": "miruken.ng",
             "file": "lib\\angular\\ng.js",
-            "line": 51,
+            "line": 66,
             "description": "Description goes here",
             "is_constructor": 1,
             "extends": "Directive"
@@ -1244,7 +1273,7 @@
             "submodule": "mvc",
             "namespace": "miruken.mvc",
             "file": "lib\\mvc\\mvc.js",
-            "line": 30,
+            "line": 28,
             "description": "Base class for modelling concepts using one or more \n{{#crossLink \"miruken.$properties\"}}{{/crossLink}}\n<pre>\n   var Child = Model.extend({\n      $properties: {\n          firstName: { validate: { presence: true } },\n          lastNane:  { validate: { presence: true } },\n          sibling:   { map: Child },\n          age:       { validate {\n                           numericality: {\n                               onlyInteger:       true,\n                               lessThanOrEqualTo: 12\n                           }\n                     }}\n      }\n   })\n</pre>",
             "is_constructor": 1,
             "params": [
@@ -1256,6 +1285,22 @@
                 }
             ],
             "extends": "Base"
+        },
+        "miruken.mvc.ViewRegion": {
+            "name": "miruken.mvc.ViewRegion",
+            "shortname": "ViewRegion",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "miruken",
+            "submodule": "mvc",
+            "namespace": "miruken.mvc",
+            "file": "lib\\mvc\\mvc.js",
+            "line": 154,
+            "description": "Protocol representing a region on the screen where a controller can be rendered.",
+            "extends": "StrictProtocol"
         },
         "miruken.mvc.Controller": {
             "name": "miruken.mvc.Controller",
@@ -1269,7 +1314,7 @@
             "submodule": "mvc",
             "namespace": "miruken.mvc",
             "file": "lib\\mvc\\mvc.js",
-            "line": 156,
+            "line": 169,
             "description": "Base class for controllers.",
             "is_constructor": 1,
             "extends": "miruken.callback.CallbackHandler",
@@ -1290,7 +1335,7 @@
             "submodule": "mvc",
             "namespace": "miruken.mvc",
             "file": "lib\\mvc\\mvc.js",
-            "line": 183,
+            "line": 196,
             "description": "Protocol for managing master-detail relationships.",
             "extends": "miruken.Protocol"
         },
@@ -1306,7 +1351,7 @@
             "submodule": "mvc",
             "namespace": "miruken.mvc",
             "file": "lib\\mvc\\mvc.js",
-            "line": 264,
+            "line": 277,
             "description": "Protocol for receiving master-detail notifications.",
             "extends": "miruken.Protocol"
         },
@@ -2967,13 +3012,18 @@
     "classitems": [
         {
             "file": "lib\\angular\\ng.js",
-            "line": 10,
+            "line": 51,
+            "description": "Executed during the run phase of an Angular module.",
+            "itemtype": "method",
+            "name": "run",
             "class": "miruken.ng.Runner",
+            "module": "miruken",
+            "submodule": "ng",
             "namespace": "miruken.ng"
         },
         {
             "file": "lib\\angular\\ng.js",
-            "line": 118,
+            "line": 133,
             "itemtype": "method",
             "name": "_instrumentScopes\nInstruments angular scopes with miruken contexts.",
             "params": [
@@ -2989,11 +3039,13 @@
                 }
             ],
             "class": "miruken.ng.UseModelValidation",
+            "module": "miruken",
+            "submodule": "ng",
             "namespace": "miruken.ng"
         },
         {
             "file": "lib\\angular\\ng.js",
-            "line": 149,
+            "line": 164,
             "itemtype": "method",
             "name": "_registerControllersAndDirectives\nRegisters the package controllers and directives.",
             "params": [
@@ -3014,11 +3066,13 @@
                 }
             ],
             "class": "miruken.ng.UseModelValidation",
+            "module": "miruken",
+            "submodule": "ng",
             "namespace": "miruken.ng"
         },
         {
             "file": "lib\\angular\\ng.js",
-            "line": 185,
+            "line": 200,
             "itemtype": "method",
             "name": "_installPackage\nRegisters the package Installers, Runners and Starters.",
             "params": [
@@ -3054,11 +3108,13 @@
                 }
             ],
             "class": "miruken.ng.UseModelValidation",
+            "module": "miruken",
+            "submodule": "ng",
             "namespace": "miruken.ng"
         },
         {
             "file": "lib\\angular\\ng.js",
-            "line": 231,
+            "line": 246,
             "itemtype": "method",
             "name": "Shim\nResolves the component from the container.",
             "params": [
@@ -3078,11 +3134,13 @@
                 "type": "Function"
             },
             "class": "miruken.ng.UseModelValidation",
+            "module": "miruken",
+            "submodule": "ng",
             "namespace": "miruken.ng"
         },
         {
             "file": "lib\\angular\\ng.js",
-            "line": 257,
+            "line": 272,
             "itemtype": "method",
             "name": "_provideLiteral\nProvides all keys from the object literal.",
             "params": [
@@ -3098,11 +3156,13 @@
                 }
             ],
             "class": "miruken.ng.UseModelValidation",
+            "module": "miruken",
+            "submodule": "ng",
             "namespace": "miruken.ng"
         },
         {
             "file": "lib\\angular\\ng.js",
-            "line": 270,
+            "line": 285,
             "itemtype": "method",
             "name": "_provideInjector\nAttaches the supplied injector to owners $providers.",
             "params": [
@@ -3118,11 +3178,13 @@
                 }
             ],
             "class": "miruken.ng.UseModelValidation",
+            "module": "miruken",
+            "submodule": "ng",
             "namespace": "miruken.ng"
         },
         {
             "file": "lib\\angular\\ng.js",
-            "line": 285,
+            "line": 300,
             "itemtype": "method",
             "name": "_ngDependencies\nExtracts the string dependencies for the component.",
             "params": [
@@ -3137,6 +3199,8 @@
                 "type": "Array"
             },
             "class": "miruken.ng.UseModelValidation",
+            "module": "miruken",
+            "submodule": "ng",
             "namespace": "miruken.ng"
         },
         {
@@ -4391,7 +4455,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 58,
+            "line": 56,
             "description": "Maps json structured data into the model.",
             "itemtype": "method",
             "name": "fromData",
@@ -4409,7 +4473,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 97,
+            "line": 95,
             "description": "Maps the model into json structured data.",
             "itemtype": "method",
             "name": "toData",
@@ -4437,7 +4501,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 133,
+            "line": 131,
             "description": "Maps the model value into json using a mapper function.",
             "itemtype": "method",
             "name": "map",
@@ -4471,7 +4535,29 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 189,
+            "line": 160,
+            "description": "Renders the controller in the view region.",
+            "itemtype": "method",
+            "name": "presentController",
+            "params": [
+                {
+                    "name": "controller",
+                    "description": "-  controller",
+                    "type": "miruken.mvc.Controller"
+                }
+            ],
+            "return": {
+                "description": "promise when rendering complete.",
+                "type": "Promise"
+            },
+            "class": "miruken.mvc.ViewRegion",
+            "module": "miruken",
+            "submodule": "mvc",
+            "namespace": "miruken.mvc"
+        },
+        {
+            "file": "lib\\mvc\\mvc.js",
+            "line": 202,
             "description": "Gets the selected detail.",
             "itemtype": "method",
             "name": "getSelectedDetail",
@@ -4493,7 +4579,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 196,
+            "line": 209,
             "description": "Gets the selected details.",
             "itemtype": "method",
             "name": "getSelectedDetails",
@@ -4515,7 +4601,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 203,
+            "line": 216,
             "description": "Selects the detail",
             "itemtype": "method",
             "name": "selectDetail",
@@ -4533,7 +4619,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 209,
+            "line": 222,
             "description": "Unselects the detail",
             "itemtype": "method",
             "name": "deselectDetail",
@@ -4551,7 +4637,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 215,
+            "line": 228,
             "description": "Determines if a previous detail exists.",
             "itemtype": "method",
             "name": "hasPreviousDetail",
@@ -4573,7 +4659,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 222,
+            "line": 235,
             "description": "Determines if a next detail exists.",
             "itemtype": "method",
             "name": "hasNextDetail.",
@@ -4595,7 +4681,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 229,
+            "line": 242,
             "description": "Gets the previous detail.",
             "itemtype": "method",
             "name": "getPreviousDetail",
@@ -4617,7 +4703,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 236,
+            "line": 249,
             "description": "Gets the next detail.",
             "itemtype": "method",
             "name": "getNextDetail",
@@ -4639,7 +4725,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 243,
+            "line": 256,
             "description": "Adds the detail to the master.",
             "itemtype": "method",
             "name": "addDetail",
@@ -4657,7 +4743,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 249,
+            "line": 262,
             "description": "Updates the detail in the master.",
             "itemtype": "method",
             "name": "updateDetail",
@@ -4675,7 +4761,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 255,
+            "line": 268,
             "description": "Removes the detail from the master.",
             "itemtype": "method",
             "name": "removeDetail",
@@ -4698,7 +4784,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 270,
+            "line": 283,
             "description": "Informs the master has changed.",
             "itemtype": "method",
             "name": "masterChanged",
@@ -4716,7 +4802,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 276,
+            "line": 289,
             "description": "Informs a detail was selected.",
             "itemtype": "method",
             "name": "didSelectDetail",
@@ -4739,7 +4825,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 283,
+            "line": 296,
             "description": "Informs a detail was unselected.",
             "itemtype": "method",
             "name": "didDeselectDetail",
@@ -4762,7 +4848,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 290,
+            "line": 303,
             "description": "Informs a detail was added to the master.",
             "itemtype": "method",
             "name": "didAddDetail",
@@ -4785,7 +4871,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 297,
+            "line": 310,
             "description": "Informs a detail was updated in the master.",
             "itemtype": "method",
             "name": "didUpdateDetail",
@@ -4808,7 +4894,7 @@
         },
         {
             "file": "lib\\mvc\\mvc.js",
-            "line": 304,
+            "line": 317,
             "description": "Informs a detail was removed from the master.",
             "itemtype": "method",
             "name": "didRemoveDetail",
@@ -6368,7 +6454,7 @@
         },
         {
             "file": "lib\\callback.js",
-            "line": 1600,
+            "line": 1599,
             "description": "Marks the callback handler for asynchronous validation.",
             "itemtype": "method",
             "name": "$validAsync",
@@ -9105,39 +9191,39 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: function with method",
-            "line": " lib\\angular\\ng.js:118"
+            "line": " lib\\angular\\ng.js:133"
         },
         {
             "message": "replacing incorrect tag: function with method",
-            "line": " lib\\angular\\ng.js:149"
+            "line": " lib\\angular\\ng.js:164"
         },
         {
             "message": "replacing incorrect tag: function with method",
-            "line": " lib\\angular\\ng.js:185"
+            "line": " lib\\angular\\ng.js:200"
         },
         {
             "message": "replacing incorrect tag: function with method",
-            "line": " lib\\angular\\ng.js:231"
+            "line": " lib\\angular\\ng.js:246"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\angular\\ng.js:231"
+            "line": " lib\\angular\\ng.js:246"
         },
         {
             "message": "replacing incorrect tag: function with method",
-            "line": " lib\\angular\\ng.js:257"
-        },
-        {
-            "message": "replacing incorrect tag: function with method",
-            "line": " lib\\angular\\ng.js:270"
+            "line": " lib\\angular\\ng.js:272"
         },
         {
             "message": "replacing incorrect tag: function with method",
             "line": " lib\\angular\\ng.js:285"
         },
         {
+            "message": "replacing incorrect tag: function with method",
+            "line": " lib\\angular\\ng.js:300"
+        },
+        {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\angular\\ng.js:285"
+            "line": " lib\\angular\\ng.js:300"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -9237,35 +9323,39 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\mvc\\mvc.js:97"
+            "line": " lib\\mvc\\mvc.js:95"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\mvc\\mvc.js:133"
+            "line": " lib\\mvc\\mvc.js:131"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\mvc\\mvc.js:189"
+            "line": " lib\\mvc\\mvc.js:160"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\mvc\\mvc.js:196"
+            "line": " lib\\mvc\\mvc.js:202"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\mvc\\mvc.js:215"
+            "line": " lib\\mvc\\mvc.js:209"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\mvc\\mvc.js:222"
+            "line": " lib\\mvc\\mvc.js:228"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\mvc\\mvc.js:229"
+            "line": " lib\\mvc\\mvc.js:235"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\mvc\\mvc.js:236"
+            "line": " lib\\mvc\\mvc.js:242"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib\\mvc\\mvc.js:249"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -9441,7 +9531,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\callback.js:1600"
+            "line": " lib\\callback.js:1599"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -9790,10 +9880,6 @@
         {
             "message": "replacing incorrect tag: returns with return",
             "line": " lib\\miruken.js:1948"
-        },
-        {
-            "message": "Missing item type",
-            "line": " lib\\angular\\ng.js:10"
         },
         {
             "message": "Missing item type\nAdds a lookup result.",
