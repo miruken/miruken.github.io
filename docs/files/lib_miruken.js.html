@@ -1159,12 +1159,13 @@ projectAssets: ../assets
                         /**
                          * Metamacro to derive class properties from existng methods.
                          * &lt;p&gt;Currently getFoo, isFoo and setFoo conventions are recognized.&lt;/p&gt;
-                         * &lt;pre&gt;
-                         *    var Person = Base.extend(**$inferProperties**, {
-                         *        getName: function () { return this._name; },
-                         *        setName: function (value) { this._name = value; },
-                         *    })
-                         * &lt;/pre&gt;
+                         * @exmaple
+                         * &#x60;&#x60;&#x60;
+                         * var Person = Base.extend(**$inferProperties**, {
+                         *     getName: function () { return this._name; },
+                         *     setName: function (value) { this._name = value; },
+                         * })
+                         * &#x60;&#x60;&#x60;
                          * would create a Person.name property bound to getName and setName 
                          * @class $inferProperties
                          * @constructor
