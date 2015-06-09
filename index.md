@@ -10,7 +10,7 @@ header:
    image_fullwidth: "header_drop.jpg"
 widget-1:
     title: "Download MirukenJS"
-    url: 'http://phlow.github.io/feeling-responsive/blog/'
+    url: 'http://miruken.github.io/bundles/miruken-0.1.0.zip'
     text: 'Miruken focuses on the challenges surrounding "Models" and "Controllers".  It does all the heavy lifting for object inheritance, properties, mapping, validation, and error handling.  Other frameworks like Angular have the "View" covered.  Miruken is a framework that embraces true object oriented javascript. It focuses on convention, composition, and aspect-oriented programming.'
     image: download.png
 widget-2:
