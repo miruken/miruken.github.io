@@ -179,13 +179,21 @@ projectAssets: ../assets
                     
                     <div class="box intro">
                         <p>Metamacro to derive class properties from existng methods.</p>
-                    <p>Currently getFoo, isFoo and setFoo conventions are recognized.</p>
+                    <p><p>Currently getFoo, isFoo and setFoo conventions are recognized.</p></p>
+                    <p><pre>
+                       var Person = Base.extend(<strong>$inferProperties</strong>, {
+                           getName: function () { return this._name; },
+                           setName: function (value) { this._name = value; },
+                       })
+                    </pre>
+                    would create a Person.name property bound to getName and setName</p>
+                    
                     </div>
                     
                         <div class="constructor">
                             <h2>Constructor</h2>
                             <div id="method_miruken.$inferProperties" class="method item">
-                                <h3 class="name"><code>miruken.$inferProperties</code></h3>
+                                <div class="name"><code>miruken.$inferProperties</code></div>
                             
                                     <span class="paren">()</span>
                             
@@ -258,10 +266,11 @@ projectAssets: ../assets
                                     <h2 class="off-left">Methods</h2>
                     
                     <div id="method_apply" class="method item inherited">
-                        <h3 class="name"><code>apply</code></h3>
+                        <div class="name"><code>apply</code></div>
                     
                             <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
+                                <ul class="args-list inline commas">
+                                <li><span>(</span></li>
                                     <li class="arg">
                                             <code>step</code>
                                     </li>
@@ -274,7 +283,8 @@ projectAssets: ../assets
                                     <li class="arg">
                                             <code>definition</code>
                                     </li>
-                                </ul><span class="paren">)</span>
+                                <li><span>)</span></li>
+                                </ul>
                             </div>
                     
                     
@@ -362,7 +372,7 @@ projectAssets: ../assets
                     
                     </div>
                     <div id="method_isActive" class="method item">
-                        <h3 class="name"><code>isActive</code></h3>
+                        <div class="name"><code>isActive</code></div>
                     
                             <span class="paren">()</span>
                     
@@ -382,7 +392,7 @@ projectAssets: ../assets
                                     miruken.MetaMacro
                                 </a>
                                 but overwritten in
-                            <a href="../files/lib_miruken.js.html#l1040"><code>lib\miruken.js:1040</code></a>
+                            <a href="../files/lib_miruken.js.html#l1039"><code>lib\miruken.js:1039</code></a>
                             </p>
                     
                     
@@ -408,17 +418,19 @@ projectAssets: ../assets
                     
                     </div>
                     <div id="method_protocolAdded" class="method item inherited">
-                        <h3 class="name"><code>protocolAdded</code></h3>
+                        <div class="name"><code>protocolAdded</code></div>
                     
                             <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
+                                <ul class="args-list inline commas">
+                                <li><span>(</span></li>
                                     <li class="arg">
                                             <code>metadata</code>
                                     </li>
                                     <li class="arg">
                                             <code>protocol</code>
                                     </li>
-                                </ul><span class="paren">)</span>
+                                <li><span>)</span></li>
+                                </ul>
                             </div>
                     
                     
@@ -480,7 +492,7 @@ projectAssets: ../assets
                     
                     </div>
                     <div id="method_shouldInherit" class="method item">
-                        <h3 class="name"><code>shouldInherit</code></h3>
+                        <div class="name"><code>shouldInherit</code></div>
                     
                             <span class="paren">()</span>
                     
@@ -500,7 +512,7 @@ projectAssets: ../assets
                                     miruken.MetaMacro
                                 </a>
                                 but overwritten in
-                            <a href="../files/lib_miruken.js.html#l1034"><code>lib\miruken.js:1034</code></a>
+                            <a href="../files/lib_miruken.js.html#l1033"><code>lib\miruken.js:1033</code></a>
                             </p>
                     
                     

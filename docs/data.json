@@ -415,7 +415,7 @@
             },
             "tag": "main",
             "file": "lib\\miruken.js",
-            "line": 1601,
+            "line": 1600,
             "description": "Package containing enhancements to the javascript language.",
             "itemtype": "main"
         },
@@ -2435,7 +2435,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1255,
+            "line": 1254,
             "description": "Class for annotating targets.",
             "params": [
                 {
@@ -2747,8 +2747,7 @@
             "namespace": "miruken",
             "file": "lib\\miruken.js",
             "line": 992,
-            "description": "Metamacro to derive class properties from existng methods.\n<p>Currently getFoo, isFoo and setFoo conventions are recognized.</p>",
-            "exmaple": "```\nvar Person = Base.extend(**$inferProperties**, {\n    getName: function () { return this._name; },\n    setName: function (value) { this._name = value; },\n})\n```\nwould create a Person.name property bound to getName and setName",
+            "description": "Metamacro to derive class properties from existng methods.\n<p>Currently getFoo, isFoo and setFoo conventions are recognized.</p>\n<pre>\n   var Person = Base.extend(**$inferProperties**, {\n       getName: function () { return this._name; },\n       setName: function (value) { this._name = value; },\n   })\n</pre>\nwould create a Person.name property bound to getName and setName",
             "is_constructor": 1,
             "extends": "miruken.MetaMacro"
         },
@@ -2763,7 +2762,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1074,
+            "line": 1073,
             "description": "Metamacro to inherit static members in subclasses.\n<pre>\nvar Math = Base.extend(\n    **$inheritStatic**, null, {\n        PI:  3.14159265359,\n        add: function (a, b) {\n            return a + b;\n         }\n    }),\n    Geometry = Math.extend(null, {\n        area: function(length, width) {\n            return length * width;\n        }\n    });\n</pre>\nwould make Math.PI and Math.add available on the Geometry class.",
             "is_constructor": 1,
             "params": [
@@ -2788,7 +2787,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1132,
+            "line": 1131,
             "description": "Base class to prefer coercion over casting.\nBy default, Type(target) will cast target to the type.",
             "extends": "Base"
         },
@@ -2808,7 +2807,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1142,
+            "line": 1141,
             "description": "Protocol for targets that manage disposal lifecycle.",
             "extends": "miruken.Protocol"
         },
@@ -2825,7 +2824,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1155,
+            "line": 1154,
             "description": "Mixin for {{#crossLink \"miruken.Disposing\"}}{{/crossLink}} implementation.",
             "uses": [
                 "miruken.Disposing"
@@ -2845,7 +2844,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1170,
+            "line": 1169,
             "description": "Protocol for targets that can execute functions.",
             "extends": "miruken.StrictProtocol"
         },
@@ -2862,7 +2861,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1187,
+            "line": 1186,
             "description": "Protocol for targets that have parent/child relationships.",
             "extends": "miruken.Protocol"
         },
@@ -2879,7 +2878,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1201,
+            "line": 1200,
             "description": "Protocol for targets that can be started.",
             "extends": "miruken.Protocol"
         },
@@ -2894,7 +2893,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1214,
+            "line": 1213,
             "description": "Base class for startable targets.",
             "uses": [
                 "miruken.Starting"
@@ -2912,7 +2911,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1301,
+            "line": 1300,
             "description": "Helper class to simplify array manipulation.",
             "is_constructor": 1,
             "params": [
@@ -2937,7 +2936,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1431,
+            "line": 1430,
             "description": "Maintains a simple doublely-linked list with indexing.\nIndexes are partially ordered according to the order comparator.",
             "is_constructor": 1,
             "params": [
@@ -2960,7 +2959,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1541,
+            "line": 1540,
             "description": "Facet choices for proxies.",
             "extends": "miruken.Enum"
         },
@@ -2975,7 +2974,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1566,
+            "line": 1565,
             "description": "Base class for method interception.",
             "extends": "Base"
         },
@@ -2990,7 +2989,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1582,
+            "line": 1581,
             "description": "Responsible for selecting which interceptors to apply to a method.",
             "extends": "Base"
         },
@@ -3005,7 +3004,7 @@
             "module": "miruken",
             "namespace": "miruken",
             "file": "lib\\miruken.js",
-            "line": 1601,
+            "line": 1600,
             "description": "Builds proxy classes for interception.",
             "extends": "Base"
         }
@@ -8385,7 +8384,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1034,
+            "line": 1033,
             "description": "Determines if the macro should be inherited",
             "itemtype": "method",
             "name": "shouldInherit",
@@ -8399,7 +8398,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1040,
+            "line": 1039,
             "description": "Determines if the macro should be applied on extension.",
             "itemtype": "method",
             "name": "isActive",
@@ -8413,7 +8412,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1124,
+            "line": 1123,
             "description": "Determines if the macro should be inherited",
             "itemtype": "method",
             "name": "shouldInherit",
@@ -8427,7 +8426,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1148,
+            "line": 1147,
             "description": "Releases any resources managed by the receiver.",
             "itemtype": "method",
             "name": "dispose",
@@ -8437,7 +8436,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1176,
+            "line": 1175,
             "description": "Invokes the function with dependencies.",
             "itemtype": "method",
             "name": "invoke",
@@ -8469,7 +8468,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1193,
+            "line": 1192,
             "description": "Creates a new child of the parent.",
             "itemtype": "method",
             "name": "newChild",
@@ -8483,7 +8482,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1207,
+            "line": 1206,
             "description": "Starts the reciever.",
             "itemtype": "method",
             "name": "start",
@@ -8493,7 +8492,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1224,
+            "line": 1223,
             "description": "Convenience function for disposing resources.",
             "itemtype": "method",
             "name": "$using",
@@ -8525,7 +8524,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1312,
+            "line": 1311,
             "description": "Gets the array.",
             "itemtype": "method",
             "name": "getItems",
@@ -8539,7 +8538,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1318,
+            "line": 1317,
             "description": "Gets the item at array index.",
             "itemtype": "method",
             "name": "getIndex",
@@ -8560,7 +8559,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1329,
+            "line": 1328,
             "description": "Sets the item at array index if empty.",
             "itemtype": "method",
             "name": "setIndex",
@@ -8587,7 +8586,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1344,
+            "line": 1343,
             "description": "Inserts the item at array index.",
             "itemtype": "method",
             "name": "insertIndex",
@@ -8614,7 +8613,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1356,
+            "line": 1355,
             "description": "Replaces the item at array index.",
             "itemtype": "method",
             "name": "replaceIndex",
@@ -8641,7 +8640,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1368,
+            "line": 1367,
             "description": "Removes the item at array index.",
             "itemtype": "method",
             "name": "removeIndex",
@@ -8663,7 +8662,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1381,
+            "line": 1380,
             "description": "Appends one or more items to the end of the array.",
             "itemtype": "method",
             "name": "append",
@@ -8678,7 +8677,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1401,
+            "line": 1400,
             "description": "Merges the items into the array.",
             "itemtype": "method",
             "name": "merge",
@@ -8700,7 +8699,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1422,
+            "line": 1421,
             "description": "Optional mapping for items before adding to the array.",
             "itemtype": "method",
             "name": "mapItem",
@@ -8721,7 +8720,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1443,
+            "line": 1442,
             "description": "Determines if list is empty.",
             "itemtype": "method",
             "name": "isEmpty",
@@ -8735,7 +8734,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1451,
+            "line": 1450,
             "description": "Gets the node at an index.",
             "itemtype": "method",
             "name": "getIndex",
@@ -8756,7 +8755,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1460,
+            "line": 1459,
             "description": "Inserts the node at an index.",
             "itemtype": "method",
             "name": "insert",
@@ -8778,7 +8777,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1505,
+            "line": 1504,
             "description": "Removes the node from the list.",
             "itemtype": "method",
             "name": "remove",
@@ -8795,7 +8794,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1547,
+            "line": 1546,
             "itemtype": "property",
             "name": "Parameters",
             "type": "String",
@@ -8805,7 +8804,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1551,
+            "line": 1550,
             "itemtype": "property",
             "name": "Interceptors",
             "type": "String",
@@ -8815,7 +8814,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1555,
+            "line": 1554,
             "itemtype": "property",
             "name": "InterceptorSelectors",
             "type": "String",
@@ -8825,7 +8824,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1559,
+            "line": 1558,
             "itemtype": "property",
             "name": "Delegate",
             "type": "String",
@@ -8835,7 +8834,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1572,
+            "line": 1571,
             "itemtype": "method",
             "name": "intercept",
             "params": [
@@ -8855,7 +8854,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1588,
+            "line": 1587,
             "description": "Description goes here",
             "itemtype": "method",
             "name": "selectInterceptors",
@@ -8886,7 +8885,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1607,
+            "line": 1606,
             "description": "Builds a proxy class for the supplied types.",
             "itemtype": "method",
             "name": "buildProxy",
@@ -8913,7 +8912,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1840,
+            "line": 1839,
             "description": "Determines if target is a protocol.",
             "itemtype": "method",
             "name": "$isProtocol",
@@ -8934,7 +8933,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1849,
+            "line": 1848,
             "description": "Determines if target is a class.",
             "itemtype": "method",
             "name": "$isClass",
@@ -8955,7 +8954,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1859,
+            "line": 1858,
             "description": "Gets the class the instance belongs to.",
             "itemtype": "method",
             "name": "$classOf",
@@ -8976,7 +8975,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1869,
+            "line": 1868,
             "description": "Gets the classes superclass.",
             "itemtype": "method",
             "name": "$ancestorOf",
@@ -8997,7 +8996,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1879,
+            "line": 1878,
             "description": "Determines if target is a string.",
             "itemtype": "method",
             "name": "$isString",
@@ -9018,7 +9017,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1889,
+            "line": 1888,
             "description": "Determines if the target is a function.",
             "itemtype": "method",
             "name": "$isFunction",
@@ -9039,7 +9038,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1899,
+            "line": 1898,
             "description": "Determines if target is an object.",
             "itemtype": "method",
             "name": "$isObject",
@@ -9060,7 +9059,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1909,
+            "line": 1908,
             "description": "Determines if target is a promise.",
             "itemtype": "method",
             "name": "$isPromise",
@@ -9081,7 +9080,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1919,
+            "line": 1918,
             "description": "Determines if value is null or undefined.",
             "itemtype": "method",
             "name": "$isNothing",
@@ -9102,7 +9101,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1929,
+            "line": 1928,
             "description": "Description goes here",
             "itemtype": "method",
             "name": "$isSomething",
@@ -9123,7 +9122,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1939,
+            "line": 1938,
             "description": "Returns a function that returns value.",
             "itemtype": "method",
             "name": "$lift",
@@ -9144,7 +9143,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1949,
+            "line": 1948,
             "description": "Throttles a function over a time period.",
             "itemtype": "method",
             "name": "$debounce",
@@ -9180,7 +9179,7 @@
         },
         {
             "file": "lib\\miruken.js",
-            "line": 1986,
+            "line": 1985,
             "description": "Enhances Functions to create instances.",
             "itemtype": "method",
             "name": "new",
@@ -9755,136 +9754,132 @@
             "line": " lib\\miruken.js:958"
         },
         {
-            "message": "unknown tag: exmaple",
-            "line": " lib\\miruken.js:992"
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib\\miruken.js:1033"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1034"
+            "line": " lib\\miruken.js:1039"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1040"
+            "line": " lib\\miruken.js:1123"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1124"
+            "line": " lib\\miruken.js:1175"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1176"
+            "line": " lib\\miruken.js:1192"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1193"
+            "line": " lib\\miruken.js:1223"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1224"
+            "line": " lib\\miruken.js:1311"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1312"
+            "line": " lib\\miruken.js:1317"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1318"
+            "line": " lib\\miruken.js:1328"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1329"
+            "line": " lib\\miruken.js:1343"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1344"
+            "line": " lib\\miruken.js:1355"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1356"
+            "line": " lib\\miruken.js:1367"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1368"
+            "line": " lib\\miruken.js:1380"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1381"
+            "line": " lib\\miruken.js:1400"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1401"
+            "line": " lib\\miruken.js:1421"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1422"
+            "line": " lib\\miruken.js:1442"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1443"
+            "line": " lib\\miruken.js:1450"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1451"
+            "line": " lib\\miruken.js:1571"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1572"
+            "line": " lib\\miruken.js:1587"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1588"
+            "line": " lib\\miruken.js:1606"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1607"
+            "line": " lib\\miruken.js:1839"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1840"
+            "line": " lib\\miruken.js:1848"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1849"
+            "line": " lib\\miruken.js:1858"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1859"
+            "line": " lib\\miruken.js:1868"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1869"
+            "line": " lib\\miruken.js:1878"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1879"
+            "line": " lib\\miruken.js:1888"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1889"
+            "line": " lib\\miruken.js:1898"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1899"
+            "line": " lib\\miruken.js:1908"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1909"
+            "line": " lib\\miruken.js:1918"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1919"
+            "line": " lib\\miruken.js:1928"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1929"
+            "line": " lib\\miruken.js:1938"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1939"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " lib\\miruken.js:1949"
+            "line": " lib\\miruken.js:1948"
         },
         {
             "message": "Missing item type\nAdds a lookup result.",
