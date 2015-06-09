@@ -9,15 +9,15 @@ title: "Miruken – Making JavaScript Inheritance Easy"
 header:
    image_fullwidth: "header_drop.jpg"
 widget-1:
-    title: "Blog & Portfolio"
+    title: "Download MirukenJS"
     url: 'http://phlow.github.io/feeling-responsive/blog/'
-    text: 'Every good portfolio website has a blog with fresh news, thoughts and develop&shy;ments of your activities. <em>Feeling Responsive</em> offers you a fully functional blog with an archive page to give readers a quick overview of all your posts.'
+    text: 'Miruken focuses on the challenges surrounding "Models" and "Controllers".  It does all the heavy lifting for object inheritance, properties, mapping, validation, and error handling.  Other frameworks like Angular have the "View" covered.  Miruken is a framework that embraces true object oriented javascript. It focuses on convention, composition, and aspect-oriented programming.'
     image: unsplash_9-302x182.jpg
 widget-2:
-    title: "Why use this theme?"
-    url: 'http://phlow.github.io/feeling-responsive/info/'
-    text: '<em>Feeling Responsive</em> is heavily customizable.<br>1. Language-Support :)<br>2. Optimized for speed and it&#39;s responsive.<br>3. Built on <a href="http://foundation.zurb.com/">Foundation Framework</a>.<br>4. Seven different Headers.<br>5. Customizable navigation, footer,...'
-    video: '<a href="#" data-reveal-id="videoModal"><img src="http://phlow.github.io/feeling-responsive/images/start-video-feeling-responsive-302x182.jpg" width="302" height="182" alt=""></a>'
+    title: "Learn Miruken"
+    url: 'http://miruken.github.io/documentation/'
+    text: 'Learn more about how to use Miruken in your project with our documentation. There we will teach you about the various classes and modules that make up Miruken and how they work.'
+    image: manual.png
 widget-3:
     title: "Download Source Code"
     url: 'https://github.com/miruken/mirukenjs'
