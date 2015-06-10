@@ -18,7 +18,7 @@ widget-1:
     <!-- image: download.png -->
 widget-2:
     title: "Learn Miruken"
-    url: 'http://miruken.github.io/documentation/'
+    url: 'http://miruken.github.io/docs/'
     text: 'Learn more about how to use Miruken in your project with our documentation. There we will teach you about the various classes and modules that make up Miruken and how they work.'
     <!-- image: manual.png -->
 widget-3:
