@@ -183,25 +183,25 @@ projectAssets: ../assets
         <div class="apidocs">
             <div id="docs-main">
                 <div class="content">
-                    <h1>miruken.$proxyProtocol Class</h1>
+                    <h1>miruken.mvc.ViewRegion Class</h1>
                     <div class="box meta">
                     
                             <div class="extends">
-                                Extends <a href="../classes/miruken.MetaMacro.html" class="crosslink">miruken.MetaMacro</a>
+                                Extends StrictProtocol
                             </div>
                     
                             <div class="foundat">
-                                Defined in: <a href="../files/lib_miruken.js.html#l778"><code>lib&#x2F;miruken.js:778</code></a>
+                                Defined in: <a href="../files/lib_mvc_mvc.js.html#l154"><code>lib&#x2F;mvc&#x2F;mvc.js:154</code></a>
                             </div>
                     
-                                Module: <a href="../modules/miruken.html">miruken</a>
+                                Module: <a href="../modules/mvc.html">mvc</a><br>
+                                Parent Module: <a href="../modules/miruken.html">miruken</a>
                     
                     </div>
                     
                     
                     <div class="box intro">
-                        <p>Metamacro to proxy protocol methods through a delegate.<br/>
-                    See <a href="../classes/miruken.Protocol.html" class="crosslink">miruken.Protocol</a></p>
+                        <p>Protocol representing an area on the screen where a controller can be rendered.</p>
                     
                     </div>
                     
@@ -221,20 +221,8 @@ projectAssets: ../assets
                                         <h3>Methods</h3>
                     
                                         <ul class="index-list methods extends">
-                                                <li class="index-item method inherited">
-                                                    <a href="#method_apply">apply</a>
-                    
-                                                </li>
-                                                <li class="index-item method inherited">
-                                                    <a href="#method_isActive">isActive</a>
-                    
-                                                </li>
-                                                <li class="index-item method inherited">
-                                                    <a href="#method_protocolAdded">protocolAdded</a>
-                    
-                                                </li>
-                                                <li class="index-item method inherited">
-                                                    <a href="#method_shouldInherit">shouldInherit</a>
+                                                <li class="index-item method">
+                                                    <a href="#method_presentController">presentController</a>
                     
                                                 </li>
                                         </ul>
@@ -247,117 +235,19 @@ projectAssets: ../assets
                                 <div id="methods" class="api-class-tabpanel">
                                     <h2 class="off-left">Methods</h2>
                     
-                    <div id="method_apply" class="method item inherited">
-                        <h3 class="name"><code>apply</code></h3>
+                    <div id="method_presentController" class="method item">
+                        <h3 class="name"><code>presentController</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>step</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>metadata</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>target</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>definition</code>
+                                            <code>controller</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.MetaMacro.html#method_apply">miruken.MetaMacro</a>:
-                            <a href="../files/lib_miruken.js.html#l317"><code>lib&#x2F;miruken.js:317</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Executes the macro for the given step.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">step</code>
-                                            <span class="type"><a href="../classes/miruken.MetaStep.html" class="crosslink">miruken.MetaStep</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>meta step</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">metadata</code>
-                                            <span class="type"><a href="../classes/miruken.MetaBase.html" class="crosslink">miruken.MetaBase</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>effective metadata</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">target</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>target macro applied to</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">definition</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>literal containing changes</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_isActive" class="method item">
-                        <h3 class="name"><code>isActive</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
                             <span class="returns-inline">
-                                <span class="type">Boolean</span>
+                                <span class="type">Promise</span>
                             </span>
                     
                     
@@ -367,12 +257,9 @@ projectAssets: ../assets
                     
                     
                         <div class="meta">
-                                <p>Inherited from
-                                <a href="../classes/miruken.MetaMacro.html#method_isActive">
-                                    miruken.MetaMacro
-                                </a>
-                                but overwritten in
-                            <a href="../files/lib_miruken.js.html#l826"><code>lib&#x2F;miruken.js:826</code></a>
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_mvc_mvc.js.html#l160"><code>lib&#x2F;mvc&#x2F;mvc.js:160</code></a>
                             </p>
                     
                     
@@ -380,56 +267,7 @@ projectAssets: ../assets
                         </div>
                     
                         <div class="description">
-                            <p>Determines if the macro should be applied on extension.</p>
-                    
-                        </div>
-                    
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Boolean</span>:
-                                        <p>true</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_protocolAdded" class="method item inherited">
-                        <h3 class="name"><code>protocolAdded</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>metadata</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>protocol</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.MetaMacro.html#method_protocolAdded">miruken.MetaMacro</a>:
-                            <a href="../files/lib_miruken.js.html#l326"><code>lib&#x2F;miruken.js:326</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Triggered when a protocol is added to metadata.</p>
+                            <p>Renders the controller in the view region.</p>
                     
                         </div>
                     
@@ -438,26 +276,13 @@ projectAssets: ../assets
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">metadata</code>
-                                            <span class="type"><a href="../classes/miruken.MetaBase.html" class="crosslink">miruken.MetaBase</a></span>
+                                            <code class="param-name">controller</code>
+                                            <span class="type"><a href="../classes/miruken.mvc.Controller.html" class="crosslink">miruken.mvc.Controller</a></span>
                     
                     
                                         <div class="param-description">
                                             <ul>
-                    <li>effective metadata</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">protocol</code>
-                                            <span class="type"><a href="../classes/miruken.Protocol.html" class="crosslink">miruken.Protocol</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>protocol added</li>
+                    <li>controller</li>
                     </ul>
                     
                                         </div>
@@ -466,49 +291,12 @@ projectAssets: ../assets
                                 </ul>
                             </div>
                     
-                    
-                    
-                    </div>
-                    <div id="method_shouldInherit" class="method item">
-                        <h3 class="name"><code>shouldInherit</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Boolean</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                <p>Inherited from
-                                <a href="../classes/miruken.MetaMacro.html#method_shouldInherit">
-                                    miruken.MetaMacro
-                                </a>
-                                but overwritten in
-                            <a href="../files/lib_miruken.js.html#l820"><code>lib&#x2F;miruken.js:820</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Determines if the macro should be inherited</p>
-                    
-                        </div>
-                    
-                    
                             <div class="returns">
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type">Boolean</span>:
-                                        <p>true</p>
+                                            <span class="type">Promise</span>:
+                                        <p>promise reflecting rendering.</p>
                     
                                 </div>
                             </div>

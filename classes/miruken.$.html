@@ -37,14 +37,12 @@ projectAssets: ../assets
                             <li><a class="subheader" href="../classes/miruken.ArrayManager.html">miruken.ArrayManager</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.$.html">miruken.callback.$</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.$callbacks.html">miruken.callback.$callbacks</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.AcceptingCallbackHandler.html">miruken.callback.AcceptingCallbackHandler</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.CallbackHandler.html">miruken.callback.CallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerAspect.html">miruken.callback.CallbackHandlerAspect</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerDecorator.html">miruken.callback.CallbackHandlerDecorator</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerFilter.html">miruken.callback.CallbackHandlerFilter</a></li>
+                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerx.html">miruken.callback.CallbackHandlerx</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.CascadeCallbackHandler.html">miruken.callback.CascadeCallbackHandler</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.CompositeCallbackHandler.html">miruken.callback.CompositeCallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.ConditionalCallbackHandler.html">miruken.callback.ConditionalCallbackHandler</a></li>
+                            <li><a class="subheader" href="../classes/miruken.callback.Composition.html">miruken.callback.Composition</a></li>
+                            <li><a class="subheader" href="../classes/miruken.callback.CompositionScope.html">miruken.callback.CompositionScope</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.Deferred.html">miruken.callback.Deferred</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.HandleMethod.html">miruken.callback.HandleMethod</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.InvocationDelegate.html">miruken.callback.InvocationDelegate</a></li>
@@ -52,10 +50,6 @@ projectAssets: ../assets
                             <li><a class="subheader" href="../classes/miruken.callback.InvocationOptionsHandler.html">miruken.callback.InvocationOptionsHandler</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.InvocationSemantics.html">miruken.callback.InvocationSemantics</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.Lookup.html">miruken.callback.Lookup</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.MethodCallbackHandler.html">miruken.callback.MethodCallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.ProvidingCallbackHandler.html">miruken.callback.ProvidingCallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.Reentrant.html">miruken.callback.Reentrant</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.ReentrantScope.html">miruken.callback.ReentrantScope</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.RejectedError.html">miruken.callback.RejectedError</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.Resolution.html">miruken.callback.Resolution</a></li>
                             <li><a class="subheader" href="../classes/miruken.ClassMeta.html">miruken.ClassMeta</a></li>
@@ -117,6 +111,7 @@ projectAssets: ../assets
                             <li><a class="subheader" href="../classes/miruken.mvc.MasterDetail.html">miruken.mvc.MasterDetail</a></li>
                             <li><a class="subheader" href="../classes/miruken.mvc.MasterDetailAware.html">miruken.mvc.MasterDetailAware</a></li>
                             <li><a class="subheader" href="../classes/miruken.mvc.Model.html">miruken.mvc.Model</a></li>
+                            <li><a class="subheader" href="../classes/miruken.mvc.ViewRegion.html">miruken.mvc.ViewRegion</a></li>
                             <li><a class="subheader" href="../classes/miruken.ng.Directive.html">miruken.ng.Directive</a></li>
                             <li><a class="subheader" href="../classes/miruken.ng.Runner.html">miruken.ng.Runner</a></li>
                             <li><a class="subheader" href="../classes/miruken.ng.UseModelValidation.html">miruken.ng.UseModelValidation</a></li>
@@ -148,6 +143,7 @@ projectAssets: ../assets
                             <li><a href="../modules/ioc.html">ioc</a></li>
                             <li><a href="../modules/miruken.html">miruken</a></li>
                             <li><a href="../modules/mvc.html">mvc</a></li>
+                            <li><a href="../modules/ng.html">ng</a></li>
                             <li><a href="../modules/validate.html">validate</a></li>
                         </ul>
                     </div>
@@ -192,7 +188,7 @@ projectAssets: ../assets
                     
                     
                             <div class="foundat">
-                                Defined in: <a href="../files/lib_miruken.js.html#l5"><code>lib\miruken.js:5</code></a>
+                                Defined in: <a href="../files/lib_miruken.js.html#l5"><code>lib&#x2F;miruken.js:5</code></a>
                             </div>
                     
                                 Module: <a href="../modules/miruken.html">miruken</a>
@@ -234,6 +230,10 @@ projectAssets: ../assets
                     
                                                 </li>
                                                 <li class="index-item method">
+                                                    <a href="#method_$equals">$equals</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
                                                     <a href="#method_$isClass">$isClass</a>
                     
                                                 </li>
@@ -250,7 +250,15 @@ projectAssets: ../assets
                     
                                                 </li>
                                                 <li class="index-item method">
+                                                    <a href="#method_"></a>
+                    
+                                                </li>
+                                                <li class="index-item method">
                                                     <a href="#method_$isPromise">$isPromise</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_"></a>
                     
                                                 </li>
                                                 <li class="index-item method">
@@ -307,7 +315,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1868"><code>lib\miruken.js:1868</code></a>
+                            <a href="../files/lib_miruken.js.html#l1868"><code>lib&#x2F;miruken.js:1868</code></a>
                             </p>
                     
                     
@@ -375,7 +383,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1858"><code>lib\miruken.js:1858</code></a>
+                            <a href="../files/lib_miruken.js.html#l1858"><code>lib&#x2F;miruken.js:1858</code></a>
                             </p>
                     
                     
@@ -452,7 +460,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1948"><code>lib\miruken.js:1948</code></a>
+                            <a href="../files/lib_miruken.js.html#l2010"><code>lib&#x2F;miruken.js:2010</code></a>
                             </p>
                     
                     
@@ -535,6 +543,93 @@ projectAssets: ../assets
                     
                     
                     </div>
+                    <div id="method_$equals" class="method item">
+                        <h3 class="name"><code>$equals</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>obj1</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>obj2</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Boolean</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_miruken.js.html#l1948"><code>lib&#x2F;miruken.js:1948</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Determines whether the objects are considered equal.</p>
+                    <p>
+                    Objects are considered equal if the objects are strictly equal (===) or
+                    either object has an equals method accepting other object that returns true.
+                    </p>
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">obj1</code>
+                                            <span class="type">Any</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>first object</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">obj2</code>
+                                            <span class="type">Any</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>second object</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Boolean</span>:
+                                        <p>true if the obejcts are considered equal, false otherwise.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
                     <div id="method_$isClass" class="method item">
                         <h3 class="name"><code>$isClass</code></h3>
                     
@@ -559,7 +654,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1848"><code>lib\miruken.js:1848</code></a>
+                            <a href="../files/lib_miruken.js.html#l1848"><code>lib&#x2F;miruken.js:1848</code></a>
                             </p>
                     
                     
@@ -627,7 +722,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1888"><code>lib\miruken.js:1888</code></a>
+                            <a href="../files/lib_miruken.js.html#l1888"><code>lib&#x2F;miruken.js:1888</code></a>
                             </p>
                     
                     
@@ -695,7 +790,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1918"><code>lib\miruken.js:1918</code></a>
+                            <a href="../files/lib_miruken.js.html#l1918"><code>lib&#x2F;miruken.js:1918</code></a>
                             </p>
                     
                     
@@ -763,7 +858,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1898"><code>lib\miruken.js:1898</code></a>
+                            <a href="../files/lib_miruken.js.html#l1898"><code>lib&#x2F;miruken.js:1898</code></a>
                             </p>
                     
                     
@@ -807,6 +902,63 @@ projectAssets: ../assets
                     
                     
                     </div>
+                    <div id="method_" class="method item">
+                        <h3 class="name"><code></code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>decorations</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_miruken.js.html#l1971"><code>lib&#x2F;miruken.js:1971</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Creates a decorator builder.<br/>
+                    See <a href="http://en.wikipedia.org/wiki/Decorator_pattern">Decorator Pattern</a></p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">decorations</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>object defining decorations</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    
+                    </div>
                     <div id="method_$isPromise" class="method item">
                         <h3 class="name"><code>$isPromise</code></h3>
                     
@@ -831,7 +983,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1908"><code>lib\miruken.js:1908</code></a>
+                            <a href="../files/lib_miruken.js.html#l1908"><code>lib&#x2F;miruken.js:1908</code></a>
                             </p>
                     
                     
@@ -875,6 +1027,79 @@ projectAssets: ../assets
                     
                     
                     </div>
+                    <div id="method_" class="method item">
+                        <h3 class="name"><code></code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>decoratee</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>decorations</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_miruken.js.html#l1998"><code>lib&#x2F;miruken.js:1998</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Decorates an instance using the 
+                    <a href="http://en.wikipedia.org/wiki/Decorator_pattern">Decorator Pattern</a>.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">decoratee</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>decoratee</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">decorations</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>object defining decorations</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    
+                    </div>
                     <div id="method_$isProtocol" class="method item">
                         <h3 class="name"><code>$isProtocol</code></h3>
                     
@@ -899,7 +1124,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1839"><code>lib\miruken.js:1839</code></a>
+                            <a href="../files/lib_miruken.js.html#l1839"><code>lib&#x2F;miruken.js:1839</code></a>
                             </p>
                     
                     
@@ -967,7 +1192,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1928"><code>lib\miruken.js:1928</code></a>
+                            <a href="../files/lib_miruken.js.html#l1928"><code>lib&#x2F;miruken.js:1928</code></a>
                             </p>
                     
                     
@@ -1035,7 +1260,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1878"><code>lib\miruken.js:1878</code></a>
+                            <a href="../files/lib_miruken.js.html#l1878"><code>lib&#x2F;miruken.js:1878</code></a>
                             </p>
                     
                     
@@ -1103,7 +1328,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1938"><code>lib\miruken.js:1938</code></a>
+                            <a href="../files/lib_miruken.js.html#l1938"><code>lib&#x2F;miruken.js:1938</code></a>
                             </p>
                     
                     
@@ -1177,7 +1402,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/lib_miruken.js.html#l1223"><code>lib\miruken.js:1223</code></a>
+                            <a href="../files/lib_miruken.js.html#l1223"><code>lib&#x2F;miruken.js:1223</code></a>
                             </p>
                     
                     

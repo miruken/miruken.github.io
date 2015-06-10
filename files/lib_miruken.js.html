@@ -37,14 +37,12 @@ projectAssets: ../assets
                             <li><a class="subheader" href="../classes/miruken.ArrayManager.html">miruken.ArrayManager</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.$.html">miruken.callback.$</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.$callbacks.html">miruken.callback.$callbacks</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.AcceptingCallbackHandler.html">miruken.callback.AcceptingCallbackHandler</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.CallbackHandler.html">miruken.callback.CallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerAspect.html">miruken.callback.CallbackHandlerAspect</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerDecorator.html">miruken.callback.CallbackHandlerDecorator</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerFilter.html">miruken.callback.CallbackHandlerFilter</a></li>
+                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerx.html">miruken.callback.CallbackHandlerx</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.CascadeCallbackHandler.html">miruken.callback.CascadeCallbackHandler</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.CompositeCallbackHandler.html">miruken.callback.CompositeCallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.ConditionalCallbackHandler.html">miruken.callback.ConditionalCallbackHandler</a></li>
+                            <li><a class="subheader" href="../classes/miruken.callback.Composition.html">miruken.callback.Composition</a></li>
+                            <li><a class="subheader" href="../classes/miruken.callback.CompositionScope.html">miruken.callback.CompositionScope</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.Deferred.html">miruken.callback.Deferred</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.HandleMethod.html">miruken.callback.HandleMethod</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.InvocationDelegate.html">miruken.callback.InvocationDelegate</a></li>
@@ -52,10 +50,6 @@ projectAssets: ../assets
                             <li><a class="subheader" href="../classes/miruken.callback.InvocationOptionsHandler.html">miruken.callback.InvocationOptionsHandler</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.InvocationSemantics.html">miruken.callback.InvocationSemantics</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.Lookup.html">miruken.callback.Lookup</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.MethodCallbackHandler.html">miruken.callback.MethodCallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.ProvidingCallbackHandler.html">miruken.callback.ProvidingCallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.Reentrant.html">miruken.callback.Reentrant</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.ReentrantScope.html">miruken.callback.ReentrantScope</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.RejectedError.html">miruken.callback.RejectedError</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.Resolution.html">miruken.callback.Resolution</a></li>
                             <li><a class="subheader" href="../classes/miruken.ClassMeta.html">miruken.ClassMeta</a></li>
@@ -117,6 +111,7 @@ projectAssets: ../assets
                             <li><a class="subheader" href="../classes/miruken.mvc.MasterDetail.html">miruken.mvc.MasterDetail</a></li>
                             <li><a class="subheader" href="../classes/miruken.mvc.MasterDetailAware.html">miruken.mvc.MasterDetailAware</a></li>
                             <li><a class="subheader" href="../classes/miruken.mvc.Model.html">miruken.mvc.Model</a></li>
+                            <li><a class="subheader" href="../classes/miruken.mvc.ViewRegion.html">miruken.mvc.ViewRegion</a></li>
                             <li><a class="subheader" href="../classes/miruken.ng.Directive.html">miruken.ng.Directive</a></li>
                             <li><a class="subheader" href="../classes/miruken.ng.Runner.html">miruken.ng.Runner</a></li>
                             <li><a class="subheader" href="../classes/miruken.ng.UseModelValidation.html">miruken.ng.UseModelValidation</a></li>
@@ -148,6 +143,7 @@ projectAssets: ../assets
                             <li><a href="../modules/ioc.html">ioc</a></li>
                             <li><a href="../modules/miruken.html">miruken</a></li>
                             <li><a href="../modules/mvc.html">mvc</a></li>
+                            <li><a href="../modules/ng.html">ng</a></li>
                             <li><a href="../modules/validate.html">validate</a></li>
                         </ul>
                     </div>
@@ -187,7 +183,7 @@ projectAssets: ../assets
         <div class="apidocs">
             <div id="docs-main">
                 <div class="content">
-                    <h1 class="file-heading">File: lib\miruken.js</h1>
+                    <h1 class="file-heading">File: lib/miruken.js</h1>
                     
                     <div class="file">
                         <pre class="code prettyprint linenums">
@@ -205,7 +201,7 @@ projectAssets: ../assets
                         var miruken = new base2.Package(this, {
                             name:    &quot;miruken&quot;,
                             version: &quot;1.0&quot;,
-                            exports: &quot;Enum,Variance,Protocol,StrictProtocol,Delegate,Miruken,MetaStep,MetaMacro,Disposing,DisposingMixin,Invoking,Parenting,Starting,Startup,Facet,Interceptor,InterceptorSelector,ProxyBuilder,Modifier,ArrayManager,IndexedList,$isProtocol,$isClass,$classOf,$ancestorOf,$isString,$isFunction,$isObject,$isPromise,$isNothing,$isSomething,$using,$lift,$debounce,$eq,$use,$copy,$lazy,$eval,$every,$child,$optional,$promise,$instant,$createModifier,$properties,$inferProperties,$inheritStatic&quot;
+                            exports: &quot;Enum,Variance,Protocol,StrictProtocol,Delegate,Miruken,MetaStep,MetaMacro,Disposing,DisposingMixin,Invoking,Parenting,Starting,Startup,Facet,Interceptor,InterceptorSelector,ProxyBuilder,Modifier,ArrayManager,IndexedList,$isProtocol,$isClass,$classOf,$ancestorOf,$isString,$isFunction,$isObject,$isPromise,$isNothing,$isSomething,$using,$lift,$equals,$decorator,$decorate,$debounce,$eq,$use,$copy,$lazy,$eval,$every,$child,$optional,$promise,$instant,$createModifier,$properties,$inferProperties,$inheritStatic&quot;
                         });
                     
                         eval(this.imports);
@@ -2115,7 +2111,7 @@ projectAssets: ../assets
                          * @returns  {boolean} true if value null or undefined.
                          */
                         function $isNothing(value) {
-                            return (value === undefined || value === null);
+                            return (value === undefined) || (value === null);
                         }
                     
                         /**
@@ -2138,6 +2134,68 @@ projectAssets: ../assets
                             return function() { return value; };
                         }
                     
+                        /**
+                         * Determines whether the objects are considered equal.
+                         * &lt;p&gt;
+                         * Objects are considered equal if the objects are strictly equal (===) or
+                         * either object has an equals method accepting other object that returns true.
+                         * &lt;/p&gt;
+                         * @method $equals
+                         * @param    {Any}     obj1  - first object
+                         * @param    {Any}     obj2  - second object
+                         * @returns  {boolean} true if the obejcts are considered equal, false otherwise.
+                         */
+                        function $equals(obj1, obj2) {
+                            if (obj1 === obj2) {
+                                return true;
+                            }
+                            if ($isFunction(obj1.equals)) {
+                                return obj1.equals(obj2);
+                            } else if ($isFunction(obj2.equals)) {
+                                return obj2.equals(obj1);
+                            }
+                            return false;
+                        }
+                    
+                        /**
+                         * Creates a decorator builder.&lt;br/&gt;
+                         * See [Decorator Pattern](http://en.wikipedia.org/wiki/Decorator_pattern)
+                         * @method
+                         * @param   {Object}   decorations  -  object defining decorations
+                         * @erturns {Function} function to build decorators.
+                         */
+                        function $decorator(decorations) {
+                            return function (decoratee) {
+                                if ($isNothing(decoratee)) {
+                                    throw new TypeError(&quot;No decoratee specified.&quot;);
+                                }
+                                var decorator = Object.create(decoratee),
+                                    spec      = $decorator.spec || ($decorator.spec = {});
+                                spec.value = decoratee;
+                                Object.defineProperty(decorator, &#x27;decoratee&#x27;, spec);
+                                decorator.extend(&quot;equals&quot;, function (other) {
+                                    return (this === other) || (other === decoratee);
+                                });
+                                if (decorations) {
+                                    decorator.extend(decorations);
+                                }
+                                delete spec.value;
+                                return decorator;
+                            }
+                        }
+                    
+                        /**
+                         * Decorates an instance using the 
+                         * [Decorator Pattern](http://en.wikipedia.org/wiki/Decorator_pattern).
+                         * @method
+                         * @param   {Object}   decoratee    -  decoratee
+                         * @param   {Object}   decorations  -  object defining decorations
+                         * @erturns {Function} function to build decorators.
+                         */
+                        function $decorate(decoratee, decorations) {
+                            return $decorator(decorations)(decoratee);
+                        }
+                        
                         /**
                          * Throttles a function over a time period.
                          * @method $debounce

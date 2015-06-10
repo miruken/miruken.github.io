@@ -37,14 +37,12 @@ projectAssets: ../assets
                             <li><a class="subheader" href="../classes/miruken.ArrayManager.html">miruken.ArrayManager</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.$.html">miruken.callback.$</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.$callbacks.html">miruken.callback.$callbacks</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.AcceptingCallbackHandler.html">miruken.callback.AcceptingCallbackHandler</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.CallbackHandler.html">miruken.callback.CallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerAspect.html">miruken.callback.CallbackHandlerAspect</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerDecorator.html">miruken.callback.CallbackHandlerDecorator</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerFilter.html">miruken.callback.CallbackHandlerFilter</a></li>
+                            <li><a class="subheader" href="../classes/miruken.callback.CallbackHandlerx.html">miruken.callback.CallbackHandlerx</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.CascadeCallbackHandler.html">miruken.callback.CascadeCallbackHandler</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.CompositeCallbackHandler.html">miruken.callback.CompositeCallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.ConditionalCallbackHandler.html">miruken.callback.ConditionalCallbackHandler</a></li>
+                            <li><a class="subheader" href="../classes/miruken.callback.Composition.html">miruken.callback.Composition</a></li>
+                            <li><a class="subheader" href="../classes/miruken.callback.CompositionScope.html">miruken.callback.CompositionScope</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.Deferred.html">miruken.callback.Deferred</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.HandleMethod.html">miruken.callback.HandleMethod</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.InvocationDelegate.html">miruken.callback.InvocationDelegate</a></li>
@@ -52,10 +50,6 @@ projectAssets: ../assets
                             <li><a class="subheader" href="../classes/miruken.callback.InvocationOptionsHandler.html">miruken.callback.InvocationOptionsHandler</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.InvocationSemantics.html">miruken.callback.InvocationSemantics</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.Lookup.html">miruken.callback.Lookup</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.MethodCallbackHandler.html">miruken.callback.MethodCallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.ProvidingCallbackHandler.html">miruken.callback.ProvidingCallbackHandler</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.Reentrant.html">miruken.callback.Reentrant</a></li>
-                            <li><a class="subheader" href="../classes/miruken.callback.ReentrantScope.html">miruken.callback.ReentrantScope</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.RejectedError.html">miruken.callback.RejectedError</a></li>
                             <li><a class="subheader" href="../classes/miruken.callback.Resolution.html">miruken.callback.Resolution</a></li>
                             <li><a class="subheader" href="../classes/miruken.ClassMeta.html">miruken.ClassMeta</a></li>
@@ -117,6 +111,7 @@ projectAssets: ../assets
                             <li><a class="subheader" href="../classes/miruken.mvc.MasterDetail.html">miruken.mvc.MasterDetail</a></li>
                             <li><a class="subheader" href="../classes/miruken.mvc.MasterDetailAware.html">miruken.mvc.MasterDetailAware</a></li>
                             <li><a class="subheader" href="../classes/miruken.mvc.Model.html">miruken.mvc.Model</a></li>
+                            <li><a class="subheader" href="../classes/miruken.mvc.ViewRegion.html">miruken.mvc.ViewRegion</a></li>
                             <li><a class="subheader" href="../classes/miruken.ng.Directive.html">miruken.ng.Directive</a></li>
                             <li><a class="subheader" href="../classes/miruken.ng.Runner.html">miruken.ng.Runner</a></li>
                             <li><a class="subheader" href="../classes/miruken.ng.UseModelValidation.html">miruken.ng.UseModelValidation</a></li>
@@ -148,6 +143,7 @@ projectAssets: ../assets
                             <li><a href="../modules/ioc.html">ioc</a></li>
                             <li><a href="../modules/miruken.html">miruken</a></li>
                             <li><a href="../modules/mvc.html">mvc</a></li>
+                            <li><a href="../modules/ng.html">ng</a></li>
                             <li><a href="../modules/validate.html">validate</a></li>
                         </ul>
                     </div>
@@ -202,7 +198,7 @@ projectAssets: ../assets
                             </div>
                     
                             <div class="foundat">
-                                Defined in: <a href="../files/lib_validate_validate.js.html#l246"><code>lib\validate\validate.js:246</code></a>
+                                Defined in: <a href="../files/lib_validate_validate.js.html#l246"><code>lib&#x2F;validate&#x2F;validate.js:246</code></a>
                             </div>
                     
                                 Module: <a href="../modules/validate.html">validate</a><br>
@@ -273,6 +269,10 @@ projectAssets: ../assets
                                                 </li>
                                                 <li class="index-item method inherited">
                                                     <a href="#method_aspect">aspect</a>
+                    
+                                                </li>
+                                                <li class="index-item method inherited">
+                                                    <a href="#method_decorate">decorate</a>
                     
                                                 </li>
                                                 <li class="index-item method inherited">
@@ -369,7 +369,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_$bestEffort">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1114"><code>lib\callback.js:1114</code></a>
+                            <a href="../files/lib_callback.js.html#l922"><code>lib&#x2F;callback.js:922</code></a>
                             </p>
                     
                     
@@ -412,7 +412,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_$broadcast">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1107"><code>lib\callback.js:1107</code></a>
+                            <a href="../files/lib_callback.js.html#l915"><code>lib&#x2F;callback.js:915</code></a>
                             </p>
                     
                     
@@ -461,7 +461,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_$callOptions">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1128"><code>lib\callback.js:1128</code></a>
+                            <a href="../files/lib_callback.js.html#l936"><code>lib&#x2F;callback.js:936</code></a>
                             </p>
                     
                     
@@ -523,7 +523,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_$notify">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1121"><code>lib\callback.js:1121</code></a>
+                            <a href="../files/lib_callback.js.html#l929"><code>lib&#x2F;callback.js:929</code></a>
                             </p>
                     
                     
@@ -554,7 +554,7 @@ projectAssets: ../assets
                             <span class="paren">()</span>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>
+                                <span class="type">miruken.callback.CallbackHandlerFilter</span>
                             </span>
                     
                     
@@ -566,7 +566,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_$recover">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_error.js.html#l95"><code>lib\error.js:95</code></a>
+                            <a href="../files/lib_error.js.html#l95"><code>lib&#x2F;error.js:95</code></a>
                             </p>
                     
                     
@@ -583,7 +583,7 @@ projectAssets: ../assets
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>:
+                                            <span class="type">miruken.callback.CallbackHandlerFilter</span>:
                                         <p>recovery semantics.</p>
                     
                                 </div>
@@ -609,7 +609,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_$recoverError">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_error.js.html#l121"><code>lib\error.js:121</code></a>
+                            <a href="../files/lib_error.js.html#l121"><code>lib&#x2F;error.js:121</code></a>
                             </p>
                     
                     
@@ -652,7 +652,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_$strict">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1100"><code>lib\callback.js:1100</code></a>
+                            <a href="../files/lib_callback.js.html#l908"><code>lib&#x2F;callback.js:908</code></a>
                             </p>
                     
                     
@@ -692,7 +692,7 @@ projectAssets: ../assets
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>
+                                <span class="type">miruken.callback.CallbackHandlerAspect</span>
                             </span>
                     
                     
@@ -704,7 +704,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_$valid">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1590"><code>lib\callback.js:1590</code></a>
+                            <a href="../files/lib_callback.js.html#l1473"><code>lib&#x2F;callback.js:1473</code></a>
                             </p>
                     
                     
@@ -753,7 +753,7 @@ projectAssets: ../assets
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>:
+                                            <span class="type">miruken.callback.CallbackHandlerAspect</span>:
                                         <p>validation semantics.</p>
                     
                                 </div>
@@ -776,7 +776,7 @@ projectAssets: ../assets
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>
+                                <span class="type">miruken.callback.CallbackHandlerAspect</span>
                             </span>
                     
                     
@@ -788,7 +788,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_$validAsync">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1600"><code>lib\callback.js:1600</code></a>
+                            <a href="../files/lib_callback.js.html#l1482"><code>lib&#x2F;callback.js:1482</code></a>
                             </p>
                     
                     
@@ -837,7 +837,7 @@ projectAssets: ../assets
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>:
+                                            <span class="type">miruken.callback.CallbackHandlerAspect</span>:
                                         <p>validation semantics.</p>
                     
                                 </div>
@@ -856,11 +856,14 @@ projectAssets: ../assets
                                     <li class="arg">
                                             <code>action</code>
                                     </li>
+                                    <li class="arg">
+                                            <code>reentrant</code>
+                                    </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>
+                                <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
                             </span>
                     
                     
@@ -872,7 +875,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_aspect">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1249"><code>lib\callback.js:1249</code></a>
+                            <a href="../files/lib_callback.js.html#l1081"><code>lib&#x2F;callback.js:1081</code></a>
                             </p>
                     
                     
@@ -880,7 +883,7 @@ projectAssets: ../assets
                         </div>
                     
                         <div class="description">
-                            <p>Creates a handler for applying aspects to callbacks.</p>
+                            <p>Decorates the handler for applying aspects to callbacks.</p>
                     
                         </div>
                     
@@ -914,6 +917,19 @@ projectAssets: ../assets
                                         </div>
                     
                                     </li>
+                                    <li class="param">
+                                            <code class="param-name">reentrant</code>
+                                            <span class="type">Boolean</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>true if reentrant, false otherwise</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
                                 </ul>
                             </div>
                     
@@ -921,8 +937,76 @@ projectAssets: ../assets
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>:
-                                        <p>aspected callback handler.</p>
+                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>:
+                                        <p>callback handler aspect.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_decorate" class="method item inherited">
+                        <h3 class="name"><code>decorate</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>decorations</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_decorate">miruken.callback.CallbackHandler</a>:
+                            <a href="../files/lib_callback.js.html#l1047"><code>lib&#x2F;callback.js:1047</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Decorates the handler.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">decorations</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>decorations</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>:
+                                        <p>decorated callback handler.</p>
                     
                                 </div>
                             </div>
@@ -954,7 +1038,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_defer">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1139"><code>lib\callback.js:1139</code></a>
+                            <a href="../files/lib_callback.js.html#l947"><code>lib&#x2F;callback.js:947</code></a>
                             </p>
                     
                     
@@ -1023,7 +1107,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_deferAll">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1153"><code>lib\callback.js:1153</code></a>
+                            <a href="../files/lib_callback.js.html#l961"><code>lib&#x2F;callback.js:961</code></a>
                             </p>
                     
                     
@@ -1075,11 +1159,14 @@ projectAssets: ../assets
                                     <li class="arg">
                                             <code>filter</code>
                                     </li>
+                                    <li class="arg">
+                                            <code>reentrant</code>
+                                    </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>
+                                <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
                             </span>
                     
                     
@@ -1091,7 +1178,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_filter">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1239"><code>lib\callback.js:1239</code></a>
+                            <a href="../files/lib_callback.js.html#l1057"><code>lib&#x2F;callback.js:1057</code></a>
                             </p>
                     
                     
@@ -1099,7 +1186,7 @@ projectAssets: ../assets
                         </div>
                     
                         <div class="description">
-                            <p>Creates a handler for the filtering callbacks.</p>
+                            <p>Decorates the handler for filtering callbacks.</p>
                     
                         </div>
                     
@@ -1120,6 +1207,19 @@ projectAssets: ../assets
                                         </div>
                     
                                     </li>
+                                    <li class="param">
+                                            <code class="param-name">reentrant</code>
+                                            <span class="type">Boolean</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>true if reentrant, false otherwise</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
                                 </ul>
                             </div>
                     
@@ -1127,7 +1227,7 @@ projectAssets: ../assets
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>:
+                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>:
                                         <p>filtered callback handler.</p>
                     
                                 </div>
@@ -1165,7 +1265,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_handle">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l432"><code>lib\callback.js:432</code></a>
+                            <a href="../files/lib_callback.js.html#l432"><code>lib&#x2F;callback.js:432</code></a>
                             </p>
                     
                     
@@ -1267,7 +1367,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_handleCallback">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l444"><code>lib\callback.js:444</code></a>
+                            <a href="../files/lib_callback.js.html#l449"><code>lib&#x2F;callback.js:449</code></a>
                             </p>
                     
                     
@@ -1362,7 +1462,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_lookup">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1204"><code>lib\callback.js:1204</code></a>
+                            <a href="../files/lib_callback.js.html#l1012"><code>lib&#x2F;callback.js:1012</code></a>
                             </p>
                     
                     
@@ -1430,7 +1530,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_lookupAll">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1220"><code>lib\callback.js:1220</code></a>
+                            <a href="../files/lib_callback.js.html#l1028"><code>lib&#x2F;callback.js:1028</code></a>
                             </p>
                     
                     
@@ -1498,7 +1598,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_next">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1280"><code>lib\callback.js:1280</code></a>
+                            <a href="../files/lib_callback.js.html#l1140"><code>lib&#x2F;callback.js:1140</code></a>
                             </p>
                     
                     
@@ -1567,7 +1667,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_resolve">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1167"><code>lib\callback.js:1167</code></a>
+                            <a href="../files/lib_callback.js.html#l975"><code>lib&#x2F;callback.js:975</code></a>
                             </p>
                     
                     
@@ -1636,7 +1736,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_resolveAll">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1184"><code>lib\callback.js:1184</code></a>
+                            <a href="../files/lib_callback.js.html#l992"><code>lib&#x2F;callback.js:992</code></a>
                             </p>
                     
                     
@@ -1698,7 +1798,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_toDelegate">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l490"><code>lib\callback.js:490</code></a>
+                            <a href="../files/lib_callback.js.html#l495"><code>lib&#x2F;callback.js:495</code></a>
                             </p>
                     
                     
@@ -1753,7 +1853,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.validate.Validating.html#method_validate">miruken.validate.Validating</a>:
-                            <a href="../files/lib_validate_validate.js.html#l39"><code>lib\validate\validate.js:39</code></a>
+                            <a href="../files/lib_validate_validate.js.html#l39"><code>lib&#x2F;validate&#x2F;validate.js:39</code></a>
                             </p>
                     
                     
@@ -1855,7 +1955,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.validate.Validating.html#method_validateAsync">miruken.validate.Validating</a>:
-                            <a href="../files/lib_validate_validate.js.html#l48"><code>lib\validate\validate.js:48</code></a>
+                            <a href="../files/lib_validate_validate.js.html#l48"><code>lib&#x2F;validate&#x2F;validate.js:48</code></a>
                             </p>
                     
                     
@@ -1938,7 +2038,7 @@ projectAssets: ../assets
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.ConditionalCallbackHandler.html" class="crosslink">miruken.callback.ConditionalCallbackHandler</a></span>
+                                <span class="type">miruken.callback.ConditionalCallbackHandler</span>
                             </span>
                     
                     
@@ -1950,7 +2050,7 @@ projectAssets: ../assets
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/miruken.callback.CallbackHandler.html#method_when">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1260"><code>lib\callback.js:1260</code></a>
+                            <a href="../files/lib_callback.js.html#l1116"><code>lib&#x2F;callback.js:1116</code></a>
                             </p>
                     
                     
@@ -1958,7 +2058,7 @@ projectAssets: ../assets
                         </div>
                     
                         <div class="description">
-                            <p>Creates a handler for conditionally handling callbacks.</p>
+                            <p>Decorates the handler to conditionally handle callbacks.</p>
                     
                         </div>
                     
@@ -1986,7 +2086,7 @@ projectAssets: ../assets
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.ConditionalCallbackHandler.html" class="crosslink">miruken.callback.ConditionalCallbackHandler</a></span>:
+                                            <span class="type">miruken.callback.ConditionalCallbackHandler</span>:
                                         <p>conditional callback handler.</p>
                     
                                 </div>
@@ -2010,7 +2110,7 @@ projectAssets: ../assets
                                             <div class="meta">
                                                         <p>Inherited from
                                                         <a href="../classes/miruken.callback.CallbackHandler.html#property_delegate">miruken.callback.CallbackHandler</a>:
-                                                <a href="../files/lib_callback.js.html#l424"><code>lib\callback.js:424</code></a>
+                                                <a href="../files/lib_callback.js.html#l424"><code>lib&#x2F;callback.js:424</code></a>
                                                 </p>
                                         
                                         
