@@ -51,7 +51,7 @@
 #     url: "/design/no-header-but-image/"
 
 - title: Documentation
-  url: "/docs/"
+  url: "/api/"
   side: left
   # dropdown:
   # - title: Documentation
