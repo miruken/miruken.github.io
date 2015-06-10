@@ -173,3 +173,7 @@ dd.accordion-navigation span:before { content: "\F107" }
 dd.accordion-navigation.active span:before { content: "\F105" }
 dd.accordion-navigation.active span:before { content: "\F105" }
 
+
+.custom-panel {
+  @include panel($bg: scale-color($ci-6, $lightness: 50%) );
+}
