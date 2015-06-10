@@ -44,6 +44,8 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.callback.CallbackHandlerFilter.html">miruken.callback.CallbackHandlerFilter</a></li>
                             <li><a href="../classes/miruken.callback.CascadeCallbackHandler.html">miruken.callback.CascadeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.CompositeCallbackHandler.html">miruken.callback.CompositeCallbackHandler</a></li>
+                            <li><a href="../classes/miruken.callback.Composition.html">miruken.callback.Composition</a></li>
+                            <li><a href="../classes/miruken.callback.CompositionScope.html">miruken.callback.CompositionScope</a></li>
                             <li><a href="../classes/miruken.callback.ConditionalCallbackHandler.html">miruken.callback.ConditionalCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.Deferred.html">miruken.callback.Deferred</a></li>
                             <li><a href="../classes/miruken.callback.HandleMethod.html">miruken.callback.HandleMethod</a></li>
@@ -54,8 +56,6 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.callback.Lookup.html">miruken.callback.Lookup</a></li>
                             <li><a href="../classes/miruken.callback.MethodCallbackHandler.html">miruken.callback.MethodCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.ProvidingCallbackHandler.html">miruken.callback.ProvidingCallbackHandler</a></li>
-                            <li><a href="../classes/miruken.callback.Reentrant.html">miruken.callback.Reentrant</a></li>
-                            <li><a href="../classes/miruken.callback.ReentrantScope.html">miruken.callback.ReentrantScope</a></li>
                             <li><a href="../classes/miruken.callback.RejectedError.html">miruken.callback.RejectedError</a></li>
                             <li><a href="../classes/miruken.callback.Resolution.html">miruken.callback.Resolution</a></li>
                             <li><a href="../classes/miruken.ClassMeta.html">miruken.ClassMeta</a></li>
@@ -190,11 +190,11 @@ projectAssets: ../assets
                             
                                     <div class="args">
                                         <ul class="args-list inline commas">
-                                        <li><span>(</span></li>
+                                            <li><span>(</span></li>
                                             <li class="arg">
                                                     <code>dependencies</code>
                                             </li>
-                                        <li><span>)</span></li>
+                                            <li><span>)</span></li>
                                         </ul>
                                     </div>
                             
@@ -305,636 +305,645 @@ projectAssets: ../assets
                                 <div id="methods" class="api-class-tabpanel">
                                     <h2 class="off-left">Methods</h2>
                     
-                    <div id="method_append" class="method item inherited">
-                        <div class="name"><code>append</code></div>
-                    
-                            <span class="paren">()</span>
-                    
-                            <span class="returns-inline">
-                                <span class="type">ArrayManager</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                            <span class="flag chainable">chainable</span>
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.ArrayManager.html#method_append">miruken.ArrayManager</a>:
-                            <a href="../files/lib_miruken.js.html#l1380"><code>lib\miruken.js:1380</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Appends one or more items to the end of the array.</p>
-                    
-                        </div>
-                    
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">ArrayManager</span>:
-                                        <p>array manager.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_getIndex" class="method item inherited">
-                        <div class="name"><code>getIndex</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>index</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Any</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.ArrayManager.html#method_getIndex">miruken.ArrayManager</a>:
-                            <a href="../files/lib_miruken.js.html#l1317"><code>lib\miruken.js:1317</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Gets the item at array index.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">index</code>
-                                            <span class="type">Number</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>index of item</li>
-                    </ul>
-                    
+                                        <div id="method_append" class="method item inherited">
+                                            <div class="name"><code>append</code></div>
+                                        
+                                                <span class="paren">()</span>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">ArrayManager</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                                <span class="flag chainable">chainable</span>
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.ArrayManager.html#method_append">miruken.ArrayManager</a>:
+                                                <a href="../files/lib_miruken.js.html#l1380"><code>lib\miruken.js:1380</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Appends one or more items to the end of the array.</p>
+                                        
+                                            </div>
+                                        
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">ArrayManager</span>:
+                                                            <p>array manager.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Any</span>:
-                                        <p>item at index.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_getItems" class="method item inherited">
-                        <div class="name"><code>getItems</code></div>
-                    
-                            <span class="paren">()</span>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Array</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.ArrayManager.html#method_getItems">miruken.ArrayManager</a>:
-                            <a href="../files/lib_miruken.js.html#l1311"><code>lib\miruken.js:1311</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Gets the array.</p>
-                    
-                        </div>
-                    
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Array</span>:
-                                        <p>array.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_insertIndex" class="method item inherited">
-                        <div class="name"><code>insertIndex</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>index</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>item</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">ArrayManager</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                            <span class="flag chainable">chainable</span>
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.ArrayManager.html#method_insertIndex">miruken.ArrayManager</a>:
-                            <a href="../files/lib_miruken.js.html#l1343"><code>lib\miruken.js:1343</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Inserts the item at array index.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">index</code>
-                                            <span class="type">Number</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>index of item</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_getIndex" class="method item inherited">
+                                            <div class="name"><code>getIndex</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>index</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Any</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.ArrayManager.html#method_getIndex">miruken.ArrayManager</a>:
+                                                <a href="../files/lib_miruken.js.html#l1317"><code>lib\miruken.js:1317</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Gets the item at array index.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">index</code>
+                                                                <span class="type">Number</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>index of item</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Any</span>:
+                                                            <p>item at index.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">item</code>
-                                            <span class="type">Item</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>item to insert</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_getItems" class="method item inherited">
+                                            <div class="name"><code>getItems</code></div>
+                                        
+                                                <span class="paren">()</span>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Array</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.ArrayManager.html#method_getItems">miruken.ArrayManager</a>:
+                                                <a href="../files/lib_miruken.js.html#l1311"><code>lib\miruken.js:1311</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Gets the array.</p>
+                                        
+                                            </div>
+                                        
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Array</span>:
+                                                            <p>array.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">ArrayManager</span>:
-                                        <p>array manager.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_mapItem" class="method item inherited">
-                        <div class="name"><code>mapItem</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>item</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Any</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.ArrayManager.html#method_mapItem">miruken.ArrayManager</a>:
-                            <a href="../files/lib_miruken.js.html#l1421"><code>lib\miruken.js:1421</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Optional mapping for items before adding to the array.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">item</code>
-                                            <span class="type">Any</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>item to map</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_insertIndex" class="method item inherited">
+                                            <div class="name"><code>insertIndex</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>index</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>item</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">ArrayManager</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                                <span class="flag chainable">chainable</span>
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.ArrayManager.html#method_insertIndex">miruken.ArrayManager</a>:
+                                                <a href="../files/lib_miruken.js.html#l1343"><code>lib\miruken.js:1343</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Inserts the item at array index.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">index</code>
+                                                                <span class="type">Number</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>index of item</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">item</code>
+                                                                <span class="type">Item</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>item to insert</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">ArrayManager</span>:
+                                                            <p>array manager.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Any</span>:
-                                        <p>mapped item.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_merge" class="method item inherited">
-                        <div class="name"><code>merge</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>items</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">ArrayManager</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                            <span class="flag chainable">chainable</span>
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.ArrayManager.html#method_merge">miruken.ArrayManager</a>:
-                            <a href="../files/lib_miruken.js.html#l1400"><code>lib\miruken.js:1400</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Merges the items into the array.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">items</code>
-                                            <span class="type">Array</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>items to merge from</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_mapItem" class="method item inherited">
+                                            <div class="name"><code>mapItem</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>item</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Any</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.ArrayManager.html#method_mapItem">miruken.ArrayManager</a>:
+                                                <a href="../files/lib_miruken.js.html#l1421"><code>lib\miruken.js:1421</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Optional mapping for items before adding to the array.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">item</code>
+                                                                <span class="type">Any</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>item to map</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Any</span>:
+                                                            <p>mapped item.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">ArrayManager</span>:
-                                        <p>array manager.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_removeIndex" class="method item inherited">
-                        <div class="name"><code>removeIndex</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>index</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">ArrayManager</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                            <span class="flag chainable">chainable</span>
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.ArrayManager.html#method_removeIndex">miruken.ArrayManager</a>:
-                            <a href="../files/lib_miruken.js.html#l1367"><code>lib\miruken.js:1367</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Removes the item at array index.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">index</code>
-                                            <span class="type">Number</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>index of item</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_merge" class="method item inherited">
+                                            <div class="name"><code>merge</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>items</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">ArrayManager</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                                <span class="flag chainable">chainable</span>
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.ArrayManager.html#method_merge">miruken.ArrayManager</a>:
+                                                <a href="../files/lib_miruken.js.html#l1400"><code>lib\miruken.js:1400</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Merges the items into the array.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">items</code>
+                                                                <span class="type">Array</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>items to merge from</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">ArrayManager</span>:
+                                                            <p>array manager.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">ArrayManager</span>:
-                                        <p>array manager.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_replaceIndex" class="method item inherited">
-                        <div class="name"><code>replaceIndex</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>index</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>item</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">ArrayManager</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                            <span class="flag chainable">chainable</span>
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.ArrayManager.html#method_replaceIndex">miruken.ArrayManager</a>:
-                            <a href="../files/lib_miruken.js.html#l1355"><code>lib\miruken.js:1355</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Replaces the item at array index.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">index</code>
-                                            <span class="type">Number</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>index of item</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_removeIndex" class="method item inherited">
+                                            <div class="name"><code>removeIndex</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>index</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">ArrayManager</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                                <span class="flag chainable">chainable</span>
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.ArrayManager.html#method_removeIndex">miruken.ArrayManager</a>:
+                                                <a href="../files/lib_miruken.js.html#l1367"><code>lib\miruken.js:1367</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Removes the item at array index.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">index</code>
+                                                                <span class="type">Number</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>index of item</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">ArrayManager</span>:
+                                                            <p>array manager.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">item</code>
-                                            <span class="type">Item</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>item to replace</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_replaceIndex" class="method item inherited">
+                                            <div class="name"><code>replaceIndex</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>index</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>item</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">ArrayManager</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                                <span class="flag chainable">chainable</span>
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.ArrayManager.html#method_replaceIndex">miruken.ArrayManager</a>:
+                                                <a href="../files/lib_miruken.js.html#l1355"><code>lib\miruken.js:1355</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Replaces the item at array index.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">index</code>
+                                                                <span class="type">Number</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>index of item</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">item</code>
+                                                                <span class="type">Item</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>item to replace</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">ArrayManager</span>:
+                                                            <p>array manager.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">ArrayManager</span>:
-                                        <p>array manager.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_setIndex" class="method item inherited">
-                        <div class="name"><code>setIndex</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>index</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>item</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">ArrayManager</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                            <span class="flag chainable">chainable</span>
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.ArrayManager.html#method_setIndex">miruken.ArrayManager</a>:
-                            <a href="../files/lib_miruken.js.html#l1328"><code>lib\miruken.js:1328</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Sets the item at array index if empty.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">index</code>
-                                            <span class="type">Number</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>index of item</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_setIndex" class="method item inherited">
+                                            <div class="name"><code>setIndex</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>index</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>item</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">ArrayManager</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                                <span class="flag chainable">chainable</span>
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.ArrayManager.html#method_setIndex">miruken.ArrayManager</a>:
+                                                <a href="../files/lib_miruken.js.html#l1328"><code>lib\miruken.js:1328</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Sets the item at array index if empty.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">index</code>
+                                                                <span class="type">Number</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>index of item</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">item</code>
+                                                                <span class="type">Any</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>item to set</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">ArrayManager</span>:
+                                                            <p>array manager.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">item</code>
-                                            <span class="type">Any</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>item to set</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">ArrayManager</span>:
-                                        <p>array manager.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
+                                        <hr class="style-two"></hr>
                                 </div>
                     
                     

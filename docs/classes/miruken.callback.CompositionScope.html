@@ -161,7 +161,7 @@ projectAssets: ../assets
         <div class="apidocs">
             <div id="docs-main">
                 <div class="content">
-                    <h1 class="word-break">miruken.callback.CallbackHandlerDecorator Class</h1>
+                    <h1 class="word-break">miruken.callback.CompositionScope Class</h1>
                     <div class="box meta">
                     
                             <div class="extends">
@@ -169,7 +169,7 @@ projectAssets: ../assets
                             </div>
                     
                             <div class="foundat">
-                                Defined in: <a href="../files/lib_callback.js.html#l536"><code>lib\callback.js:536</code></a>
+                                Defined in: <a href="../files/lib_callback.js.html#l509"><code>lib\callback.js:509</code></a>
                             </div>
                     
                                 Module: <a href="../modules/callback.html">callback</a><br>
@@ -179,21 +179,20 @@ projectAssets: ../assets
                     
                     
                     <div class="box intro">
-                        <p>Base class for all CallbackHandler decorators.<br/>
-                    See <a href="http://en.wikipedia.org/wiki/Decorator_pattern">Decorator Pattern</a></p>
+                        <p>Wraps all callbacks for composition and continues processing.</p>
                     
                     </div>
                     
                         <div class="constructor">
                             <h2>Constructor</h2>
-                            <div id="method_miruken.callback.CallbackHandlerDecorator" class="method item">
-                                <div class="name"><code>miruken.callback.CallbackHandlerDecorator</code></div>
+                            <div id="method_miruken.callback.CompositionScope" class="method item">
+                                <div class="name"><code>miruken.callback.CompositionScope</code></div>
                             
                                     <div class="args">
                                         <ul class="args-list inline commas">
                                             <li><span>(</span></li>
                                             <li class="arg">
-                                                    <code>decoratee</code>
+                                                    <code>{miruken.callback.CallbackHandler)</code>
                                             </li>
                                             <li><span>)</span></li>
                                         </ul>
@@ -209,7 +208,7 @@ projectAssets: ../assets
                                 <div class="meta">
                                             <p>
                                             Defined in
-                                    <a href="../files/lib_callback.js.html#l536"><code>lib\callback.js:536</code></a>
+                                    <a href="../files/lib_callback.js.html#l509"><code>lib\callback.js:509</code></a>
                                     </p>
                             
                             
@@ -225,14 +224,12 @@ projectAssets: ../assets
                             
                                         <ul class="params-list">
                                             <li class="param">
-                                                    <code class="param-name">decoratee</code>
-                                                    <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
+                                                    <code class="param-name">{miruken.callback.CallbackHandler)</code>
+                                                    <span class="type">Object</span>
                             
                             
                                                 <div class="param-description">
-                                                    <ul>
-                            <li>decoratee</li>
-                            </ul>
+                                                    <p>handler  -  forwarding handler</p>
                             
                                                 </div>
                             
@@ -356,12 +353,12 @@ projectAssets: ../assets
                                         <h3>Properties</h3>
                     
                                         <ul class="index-list properties extends">
-                                                <li class="index-item property">
-                                                    <a href="#property_decoratee">decoratee</a>
-                    
-                                                </li>
                                                 <li class="index-item property inherited">
                                                     <a href="#property_delegate">delegate</a>
+                    
+                                                </li>
+                                                <li class="index-item property">
+                                                    <a href="#property_handler">handler</a>
                     
                                                 </li>
                                         </ul>
@@ -1870,32 +1867,6 @@ projectAssets: ../assets
                                 <div id="properties" class="api-class-tabpanel">
                                     <h2 class="off-left">Properties</h2>
                     
-                                        <div id="property_decoratee" class="property item">
-                                            <h3 class="name"><code>decoratee</code></h3>
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                            <div class="meta">
-                                                        <p>
-                                                        Defined in
-                                                <a href="../files/lib_callback.js.html#l549"><code>lib\callback.js:549</code></a>
-                                                </p>
-                                        
-                                        
-                                            </div>
-                                        
-                                            <div class="description">
-                                                <p>Gets/Sets the decoratee.</p>
-                                        
-                                            </div>
-                                        
-                                        
-                                        
-                                        </div>
-                                        <hr class="style-two"></hr>
                                         <div id="property_delegate" class="property item inherited">
                                             <h3 class="name"><code>delegate</code></h3>
                                             <span class="type">Object</span>
@@ -1915,6 +1886,32 @@ projectAssets: ../assets
                                         
                                             <div class="description">
                                                 <p>Gets the delegate.</p>
+                                        
+                                            </div>
+                                        
+                                        
+                                        
+                                        </div>
+                                        <hr class="style-two"></hr>
+                                        <div id="property_handler" class="property item">
+                                            <h3 class="name"><code>handler</code></h3>
+                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>
+                                                        Defined in
+                                                <a href="../files/lib_callback.js.html#l520"><code>lib\callback.js:520</code></a>
+                                                </p>
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Gets the composition handler.</p>
                                         
                                             </div>
                                         

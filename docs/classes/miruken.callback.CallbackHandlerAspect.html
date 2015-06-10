@@ -44,6 +44,8 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.callback.CallbackHandlerFilter.html">miruken.callback.CallbackHandlerFilter</a></li>
                             <li><a href="../classes/miruken.callback.CascadeCallbackHandler.html">miruken.callback.CascadeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.CompositeCallbackHandler.html">miruken.callback.CompositeCallbackHandler</a></li>
+                            <li><a href="../classes/miruken.callback.Composition.html">miruken.callback.Composition</a></li>
+                            <li><a href="../classes/miruken.callback.CompositionScope.html">miruken.callback.CompositionScope</a></li>
                             <li><a href="../classes/miruken.callback.ConditionalCallbackHandler.html">miruken.callback.ConditionalCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.Deferred.html">miruken.callback.Deferred</a></li>
                             <li><a href="../classes/miruken.callback.HandleMethod.html">miruken.callback.HandleMethod</a></li>
@@ -54,8 +56,6 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.callback.Lookup.html">miruken.callback.Lookup</a></li>
                             <li><a href="../classes/miruken.callback.MethodCallbackHandler.html">miruken.callback.MethodCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.ProvidingCallbackHandler.html">miruken.callback.ProvidingCallbackHandler</a></li>
-                            <li><a href="../classes/miruken.callback.Reentrant.html">miruken.callback.Reentrant</a></li>
-                            <li><a href="../classes/miruken.callback.ReentrantScope.html">miruken.callback.ReentrantScope</a></li>
                             <li><a href="../classes/miruken.callback.RejectedError.html">miruken.callback.RejectedError</a></li>
                             <li><a href="../classes/miruken.callback.Resolution.html">miruken.callback.Resolution</a></li>
                             <li><a href="../classes/miruken.ClassMeta.html">miruken.ClassMeta</a></li>
@@ -169,7 +169,7 @@ projectAssets: ../assets
                             </div>
                     
                             <div class="foundat">
-                                Defined in: <a href="../files/lib_callback.js.html#l607"><code>lib\callback.js:607</code></a>
+                                Defined in: <a href="../files/lib_callback.js.html#l621"><code>lib\callback.js:621</code></a>
                             </div>
                     
                                 Module: <a href="../modules/callback.html">callback</a><br>
@@ -191,7 +191,7 @@ projectAssets: ../assets
                             
                                     <div class="args">
                                         <ul class="args-list inline commas">
-                                        <li><span>(</span></li>
+                                            <li><span>(</span></li>
                                             <li class="arg">
                                                     <code>decoratee</code>
                                             </li>
@@ -201,7 +201,7 @@ projectAssets: ../assets
                                             <li class="arg">
                                                     <code>after</code>
                                             </li>
-                                        <li><span>)</span></li>
+                                            <li><span>)</span></li>
                                         </ul>
                                     </div>
                             
@@ -215,7 +215,7 @@ projectAssets: ../assets
                                 <div class="meta">
                                             <p>
                                             Defined in
-                                    <a href="../files/lib_callback.js.html#l607"><code>lib\callback.js:607</code></a>
+                                    <a href="../files/lib_callback.js.html#l621"><code>lib\callback.js:621</code></a>
                                     </p>
                             
                             
@@ -400,6 +400,10 @@ projectAssets: ../assets
                                                     <a href="#property_filter">filter</a>
                     
                                                 </li>
+                                                <li class="index-item property inherited">
+                                                    <a href="#property_true if reentrant, false otherwise.">true if reentrant, false otherwise.</a>
+                    
+                                                </li>
                                         </ul>
                                     </div>
                     
@@ -409,1476 +413,1498 @@ projectAssets: ../assets
                                 <div id="methods" class="api-class-tabpanel">
                                     <h2 class="off-left">Methods</h2>
                     
-                    <div id="method_$bestEffort" class="method item inherited">
-                        <div class="name"><code>$bestEffort</code></div>
-                    
-                            <span class="paren">()</span>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_$bestEffort">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1114"><code>lib\callback.js:1114</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Establishes best-effort invocation semantics.</p>
-                    
-                        </div>
-                    
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>:
-                                        <p>best-effort semanics.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_$broadcast" class="method item inherited">
-                        <div class="name"><code>$broadcast</code></div>
-                    
-                            <span class="paren">()</span>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_$broadcast">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1107"><code>lib\callback.js:1107</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Establishes broadcast invocation semantics.</p>
-                    
-                        </div>
-                    
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>:
-                                        <p>broadcast semanics.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_$callOptions" class="method item inherited">
-                        <div class="name"><code>$callOptions</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>options</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_$callOptions">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1128"><code>lib\callback.js:1128</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Establishes custom invocation semantics.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">options</code>
-                                            <span class="type"><a href="../classes/miruken.callback.InvocationOptions.html" class="crosslink">miruken.callback.InvocationOptions</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>invocation semantics</li>
-                    </ul>
-                    
+                                        <div id="method_$bestEffort" class="method item inherited">
+                                            <div class="name"><code>$bestEffort</code></div>
+                                        
+                                                <span class="paren">()</span>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_$bestEffort">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1128"><code>lib\callback.js:1128</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Establishes best-effort invocation semantics.</p>
+                                        
+                                            </div>
+                                        
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>:
+                                                            <p>best-effort semanics.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>:
-                                        <p>custom semanics.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_$notify" class="method item inherited">
-                        <div class="name"><code>$notify</code></div>
-                    
-                            <span class="paren">()</span>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_$notify">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1121"><code>lib\callback.js:1121</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Establishes notification invocation semantics.</p>
-                    
-                        </div>
-                    
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>:
-                                        <p>notification semanics.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_$recover" class="method item inherited">
-                        <div class="name"><code>$recover</code></div>
-                    
-                            <span class="paren">()</span>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_$recover">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_error.js.html#l95"><code>lib\error.js:95</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Marks the callback handler for recovery.</p>
-                    
-                        </div>
-                    
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>:
-                                        <p>recovery semantics.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_$recoverError" class="method item inherited">
-                        <div class="name"><code>$recoverError</code></div>
-                    
-                            <span class="paren">()</span>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Function</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_$recoverError">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_error.js.html#l121"><code>lib\error.js:121</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Creates a function to pass error promises to Errors feature.</p>
-                    
-                        </div>
-                    
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Function</span>:
-                                        <p>function to pass error promises to Errors feature.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_$strict" class="method item inherited">
-                        <div class="name"><code>$strict</code></div>
-                    
-                            <span class="paren">()</span>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_$strict">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1100"><code>lib\callback.js:1100</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Establishes strict invocation semantics.</p>
-                    
-                        </div>
-                    
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>:
-                                        <p>strict semantics.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_$valid" class="method item inherited">
-                        <div class="name"><code>$valid</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>target</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>scope</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_$valid">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1590"><code>lib\callback.js:1590</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Marks the callback handler for validation.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">target</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>object to validate</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_$broadcast" class="method item inherited">
+                                            <div class="name"><code>$broadcast</code></div>
+                                        
+                                                <span class="paren">()</span>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_$broadcast">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1121"><code>lib\callback.js:1121</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Establishes broadcast invocation semantics.</p>
+                                        
+                                            </div>
+                                        
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>:
+                                                            <p>broadcast semanics.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">scope</code>
-                                            <span class="type">Any</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>scope of validation</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_$callOptions" class="method item inherited">
+                                            <div class="name"><code>$callOptions</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>options</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_$callOptions">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1142"><code>lib\callback.js:1142</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Establishes custom invocation semantics.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">options</code>
+                                                                <span class="type"><a href="../classes/miruken.callback.InvocationOptions.html" class="crosslink">miruken.callback.InvocationOptions</a></span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>invocation semantics</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>:
+                                                            <p>custom semanics.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>:
-                                        <p>validation semantics.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_$validAsync" class="method item inherited">
-                        <div class="name"><code>$validAsync</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>target</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>scope</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_$validAsync">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1599"><code>lib\callback.js:1599</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Marks the callback handler for asynchronous validation.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">target</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>object to validate</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_$notify" class="method item inherited">
+                                            <div class="name"><code>$notify</code></div>
+                                        
+                                                <span class="paren">()</span>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_$notify">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1135"><code>lib\callback.js:1135</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Establishes notification invocation semantics.</p>
+                                        
+                                            </div>
+                                        
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>:
+                                                            <p>notification semanics.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">scope</code>
-                                            <span class="type">Any</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>scope of validation</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_$recover" class="method item inherited">
+                                            <div class="name"><code>$recover</code></div>
+                                        
+                                                <span class="paren">()</span>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_$recover">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_error.js.html#l95"><code>lib\error.js:95</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Marks the callback handler for recovery.</p>
+                                        
+                                            </div>
+                                        
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>:
+                                                            <p>recovery semantics.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>:
-                                        <p>validation semantics.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_aspect" class="method item inherited">
-                        <div class="name"><code>aspect</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>before</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>action</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_aspect">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1249"><code>lib\callback.js:1249</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Creates a handler for applying aspects to callbacks.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">before</code>
-                                            <span class="type">Function</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>before predicate</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_$recoverError" class="method item inherited">
+                                            <div class="name"><code>$recoverError</code></div>
+                                        
+                                                <span class="paren">()</span>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Function</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_$recoverError">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_error.js.html#l121"><code>lib\error.js:121</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Creates a function to pass error promises to Errors feature.</p>
+                                        
+                                            </div>
+                                        
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Function</span>:
+                                                            <p>function to pass error promises to Errors feature.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">action</code>
-                                            <span class="type">Function</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>after action</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_$strict" class="method item inherited">
+                                            <div class="name"><code>$strict</code></div>
+                                        
+                                                <span class="paren">()</span>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_$strict">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1114"><code>lib\callback.js:1114</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Establishes strict invocation semantics.</p>
+                                        
+                                            </div>
+                                        
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.InvocationOptionsHandler.html" class="crosslink">miruken.callback.InvocationOptionsHandler</a></span>:
+                                                            <p>strict semantics.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>:
-                                        <p>aspected callback handler.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_defer" class="method item inherited">
-                        <div class="name"><code>defer</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>callback</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Promise</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                            <span class="flag async">async</span>
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_defer">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1139"><code>lib\callback.js:1139</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Asynchronusly handles the callback.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">callback</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>callback</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_$valid" class="method item inherited">
+                                            <div class="name"><code>$valid</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>target</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>scope</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_$valid">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1604"><code>lib\callback.js:1604</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Marks the callback handler for validation.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">target</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>object to validate</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">scope</code>
+                                                                <span class="type">Any</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>scope of validation</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>:
+                                                            <p>validation semantics.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Promise</span>:
-                                        <p>promise to handled callback.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_deferAll" class="method item inherited">
-                        <div class="name"><code>deferAll</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>callback</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Promise</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                            <span class="flag async">async</span>
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_deferAll">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1153"><code>lib\callback.js:1153</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Asynchronusly handles the callback greedily.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">callback</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>callback</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_$validAsync" class="method item inherited">
+                                            <div class="name"><code>$validAsync</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>target</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>scope</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_$validAsync">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1613"><code>lib\callback.js:1613</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Marks the callback handler for asynchronous validation.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">target</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>object to validate</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">scope</code>
+                                                                <span class="type">Any</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>scope of validation</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>:
+                                                            <p>validation semantics.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Promise</span>:
-                                        <p>promise to handled callback.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_filter" class="method item inherited">
-                        <div class="name"><code>filter</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>filter</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_filter">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1239"><code>lib\callback.js:1239</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Creates a handler for the filtering callbacks.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">filter</code>
-                                            <span class="type">Function</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>filter</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_aspect" class="method item inherited">
+                                            <div class="name"><code>aspect</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>before</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>action</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_aspect">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1263"><code>lib\callback.js:1263</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Creates a handler for applying aspects to callbacks.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">before</code>
+                                                                <span class="type">Function</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>before predicate</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">action</code>
+                                                                <span class="type">Function</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>after action</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerAspect.html" class="crosslink">miruken.callback.CallbackHandlerAspect</a></span>:
+                                                            <p>aspected callback handler.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>:
-                                        <p>filtered callback handler.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_handle" class="method item inherited">
-                        <div class="name"><code>handle</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>callback</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code class="optional">[greedy=false]</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code class="optional">[composer]</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Boolean</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_handle">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l432"><code>lib\callback.js:432</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Handles the callback.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">callback</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>any callback</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_defer" class="method item inherited">
+                                            <div class="name"><code>defer</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>callback</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Promise</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                                <span class="flag async">async</span>
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_defer">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1153"><code>lib\callback.js:1153</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Asynchronusly handles the callback.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">callback</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>callback</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Promise</span>:
+                                                            <p>promise to handled callback.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name optional">[greedy=false]</code>
-                                            <span class="type">Boolean</span>
-                                            <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>true if handle greedily</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_deferAll" class="method item inherited">
+                                            <div class="name"><code>deferAll</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>callback</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Promise</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                                <span class="flag async">async</span>
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_deferAll">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1167"><code>lib\callback.js:1167</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Asynchronusly handles the callback greedily.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">callback</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>callback</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Promise</span>:
+                                                            <p>promise to handled callback.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name optional">[composer]</code>
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
-                                            <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>composition handler</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_filter" class="method item inherited">
+                                            <div class="name"><code>filter</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>filter</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_filter">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1253"><code>lib\callback.js:1253</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Creates a handler for the filtering callbacks.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">filter</code>
+                                                                <span class="type">Function</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>filter</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.CallbackHandlerFilter.html" class="crosslink">miruken.callback.CallbackHandlerFilter</a></span>:
+                                                            <p>filtered callback handler.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Boolean</span>:
-                                        <p>true if the callback was handled, false otherwise.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_handleCallback" class="method item inherited">
-                        <div class="name"><code>handleCallback</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>callback</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>greedy</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code class="optional">[composer]</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Boolean</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_handleCallback">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l444"><code>lib\callback.js:444</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Handles the callback with all arguments populated.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">callback</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>any callback</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_handle" class="method item inherited">
+                                            <div class="name"><code>handle</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>callback</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code class="optional">[greedy=false]</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code class="optional">[composer]</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Boolean</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_handle">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l432"><code>lib\callback.js:432</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Handles the callback.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">callback</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>any callback</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name optional">[greedy=false]</code>
+                                                                <span class="type">Boolean</span>
+                                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>true if handle greedily</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name optional">[composer]</code>
+                                                                <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
+                                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>composition handler</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Boolean</span>:
+                                                            <p>true if the callback was handled, false otherwise.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">greedy</code>
-                                            <span class="type">Boolean</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>true if handle greedily</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_handleCallback" class="method item inherited">
+                                            <div class="name"><code>handleCallback</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>callback</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>greedy</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code class="optional">[composer]</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Boolean</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_handleCallback">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l449"><code>lib\callback.js:449</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Handles the callback with all arguments populated.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">callback</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>any callback</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">greedy</code>
+                                                                <span class="type">Boolean</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>true if handle greedily</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name optional">[composer]</code>
+                                                                <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
+                                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>composition handler</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Boolean</span>:
+                                                            <p>true if the callback was handled, false otherwise.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name optional">[composer]</code>
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
-                                            <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>composition handler</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_lookup" class="method item inherited">
+                                            <div class="name"><code>lookup</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>key</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Any</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_lookup">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1218"><code>lib\callback.js:1218</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Looks up the key.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">key</code>
+                                                                <span class="type">Any</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>key</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Any</span>:
+                                                            <p>value of key.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Boolean</span>:
-                                        <p>true if the callback was handled, false otherwise.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_lookup" class="method item inherited">
-                        <div class="name"><code>lookup</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>key</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Any</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_lookup">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1204"><code>lib\callback.js:1204</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Looks up the key.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">key</code>
-                                            <span class="type">Any</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>key</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_lookupAll" class="method item inherited">
+                                            <div class="name"><code>lookupAll</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>key</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Array</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_lookupAll">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1234"><code>lib\callback.js:1234</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Looks up the key greedily.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">key</code>
+                                                                <span class="type">Any</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>key</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Array</span>:
+                                                            <p>value(s) of key.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Any</span>:
-                                        <p>value of key.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_lookupAll" class="method item inherited">
-                        <div class="name"><code>lookupAll</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>key</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Array</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_lookupAll">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1220"><code>lib\callback.js:1220</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Looks up the key greedily.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">key</code>
-                                            <span class="type">Any</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>key</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_next" class="method item inherited">
+                                            <div class="name"><code>next</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>arguments</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_next">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1294"><code>lib\callback.js:1294</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Builds a handler chain.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">arguments</code>
+                                                                <span class="type">Arguments</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>handler chain members</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>:
+                                                            <p>chained callback handler.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Array</span>:
-                                        <p>value(s) of key.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_next" class="method item inherited">
-                        <div class="name"><code>next</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>arguments</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_next">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1280"><code>lib\callback.js:1280</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Builds a handler chain.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">arguments</code>
-                                            <span class="type">Arguments</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>handler chain members</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_resolve" class="method item inherited">
+                                            <div class="name"><code>resolve</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>key</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Any</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                                <span class="flag async">async</span>
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_resolve">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1181"><code>lib\callback.js:1181</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Resolves the key.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">key</code>
+                                                                <span class="type">Any</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>key</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Any</span>:
+                                                            <p>resolved key.  Could be a promise.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>:
-                                        <p>chained callback handler.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_resolve" class="method item inherited">
-                        <div class="name"><code>resolve</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>key</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Any</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                            <span class="flag async">async</span>
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_resolve">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1167"><code>lib\callback.js:1167</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Resolves the key.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">key</code>
-                                            <span class="type">Any</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>key</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_resolveAll" class="method item inherited">
+                                            <div class="name"><code>resolveAll</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>key</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type">Array</span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                                <span class="flag async">async</span>
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_resolveAll">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1198"><code>lib\callback.js:1198</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Resolves the key greedily.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">key</code>
+                                                                <span class="type">Any</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>key</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type">Array</span>:
+                                                            <p>resolved key.  Could be a promise.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Any</span>:
-                                        <p>resolved key.  Could be a promise.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_resolveAll" class="method item inherited">
-                        <div class="name"><code>resolveAll</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>key</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Array</span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                            <span class="flag async">async</span>
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_resolveAll">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1184"><code>lib\callback.js:1184</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Resolves the key greedily.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">key</code>
-                                            <span class="type">Any</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>key</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_toDelegate" class="method item inherited">
+                                            <div class="name"><code>toDelegate</code></div>
+                                        
+                                                <span class="paren">()</span>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.InvocationDelegate.html" class="crosslink">miruken.callback.InvocationDelegate</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_toDelegate">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l495"><code>lib\callback.js:495</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Converts the callback handler to a <a href="../classes/miruken.Delegate.html" class="crosslink">miruken.Delegate</a>.</p>
+                                        
+                                            </div>
+                                        
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.InvocationDelegate.html" class="crosslink">miruken.callback.InvocationDelegate</a></span>:
+                                                            <p>delegate for this callback handler.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Array</span>:
-                                        <p>resolved key.  Could be a promise.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_toDelegate" class="method item inherited">
-                        <div class="name"><code>toDelegate</code></div>
-                    
-                            <span class="paren">()</span>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.InvocationDelegate.html" class="crosslink">miruken.callback.InvocationDelegate</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_toDelegate">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l490"><code>lib\callback.js:490</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Converts the callback handler to a <a href="../classes/miruken.Delegate.html" class="crosslink">miruken.Delegate</a>.</p>
-                    
-                        </div>
-                    
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.InvocationDelegate.html" class="crosslink">miruken.callback.InvocationDelegate</a></span>:
-                                        <p>delegate for this callback handler.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_when" class="method item inherited">
-                        <div class="name"><code>when</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>constraint</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="../classes/miruken.callback.ConditionalCallbackHandler.html" class="crosslink">miruken.callback.ConditionalCallbackHandler</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.callback.CallbackHandler.html#method_when">miruken.callback.CallbackHandler</a>:
-                            <a href="../files/lib_callback.js.html#l1260"><code>lib\callback.js:1260</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Creates a handler for conditionally handling callbacks.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">constraint</code>
-                                            <span class="type">Any</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>matching constraint</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_when" class="method item inherited">
+                                            <div class="name"><code>when</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>constraint</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <span class="returns-inline">
+                                                    <span class="type"><a href="../classes/miruken.callback.ConditionalCallbackHandler.html" class="crosslink">miruken.callback.ConditionalCallbackHandler</a></span>
+                                                </span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandler.html#method_when">miruken.callback.CallbackHandler</a>:
+                                                <a href="../files/lib_callback.js.html#l1274"><code>lib\callback.js:1274</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Creates a handler for conditionally handling callbacks.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">constraint</code>
+                                                                <span class="type">Any</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>matching constraint</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                                <div class="returns">
+                                                    <h4>Returns:</h4>
+                                        
+                                                    <div class="returns-description">
+                                                                <span class="type"><a href="../classes/miruken.callback.ConditionalCallbackHandler.html" class="crosslink">miruken.callback.ConditionalCallbackHandler</a></span>:
+                                                            <p>conditional callback handler.</p>
+                                        
+                                                    </div>
+                                                </div>
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="../classes/miruken.callback.ConditionalCallbackHandler.html" class="crosslink">miruken.callback.ConditionalCallbackHandler</a></span>:
-                                        <p>conditional callback handler.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    
-                    </div>
+                                        <hr class="style-two"></hr>
                                 </div>
                     
                                 <div id="properties" class="api-class-tabpanel">
@@ -1895,7 +1921,7 @@ projectAssets: ../assets
                                             <div class="meta">
                                                         <p>Inherited from
                                                         <a href="../classes/miruken.callback.CallbackHandlerDecorator.html#property_decoratee">miruken.callback.CallbackHandlerDecorator</a>:
-                                                <a href="../files/lib_callback.js.html#l517"><code>lib\callback.js:517</code></a>
+                                                <a href="../files/lib_callback.js.html#l549"><code>lib\callback.js:549</code></a>
                                                 </p>
                                         
                                         
@@ -1909,6 +1935,7 @@ projectAssets: ../assets
                                         
                                         
                                         </div>
+                                        <hr class="style-two"></hr>
                                         <div id="property_delegate" class="property item inherited">
                                             <h3 class="name"><code>delegate</code></h3>
                                             <span class="type">Object</span>
@@ -1934,6 +1961,7 @@ projectAssets: ../assets
                                         
                                         
                                         </div>
+                                        <hr class="style-two"></hr>
                                         <div id="property_filter" class="property item inherited">
                                             <h3 class="name"><code>filter</code></h3>
                                             <span class="type">Function</span>
@@ -1945,7 +1973,7 @@ projectAssets: ../assets
                                             <div class="meta">
                                                         <p>Inherited from
                                                         <a href="../classes/miruken.callback.CallbackHandlerFilter.html#property_filter">miruken.callback.CallbackHandlerFilter</a>:
-                                                <a href="../files/lib_callback.js.html#l569"><code>lib\callback.js:569</code></a>
+                                                <a href="../files/lib_callback.js.html#l581"><code>lib\callback.js:581</code></a>
                                                 </p>
                                         
                                         
@@ -1959,6 +1987,33 @@ projectAssets: ../assets
                                         
                                         
                                         </div>
+                                        <hr class="style-two"></hr>
+                                        <div id="property_true if reentrant, false otherwise." class="property item inherited">
+                                            <h3 class="name"><code>true if reentrant, false otherwise.</code></h3>
+                                            <span class="type">Boolean</span>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/miruken.callback.CallbackHandlerFilter.html#property_true if reentrant, false otherwise.">miruken.callback.CallbackHandlerFilter</a>:
+                                                <a href="../files/lib_callback.js.html#l589"><code>lib\callback.js:589</code></a>
+                                                </p>
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Gets the filter reentrancy.  Reentrant filters will be applied during composition.</p>
+                                        
+                                            </div>
+                                        
+                                        
+                                        
+                                        </div>
+                                        <hr class="style-two"></hr>
                                 </div>
                     
                     

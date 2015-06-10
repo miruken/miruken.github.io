@@ -44,6 +44,8 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.callback.CallbackHandlerFilter.html">miruken.callback.CallbackHandlerFilter</a></li>
                             <li><a href="../classes/miruken.callback.CascadeCallbackHandler.html">miruken.callback.CascadeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.CompositeCallbackHandler.html">miruken.callback.CompositeCallbackHandler</a></li>
+                            <li><a href="../classes/miruken.callback.Composition.html">miruken.callback.Composition</a></li>
+                            <li><a href="../classes/miruken.callback.CompositionScope.html">miruken.callback.CompositionScope</a></li>
                             <li><a href="../classes/miruken.callback.ConditionalCallbackHandler.html">miruken.callback.ConditionalCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.Deferred.html">miruken.callback.Deferred</a></li>
                             <li><a href="../classes/miruken.callback.HandleMethod.html">miruken.callback.HandleMethod</a></li>
@@ -54,8 +56,6 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.callback.Lookup.html">miruken.callback.Lookup</a></li>
                             <li><a href="../classes/miruken.callback.MethodCallbackHandler.html">miruken.callback.MethodCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.ProvidingCallbackHandler.html">miruken.callback.ProvidingCallbackHandler</a></li>
-                            <li><a href="../classes/miruken.callback.Reentrant.html">miruken.callback.Reentrant</a></li>
-                            <li><a href="../classes/miruken.callback.ReentrantScope.html">miruken.callback.ReentrantScope</a></li>
                             <li><a href="../classes/miruken.callback.RejectedError.html">miruken.callback.RejectedError</a></li>
                             <li><a href="../classes/miruken.callback.Resolution.html">miruken.callback.Resolution</a></li>
                             <li><a href="../classes/miruken.ClassMeta.html">miruken.ClassMeta</a></li>
@@ -233,434 +233,440 @@ projectAssets: ../assets
                                 <div id="methods" class="api-class-tabpanel">
                                     <h2 class="off-left">Methods</h2>
                     
-                    <div id="method_didAddDetail" class="method item">
-                        <div class="name"><code>didAddDetail</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>detail</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>master</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/lib_mvc_mvc.js.html#l303"><code>lib\mvc\mvc.js:303</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Informs a detail was added to the master.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">detail</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>added detail</li>
-                    </ul>
-                    
+                                        <div id="method_didAddDetail" class="method item">
+                                            <div class="name"><code>didAddDetail</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>detail</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>master</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>
+                                                        Defined in
+                                                <a href="../files/lib_mvc_mvc.js.html#l303"><code>lib\mvc\mvc.js:303</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Informs a detail was added to the master.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">detail</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>added detail</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">master</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>master</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">master</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>master</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_didDeselectDetail" class="method item">
+                                            <div class="name"><code>didDeselectDetail</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>detail</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>master</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>
+                                                        Defined in
+                                                <a href="../files/lib_mvc_mvc.js.html#l296"><code>lib\mvc\mvc.js:296</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Informs a detail was unselected.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">detail</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>unselected detail</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">master</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>master</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_didDeselectDetail" class="method item">
-                        <div class="name"><code>didDeselectDetail</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>detail</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>master</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/lib_mvc_mvc.js.html#l296"><code>lib\mvc\mvc.js:296</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Informs a detail was unselected.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">detail</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>unselected detail</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_didRemoveDetail" class="method item">
+                                            <div class="name"><code>didRemoveDetail</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>detail</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>master</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>
+                                                        Defined in
+                                                <a href="../files/lib_mvc_mvc.js.html#l317"><code>lib\mvc\mvc.js:317</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Informs a detail was removed from the master.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">detail</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>removed detail</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">master</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>master</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">master</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>master</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_didSelectDetail" class="method item">
+                                            <div class="name"><code>didSelectDetail</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>detail</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>master</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>
+                                                        Defined in
+                                                <a href="../files/lib_mvc_mvc.js.html#l289"><code>lib\mvc\mvc.js:289</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Informs a detail was selected.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">detail</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>selected detail</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">master</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>master</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_didRemoveDetail" class="method item">
-                        <div class="name"><code>didRemoveDetail</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>detail</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>master</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/lib_mvc_mvc.js.html#l317"><code>lib\mvc\mvc.js:317</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Informs a detail was removed from the master.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">detail</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>removed detail</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_didUpdateDetail" class="method item">
+                                            <div class="name"><code>didUpdateDetail</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>detail</code>
+                                                        </li>
+                                                        <li class="arg">
+                                                                <code>master</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>
+                                                        Defined in
+                                                <a href="../files/lib_mvc_mvc.js.html#l310"><code>lib\mvc\mvc.js:310</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Informs a detail was updated in the master.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">detail</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>updated detail</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                        <li class="param">
+                                                                <code class="param-name">master</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>master</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">master</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>master</li>
-                    </ul>
-                    
+                                        <hr class="style-two"></hr>
+                                        <div id="method_masterChanged" class="method item">
+                                            <div class="name"><code>masterChanged</code></div>
+                                        
+                                                <div class="args">
+                                                    <ul class="args-list inline commas">
+                                                        <li><span>(</span></li>
+                                                        <li class="arg">
+                                                                <code>master</code>
+                                                        </li>
+                                                        <li><span>)</span></li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="meta">
+                                                        <p>
+                                                        Defined in
+                                                <a href="../files/lib_mvc_mvc.js.html#l283"><code>lib\mvc\mvc.js:283</code></a>
+                                                </p>
+                                        
+                                        
+                                        
+                                            </div>
+                                        
+                                            <div class="description">
+                                                <p>Informs the master has changed.</p>
+                                        
+                                            </div>
+                                        
+                                                <div class="params">
+                                                    <h4>Parameters:</h4>
+                                        
+                                                    <ul class="params-list">
+                                                        <li class="param">
+                                                                <code class="param-name">master</code>
+                                                                <span class="type">Object</span>
+                                        
+                                        
+                                                            <div class="param-description">
+                                                                <ul>
+                                        <li>master</li>
+                                        </ul>
+                                        
+                                                            </div>
+                                        
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        
+                                        
+                                        
                                         </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_didSelectDetail" class="method item">
-                        <div class="name"><code>didSelectDetail</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>detail</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>master</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/lib_mvc_mvc.js.html#l289"><code>lib\mvc\mvc.js:289</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Informs a detail was selected.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">detail</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>selected detail</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">master</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>master</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_didUpdateDetail" class="method item">
-                        <div class="name"><code>didUpdateDetail</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>detail</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>master</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/lib_mvc_mvc.js.html#l310"><code>lib\mvc\mvc.js:310</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Informs a detail was updated in the master.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">detail</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>updated detail</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">master</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>master</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_masterChanged" class="method item">
-                        <div class="name"><code>masterChanged</code></div>
-                    
-                            <div class="args">
-                                <ul class="args-list inline commas">
-                                <li><span>(</span></li>
-                                    <li class="arg">
-                                            <code>master</code>
-                                    </li>
-                                <li><span>)</span></li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/lib_mvc_mvc.js.html#l283"><code>lib\mvc\mvc.js:283</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Informs the master has changed.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">master</code>
-                                            <span class="type">Object</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>master</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    
-                    </div>
+                                        <hr class="style-two"></hr>
                                 </div>
                     
                     

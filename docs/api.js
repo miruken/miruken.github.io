@@ -40,6 +40,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "miruken.callback.CallbackHandlerFilter",
         "miruken.callback.CascadeCallbackHandler",
         "miruken.callback.CompositeCallbackHandler",
+        "miruken.callback.Composition",
+        "miruken.callback.CompositionScope",
         "miruken.callback.ConditionalCallbackHandler",
         "miruken.callback.Deferred",
         "miruken.callback.HandleMethod",
@@ -50,8 +52,6 @@ YUI.add("yuidoc-meta", function(Y) {
         "miruken.callback.Lookup",
         "miruken.callback.MethodCallbackHandler",
         "miruken.callback.ProvidingCallbackHandler",
-        "miruken.callback.Reentrant",
-        "miruken.callback.ReentrantScope",
         "miruken.callback.RejectedError",
         "miruken.callback.Resolution",
         "miruken.context.$contextual",
@@ -162,7 +162,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "ng",
             "name": "ng",
-            "description": "Package providing [AngularJS](https://angularjs.org) integration.<br/>\nRequires the {{#crossLinkModule \"miruken\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"callback\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"context\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"validate\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"error\"}}{{/crossLinkModule}} and\n{{#crossLinkModule \"ioc\"}}{{/crossLinkModule}} modules."
+            "description": "Package providing [Angular](https://angularjs.org) integration.<br/>\nRequires the {{#crossLinkModule \"miruken\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"callback\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"context\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"validate\"}}{{/crossLinkModule}},\n{{#crossLinkModule \"error\"}}{{/crossLinkModule}} and\n{{#crossLinkModule \"ioc\"}}{{/crossLinkModule}} modules."
         },
         {
             "displayName": "validate",
