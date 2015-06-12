@@ -188,986 +188,986 @@ projectAssets: ../assets
         <div class="apidocs">
             <div id="docs-main">
                 <div class="content">
-                <h1>miruken.ioc.ComponentBuilder Class</h1>
-                <div class="box meta">
-                        <div class="uses">
-                            Uses
-                            <ul class="inline commas">
-                                    <li><a href="miruken.ioc.Registration.html">miruken.ioc.Registration</a></li>
-                            </ul>
-                        </div>
-                
-                        <div class="extends">
-                            Extends Base
-                        </div>
-                
-                        <div class="foundat">
-                            Defined in: <a href="../files/lib_ioc_ioc.js.html#l665"><code>lib\ioc\ioc.js:665</code></a>
-                        </div>
-                
-                            Module: <a href="../modules/ioc.html">ioc</a><br>
-                            Parent Module: <a href="../modules/miruken.html">miruken</a>
-                
-                </div>
-                
-                
-                <div class="box intro">
-                    <p>Builds <a href="../classes/miruken.ioc.ComponentModel.html" class="crosslink">miruken.ioc.ComponentModel</a> using fluent api.</p>
-                
-                </div>
-                
-                    <div class="constructor">
-                        <h2>Constructor</h2>
-                <div id="method_miruken.ioc.ComponentBuilder" class="method item">
-                    <h3 class="name"><code>miruken.ioc.ComponentBuilder</code></h3>
-                
-                        <span class="paren">()</span>
-                
-                
-                
-                
-                
-                
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l665"><code>lib\ioc\ioc.js:665</code></a>
-                        </p>
-                
-                
-                
+                    <h1>miruken.ioc.ComponentBuilder Class</h1>
+                    <div class="box meta">
+                            <div class="uses">
+                                Uses
+                                <ul class="inline commas">
+                                        <li><a href="miruken.ioc.Registration.html">miruken.ioc.Registration</a></li>
+                                </ul>
+                            </div>
+                    
+                            <div class="extends">
+                                Extends Base
+                            </div>
+                    
+                            <div class="foundat">
+                                Defined in: <a href="../files/lib_ioc_ioc.js.html#l665"><code>lib\ioc\ioc.js:665</code></a>
+                            </div>
+                    
+                                Module: <a href="../modules/ioc.html">ioc</a><br>
+                                Parent Module: <a href="../modules/miruken.html">miruken</a>
+                    
                     </div>
-                
-                    <div class="description">
-                        
+                    
+                    
+                    <div class="box intro">
+                        <p>Builds <a href="../classes/miruken.ioc.ComponentModel.html" class="crosslink">miruken.ioc.ComponentModel</a> using fluent api.</p>
+                    
                     </div>
-                
-                
-                
-                
-                </div>
+                    
+                        <div class="constructor">
+                            <h2>Constructor</h2>
+                    <div id="method_miruken.ioc.ComponentBuilder" class="method item">
+                        <h3 class="name"><code>miruken.ioc.ComponentBuilder</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l665"><code>lib\ioc\ioc.js:665</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    
                     </div>
-                
-                <div id="classdocs" class="tabview">
-                    <ul class="api-class-tabs">
-                        <li class="api-class-tab index"><a href="#index">Index</a></li>
-                
-                            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+                        </div>
+                    
+                    <div id="classdocs" class="tabview">
+                        <ul class="api-class-tabs">
+                            <li class="api-class-tab index"><a href="#index">Index</a></li>
+                    
+                                <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+                        </ul>
+                    
+                        <div>
+                            <div id="index" class="api-class-tabpanel index">
+                                <h2 class="off-left">Item Index</h2>
+                    
+                                    <div class="index-section methods">
+                                        <h3>Methods</h3>
+                    
+                                        <ul class="index-list methods extends">
+                                                <li class="index-item method">
+                                                    <a href="#method_addPolicy">addPolicy</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_boundTo">boundTo</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_contextual">contextual</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_dependsOn">dependsOn</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_getPolicy">getPolicy</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_instance">instance</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_interceptors">interceptors</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_invariant">invariant</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_newInContext">newInContext</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_newInContext">newInContext</a>
+                    
+                                                </li>
+                                                <li class="index-item method inherited">
+                                                    <a href="#method_register">register</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_singleon">singleon</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_transient">transient</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_usingFactory">usingFactory</a>
+                    
+                                                </li>
+                                        </ul>
+                                    </div>
+                    
+                    
+                    
+                            </div>
+                    
+                                <div id="methods" class="api-class-tabpanel">
+                                    <h2 class="off-left">Methods</h2>
+                    
+                    <div id="method_addPolicy" class="method item">
+                        <h3 class="name"><code>addPolicy</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>policy</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Boolean</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l819"><code>lib\ioc\ioc.js:819</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Attaches a <a href="../classes/miruken.ioc.ComponentPolicy.html" class="crosslink">miruken.ioc.ComponentPolicy</a> to the model.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">policy</code>
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentPolicy.html" class="crosslink">miruken.ioc.ComponentPolicy</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>policy</li>
                     </ul>
-                
-                    <div>
-                        <div id="index" class="api-class-tabpanel index">
-                            <h2 class="off-left">Item Index</h2>
-                
-                                <div class="index-section methods">
-                                    <h3>Methods</h3>
-                
-                                    <ul class="index-list methods extends">
-                                            <li class="index-item method">
-                                                <a href="#method_addPolicy">addPolicy</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_boundTo">boundTo</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_contextual">contextual</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_dependsOn">dependsOn</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_getPolicy">getPolicy</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_instance">instance</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_interceptors">interceptors</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_invariant">invariant</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_newInContext">newInContext</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_newInContext">newInContext</a>
-                
-                                            </li>
-                                            <li class="index-item method inherited">
-                                                <a href="#method_register">register</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_singleon">singleon</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_transient">transient</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_usingFactory">usingFactory</a>
-                
-                                            </li>
-                                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Boolean</span>:
+                                        <p>true if policy was added, false if policy type already attached.</p>
+                    
                                 </div>
-                
-                
-                
-                        </div>
-                
-                            <div id="methods" class="api-class-tabpanel">
-                                <h2 class="off-left">Methods</h2>
-                
-                <div id="method_addPolicy" class="method item">
-                    <h3 class="name"><code>addPolicy</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>policy</code>
-                                </li>
-                            </ul><span class="paren">)</span>
-                        </div>
-                
-                        <span class="returns-inline">
-                            <span class="type">Boolean</span>
-                        </span>
-                
-                
-                
-                
-                
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l819"><code>lib\ioc\ioc.js:819</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Attaches a <a href="../classes/miruken.ioc.ComponentPolicy.html" class="crosslink">miruken.ioc.ComponentPolicy</a> to the model.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">policy</code>
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentPolicy.html" class="crosslink">miruken.ioc.ComponentPolicy</a></span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>policy</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type">Boolean</span>:
-                                    <p>true if policy was added, false if policy type already attached.</p>
-                
                             </div>
-                        </div>
-                
-                
-                </div>
-                <div id="method_boundTo" class="method item">
-                    <h3 class="name"><code>boundTo</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>value</code>
-                                </li>
-                            </ul><span class="paren">)</span>
-                        </div>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                        <span class="flag chainable">chainable</span>
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l689"><code>lib\ioc\ioc.js:689</code></a>
-                        </p>
-                
-                
-                
+                    
+                    
                     </div>
-                
-                    <div class="description">
-                        <p>Specifies the component class.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">value</code>
-                                        <span class="type">Function</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>component class</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
-                                    <p>builder</p>
-                
+                    <div id="method_boundTo" class="method item">
+                        <h3 class="name"><code>boundTo</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>value</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
                             </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                            <span class="flag chainable">chainable</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l689"><code>lib\ioc\ioc.js:689</code></a>
+                            </p>
+                    
+                    
+                    
                         </div>
-                
-                
-                </div>
-                <div id="method_contextual" class="method item">
-                    <h3 class="name"><code>contextual</code></h3>
-                
-                        <span class="paren">()</span>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                        <span class="flag chainable">chainable</span>
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l759"><code>lib\ioc\ioc.js:759</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Chooses the <a href="../classes/miruken.ioc.ContextualLifestyle.html" class="crosslink">miruken.ioc.ContextualLifestyle</a>.</p>
-                
-                    </div>
-                
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
-                                    <p>builder</p>
-                
+                    
+                        <div class="description">
+                            <p>Specifies the component class.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">value</code>
+                                            <span class="type">Function</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>component class</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                
-                
-                </div>
-                <div id="method_dependsOn" class="method item">
-                    <h3 class="name"><code>dependsOn</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>arguments</code>
-                                </li>
-                            </ul><span class="paren">)</span>
-                        </div>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                        <span class="flag chainable">chainable</span>
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l700"><code>lib\ioc\ioc.js:700</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Specifies component dependencies.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">arguments</code>
-                                        <span class="type">Argument</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>dependencies</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
-                                    <p>builder</p>
-                
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
+                                        <p>builder</p>
+                    
+                                </div>
                             </div>
-                        </div>
-                
-                
-                </div>
-                <div id="method_getPolicy" class="method item">
-                    <h3 class="name"><code>getPolicy</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>policyClass</code>
-                                </li>
-                            </ul><span class="paren">)</span>
-                        </div>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentPolicy.html" class="crosslink">miruken.ioc.ComponentPolicy</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l805"><code>lib\ioc\ioc.js:805</code></a>
-                        </p>
-                
-                
-                
+                    
+                    
                     </div>
-                
-                    <div class="description">
-                        <p>Gets the <a href="../classes/miruken.ioc.ComponentPolicy.html" class="crosslink">miruken.ioc.ComponentPolicy</a> of type policyClass.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">policyClass</code>
-                                        <span class="type">Function</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>type of policy to get</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
+                    <div id="method_contextual" class="method item">
+                        <h3 class="name"><code>contextual</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                            <span class="flag chainable">chainable</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l759"><code>lib\ioc\ioc.js:759</code></a>
+                            </p>
+                    
+                    
+                    
                         </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentPolicy.html" class="crosslink">miruken.ioc.ComponentPolicy</a></span>:
-                                    <p>policy of type PolicyClass</p>
-                
+                    
+                        <div class="description">
+                            <p>Chooses the <a href="../classes/miruken.ioc.ContextualLifestyle.html" class="crosslink">miruken.ioc.ContextualLifestyle</a>.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
+                                        <p>builder</p>
+                    
+                                </div>
                             </div>
-                        </div>
-                
-                
-                </div>
-                <div id="method_instance" class="method item">
-                    <h3 class="name"><code>instance</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>instance</code>
-                                </li>
-                            </ul><span class="paren">)</span>
-                        </div>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                        <span class="flag chainable">chainable</span>
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l728"><code>lib\ioc\ioc.js:728</code></a>
-                        </p>
-                
-                
-                
+                    
+                    
                     </div>
-                
-                    <div class="description">
-                        <p>Uses the supplied component instance.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">instance</code>
-                                        <span class="type">Object</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>component instance</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
-                                    <p>builder</p>
-                
+                    <div id="method_dependsOn" class="method item">
+                        <h3 class="name"><code>dependsOn</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>arguments</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
                             </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                            <span class="flag chainable">chainable</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l700"><code>lib\ioc\ioc.js:700</code></a>
+                            </p>
+                    
+                    
+                    
                         </div>
-                
-                
-                </div>
-                <div id="method_interceptors" class="method item">
-                    <h3 class="name"><code>interceptors</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>arguments</code>
-                                </li>
-                            </ul><span class="paren">)</span>
+                    
+                        <div class="description">
+                            <p>Specifies component dependencies.</p>
+                    
                         </div>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                        <span class="flag chainable">chainable</span>
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l791"><code>lib\ioc\ioc.js:791</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Attaches component interceptors.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">arguments</code>
-                                        <span class="type">Argument</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>interceptors</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
-                                    <p>builder</p>
-                
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">arguments</code>
+                                            <span class="type">Argument</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>dependencies</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                
-                
-                </div>
-                <div id="method_invariant" class="method item">
-                    <h3 class="name"><code>invariant</code></h3>
-                
-                        <span class="paren">()</span>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                        <span class="flag chainable">chainable</span>
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l679"><code>lib\ioc\ioc.js:679</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Marks the component as invariant.</p>
-                
-                    </div>
-                
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
-                                    <p>builder</p>
-                
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
+                                        <p>builder</p>
+                    
+                                </div>
                             </div>
-                        </div>
-                
-                
-                </div>
-                <div id="method_newInContext" class="method item">
-                    <h3 class="name"><code>newInContext</code></h3>
-                
-                        <span class="paren">()</span>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                        <span class="flag chainable">chainable</span>
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l769"><code>lib\ioc\ioc.js:769</code></a>
-                        </p>
-                
-                
-                
+                    
+                    
                     </div>
-                
-                    <div class="description">
-                        <p>Binds the component to the current
-                <a href="../classes/miruken.context.Context.html" class="crosslink">miruken.context.Context</a>.</p>
-                
-                    </div>
-                
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
-                                    <p>builder</p>
-                
+                    <div id="method_getPolicy" class="method item">
+                        <h3 class="name"><code>getPolicy</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>policyClass</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
                             </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentPolicy.html" class="crosslink">miruken.ioc.ComponentPolicy</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l805"><code>lib\ioc\ioc.js:805</code></a>
+                            </p>
+                    
+                    
+                    
                         </div>
-                
-                
-                </div>
-                <div id="method_newInContext" class="method item">
-                    <h3 class="name"><code>newInContext</code></h3>
-                
-                        <span class="paren">()</span>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                        <span class="flag chainable">chainable</span>
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l780"><code>lib\ioc\ioc.js:780</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Binds the component to a child of the current
-                <a href="../classes/miruken.context.Context.html" class="crosslink">miruken.context.Context</a>.</p>
-                
-                    </div>
-                
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
-                                    <p>builder</p>
-                
+                    
+                        <div class="description">
+                            <p>Gets the <a href="../classes/miruken.ioc.ComponentPolicy.html" class="crosslink">miruken.ioc.ComponentPolicy</a> of type policyClass.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">policyClass</code>
+                                            <span class="type">Function</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>type of policy to get</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                
-                
-                </div>
-                <div id="method_register" class="method item inherited">
-                    <h3 class="name"><code>register</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>container</code>
-                                </li>
-                                <li class="arg">
-                                        <code>composer</code>
-                                </li>
-                            </ul><span class="paren">)</span>
-                        </div>
-                
-                        <span class="returns-inline">
-                            <span class="type">Function</span>
-                        </span>
-                
-                
-                
-                
-                
-                
-                
-                    <div class="meta">
-                                <p>Inherited from
-                                <a href="../classes/miruken.ioc.Registration.html#method_register">miruken.ioc.Registration</a>:
-                        <a href="../files/lib_ioc_ioc.js.html#l100"><code>lib\ioc\ioc.js:100</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Encapsulates the regisration of one or more components in a container.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">container</code>
-                                        <span class="type"><a href="../classes/miruken.ioc.Container.html" class="crosslink">miruken.ioc.Container</a></span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>container to register components</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                                <li class="param">
-                                        <code class="param-name">composer</code>
-                                        <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>composition handler</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type">Function</span>:
-                                    <p>function to unregister components.</p>
-                
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentPolicy.html" class="crosslink">miruken.ioc.ComponentPolicy</a></span>:
+                                        <p>policy of type PolicyClass</p>
+                    
+                                </div>
                             </div>
-                        </div>
-                
-                
-                </div>
-                <div id="method_singleon" class="method item">
-                    <h3 class="name"><code>singleon</code></h3>
-                
-                        <span class="paren">()</span>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                        <span class="flag chainable">chainable</span>
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l739"><code>lib\ioc\ioc.js:739</code></a>
-                        </p>
-                
-                
-                
+                    
+                    
                     </div>
-                
-                    <div class="description">
-                        <p>Chooses the <a href="../classes/miruken.ioc.SingletonLifestyle.html" class="crosslink">miruken.ioc.SingletonLifestyle</a>.</p>
-                
-                    </div>
-                
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
-                                    <p>builder</p>
-                
+                    <div id="method_instance" class="method item">
+                        <h3 class="name"><code>instance</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>instance</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
                             </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                            <span class="flag chainable">chainable</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l728"><code>lib\ioc\ioc.js:728</code></a>
+                            </p>
+                    
+                    
+                    
                         </div>
-                
-                
-                </div>
-                <div id="method_transient" class="method item">
-                    <h3 class="name"><code>transient</code></h3>
-                
-                        <span class="paren">()</span>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                        <span class="flag chainable">chainable</span>
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l749"><code>lib\ioc\ioc.js:749</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Chooses the <a href="../classes/miruken.ioc.TransientLifestyle.html" class="crosslink">miruken.ioc.TransientLifestyle</a>.</p>
-                
-                    </div>
-                
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
-                                    <p>builder</p>
-                
+                    
+                        <div class="description">
+                            <p>Uses the supplied component instance.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">instance</code>
+                                            <span class="type">Object</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>component instance</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                
-                
-                </div>
-                <div id="method_usingFactory" class="method item">
-                    <h3 class="name"><code>usingFactory</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>value</code>
-                                </li>
-                            </ul><span class="paren">)</span>
-                        </div>
-                
-                        <span class="returns-inline">
-                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
-                        </span>
-                
-                
-                
-                
-                
-                        <span class="flag chainable">chainable</span>
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_ioc_ioc.js.html#l717"><code>lib\ioc\ioc.js:717</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Specifies the component factory.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">value</code>
-                                        <span class="type">Function</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>component factory</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
-                                    <p>builder</p>
-                
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
+                                        <p>builder</p>
+                    
+                                </div>
                             </div>
-                        </div>
-                
-                
-                </div>
-                            </div>
-                
-                
-                
+                    
+                    
                     </div>
-                </div>
+                    <div id="method_interceptors" class="method item">
+                        <h3 class="name"><code>interceptors</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>arguments</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                            <span class="flag chainable">chainable</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l791"><code>lib\ioc\ioc.js:791</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Attaches component interceptors.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">arguments</code>
+                                            <span class="type">Argument</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>interceptors</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
+                                        <p>builder</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_invariant" class="method item">
+                        <h3 class="name"><code>invariant</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                            <span class="flag chainable">chainable</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l679"><code>lib\ioc\ioc.js:679</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Marks the component as invariant.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
+                                        <p>builder</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_newInContext" class="method item">
+                        <h3 class="name"><code>newInContext</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                            <span class="flag chainable">chainable</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l769"><code>lib\ioc\ioc.js:769</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Binds the component to the current
+                    <a href="../classes/miruken.context.Context.html" class="crosslink">miruken.context.Context</a>.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
+                                        <p>builder</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_newInContext" class="method item">
+                        <h3 class="name"><code>newInContext</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                            <span class="flag chainable">chainable</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l780"><code>lib\ioc\ioc.js:780</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Binds the component to a child of the current
+                    <a href="../classes/miruken.context.Context.html" class="crosslink">miruken.context.Context</a>.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
+                                        <p>builder</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_register" class="method item inherited">
+                        <h3 class="name"><code>register</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>container</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>composer</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Function</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/miruken.ioc.Registration.html#method_register">miruken.ioc.Registration</a>:
+                            <a href="../files/lib_ioc_ioc.js.html#l100"><code>lib\ioc\ioc.js:100</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Encapsulates the regisration of one or more components in a container.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">container</code>
+                                            <span class="type"><a href="../classes/miruken.ioc.Container.html" class="crosslink">miruken.ioc.Container</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>container to register components</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">composer</code>
+                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>composition handler</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Function</span>:
+                                        <p>function to unregister components.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_singleon" class="method item">
+                        <h3 class="name"><code>singleon</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                            <span class="flag chainable">chainable</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l739"><code>lib\ioc\ioc.js:739</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Chooses the <a href="../classes/miruken.ioc.SingletonLifestyle.html" class="crosslink">miruken.ioc.SingletonLifestyle</a>.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
+                                        <p>builder</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_transient" class="method item">
+                        <h3 class="name"><code>transient</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                            <span class="flag chainable">chainable</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l749"><code>lib\ioc\ioc.js:749</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Chooses the <a href="../classes/miruken.ioc.TransientLifestyle.html" class="crosslink">miruken.ioc.TransientLifestyle</a>.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
+                                        <p>builder</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_usingFactory" class="method item">
+                        <h3 class="name"><code>usingFactory</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>value</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                            <span class="flag chainable">chainable</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_ioc_ioc.js.html#l717"><code>lib\ioc\ioc.js:717</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Specifies the component factory.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">value</code>
+                                            <span class="type">Function</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>component factory</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.ioc.ComponentBuilder.html" class="crosslink">miruken.ioc.ComponentBuilder</a></span>:
+                                        <p>builder</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
+                                </div>
+                    
+                    
+                    
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

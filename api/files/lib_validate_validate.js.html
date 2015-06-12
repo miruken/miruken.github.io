@@ -188,408 +188,408 @@ projectAssets: ../assets
         <div class="apidocs">
             <div id="docs-main">
                 <div class="content">
-                <h1 class="file-heading">File: lib\validate\validate.js</h1>
-                
-                <div class="file">
-                    <pre class="code prettyprint linenums">
-                var miruken = require(&#x27;../miruken.js&#x27;),
-                    Promise = require(&#x27;bluebird&#x27;);
-                              require(&#x27;../callback.js&#x27;);
-                
-                new function () { // closure
-                
-                    /**
-                     * Package providing validation support.&lt;br/&gt;
-                     * Requires the {{#crossLinkModule &quot;miruken&quot;}}{{/crossLinkModule}} and
-                     * {{#crossLinkModule &quot;callback&quot;}}{{/crossLinkModule}} modules.
-                     * @module miruken
-                     * @submodule validate
-                     * @namespace miruken.validate
-                     * @class $
-                     */    
-                    var validate = new base2.Package(this, {
-                        name:    &quot;validate&quot;,
-                        version: miruken.version,
-                        parent:  miruken,
-                        imports: &quot;miruken,miruken.callback&quot;,
-                        exports: &quot;Validating,Validator,Validation,ValidationResult,ValidationCallbackHandler,$validate,$validateThat&quot;
-                    });
-                
-                    eval(this.imports);
-                
-                    /**
-                     * Validation definition group.
-                     * @property {Function} $validate
-                     * @for miruken.validate.$
-                     */
-                    var $validate = $define(&#x27;$validate&#x27;);
-                
-                    /**
-                     * Protocol for validating objects.
-                     * @class Validating
-                     * @extends miruken.Protocol
-                     */        
-                    var Validating = Protocol.extend({
-                        /**
-                         * Validates the object in the scope.
-                         * @method validate 
-                         * @param   {Object} object     -  object to validate
-                         * @param   {Object} scope      -  scope of validation
-                         * @param   {Object} [results]  -  validation results
-                         * @returns {miruken.validate.ValidationResult}  validation results.
-                         */
-                        validate: function (object, scope, results) {},
-                        /**
-                         * Validates the object asynchronously in the scope.
-                         * @method validateAsync
-                         * @param   {Object} object     - object to validate
-                         * @param   {Object} scope      - scope of validation
-                         * @param   {Object} [results]  - validation results
-                         * @returns {Promise} promise of validation results.
-                         * @async
-                         */
-                        validateAsync: function (object, scope, results) {}
-                    });
-                
-                    /**
-                     * Protocol for validating objects strictly.
-                     * @class Validator
-                     * @extends miruken.StrictProtocol
-                     * @uses miruken.validate.Validating
-                     */        
-                    var Validator = StrictProtocol.extend(Validating);
+                    <h1 class="file-heading">File: lib\validate\validate.js</h1>
                     
-                    /**
-                     * Callback representing the validation of an object.
-                     * @class Validation
-                     * @constructor
-                     * @param   {Object}    object  -  object to validate
-                     * @param   {boolean}   async   -  true if validate asynchronously
-                     * @param   {Any}       scope   -  scope of validation
-                     * @param   {miruken.validate.ValidationResult} results  -  results to validate to
-                     * @extends Base
-                     */
-                    var Validation = Base.extend(
-                        $inferProperties, {
-                        constructor: function (object, async, scope, results) {
-                            var _asyncResults;
-                            async   = !!async;
-                            results = results || new ValidationResult;
-                            this.extend({
-                                /**
-                                 * true if asynchronous, false if synchronous.
-                                 * @property {boolean} async
-                                 */                
-                                isAsync: function () { return async; },
-                                /**
-                                 * Gets the target object to validate.
-                                 * @property {Object} object
-                                 */                                
-                                getObject: function () { return object; },
-                                /**
-                                 * Gets the scope of validation.
-                                 * @property {Any} scope
-                                 */                                                
-                                getScope: function () { return scope; },
-                                /**
-                                 * Gets the validation results.
-                                 * @property {miruken.validate.ValidationResult} results
-                                 */                                                                
-                                getResults: function () { return results; },
-                                getAsyncResults: function () { return _asyncResults; },
-                                addAsyncResult: function (result) {
-                                    if ($isPromise(result)) {
-                                        (_asyncResults || (_asyncResults = [])).push(result);
-                                    }
-                                }
-                            });
-                        }
-                    });
+                    <div class="file">
+                        <pre class="code prettyprint linenums">
+                    var miruken = require(&#x27;../miruken.js&#x27;),
+                        Promise = require(&#x27;bluebird&#x27;);
+                                  require(&#x27;../callback.js&#x27;);
                     
-                    var IGNORE = [&#x27;isValid&#x27;, &#x27;valid&#x27;, &#x27;getErrors&#x27;, &#x27;errors&#x27;, &#x27;addKey&#x27;, &#x27;addError&#x27;];
-                
-                    /**
-                     * Captures structured validation errors.
-                     * @class ValidationResult
-                     * @constructor
-                     * @extends Base
-                     */    
-                    var ValidationResult = Base.extend(
-                        $inferProperties, {
-                        constructor: function () {
-                            var _errors, _summary;
-                            this.extend({
-                                /**
-                                 * true if object is valid, false otherwisw.
-                                 * @property {boolean} valid
-                                 */                
-                                isValid: function () {
-                                    if (_errors || _summary) {
-                                        return false;
-                                    }
-                                    var ownKeys = Object.getOwnPropertyNames(this);
-                                    for (var i = 0; i &lt; ownKeys.length; ++i) {
-                                        var key = ownKeys[i];
-                                        if (IGNORE.indexOf(key) &gt;= 0) {
-                                            continue;
+                    new function () { // closure
+                    
+                        /**
+                         * Package providing validation support.&lt;br/&gt;
+                         * Requires the {{#crossLinkModule &quot;miruken&quot;}}{{/crossLinkModule}} and
+                         * {{#crossLinkModule &quot;callback&quot;}}{{/crossLinkModule}} modules.
+                         * @module miruken
+                         * @submodule validate
+                         * @namespace miruken.validate
+                         * @class $
+                         */    
+                        var validate = new base2.Package(this, {
+                            name:    &quot;validate&quot;,
+                            version: miruken.version,
+                            parent:  miruken,
+                            imports: &quot;miruken,miruken.callback&quot;,
+                            exports: &quot;Validating,Validator,Validation,ValidationResult,ValidationCallbackHandler,$validate,$validateThat&quot;
+                        });
+                    
+                        eval(this.imports);
+                    
+                        /**
+                         * Validation definition group.
+                         * @property {Function} $validate
+                         * @for miruken.validate.$
+                         */
+                        var $validate = $define(&#x27;$validate&#x27;);
+                    
+                        /**
+                         * Protocol for validating objects.
+                         * @class Validating
+                         * @extends miruken.Protocol
+                         */        
+                        var Validating = Protocol.extend({
+                            /**
+                             * Validates the object in the scope.
+                             * @method validate 
+                             * @param   {Object} object     -  object to validate
+                             * @param   {Object} scope      -  scope of validation
+                             * @param   {Object} [results]  -  validation results
+                             * @returns {miruken.validate.ValidationResult}  validation results.
+                             */
+                            validate: function (object, scope, results) {},
+                            /**
+                             * Validates the object asynchronously in the scope.
+                             * @method validateAsync
+                             * @param   {Object} object     - object to validate
+                             * @param   {Object} scope      - scope of validation
+                             * @param   {Object} [results]  - validation results
+                             * @returns {Promise} promise of validation results.
+                             * @async
+                             */
+                            validateAsync: function (object, scope, results) {}
+                        });
+                    
+                        /**
+                         * Protocol for validating objects strictly.
+                         * @class Validator
+                         * @extends miruken.StrictProtocol
+                         * @uses miruken.validate.Validating
+                         */        
+                        var Validator = StrictProtocol.extend(Validating);
+                        
+                        /**
+                         * Callback representing the validation of an object.
+                         * @class Validation
+                         * @constructor
+                         * @param   {Object}    object  -  object to validate
+                         * @param   {boolean}   async   -  true if validate asynchronously
+                         * @param   {Any}       scope   -  scope of validation
+                         * @param   {miruken.validate.ValidationResult} results  -  results to validate to
+                         * @extends Base
+                         */
+                        var Validation = Base.extend(
+                            $inferProperties, {
+                            constructor: function (object, async, scope, results) {
+                                var _asyncResults;
+                                async   = !!async;
+                                results = results || new ValidationResult;
+                                this.extend({
+                                    /**
+                                     * true if asynchronous, false if synchronous.
+                                     * @property {boolean} async
+                                     */                
+                                    isAsync: function () { return async; },
+                                    /**
+                                     * Gets the target object to validate.
+                                     * @property {Object} object
+                                     */                                
+                                    getObject: function () { return object; },
+                                    /**
+                                     * Gets the scope of validation.
+                                     * @property {Any} scope
+                                     */                                                
+                                    getScope: function () { return scope; },
+                                    /**
+                                     * Gets the validation results.
+                                     * @property {miruken.validate.ValidationResult} results
+                                     */                                                                
+                                    getResults: function () { return results; },
+                                    getAsyncResults: function () { return _asyncResults; },
+                                    addAsyncResult: function (result) {
+                                        if ($isPromise(result)) {
+                                            (_asyncResults || (_asyncResults = [])).push(result);
                                         }
-                                        var result = this[key];
-                                        if ((result instanceof ValidationResult) &amp;&amp; !result.valid) {
+                                    }
+                                });
+                            }
+                        });
+                        
+                        var IGNORE = [&#x27;isValid&#x27;, &#x27;valid&#x27;, &#x27;getErrors&#x27;, &#x27;errors&#x27;, &#x27;addKey&#x27;, &#x27;addError&#x27;];
+                    
+                        /**
+                         * Captures structured validation errors.
+                         * @class ValidationResult
+                         * @constructor
+                         * @extends Base
+                         */    
+                        var ValidationResult = Base.extend(
+                            $inferProperties, {
+                            constructor: function () {
+                                var _errors, _summary;
+                                this.extend({
+                                    /**
+                                     * true if object is valid, false otherwisw.
+                                     * @property {boolean} valid
+                                     */                
+                                    isValid: function () {
+                                        if (_errors || _summary) {
                                             return false;
                                         }
-                                    }
-                                    return true;
-                                },
-                                /**
-                                 * Gets aggregated validation errors.
-                                 * @property {Object} errors
-                                 */                                
-                                getErrors: function () {
-                                    if (_summary) {
-                                        return _summary;
-                                    }
-                                    if (_errors) {
-                                        _summary = {};
-                                        for (var name in _errors) {
-                                            _summary[name] = _errors[name].slice(0);
+                                        var ownKeys = Object.getOwnPropertyNames(this);
+                                        for (var i = 0; i &lt; ownKeys.length; ++i) {
+                                            var key = ownKeys[i];
+                                            if (IGNORE.indexOf(key) &gt;= 0) {
+                                                continue;
+                                            }
+                                            var result = this[key];
+                                            if ((result instanceof ValidationResult) &amp;&amp; !result.valid) {
+                                                return false;
+                                            }
                                         }
-                                    }
-                                    var ownKeys = Object.getOwnPropertyNames(this);
-                                    for (var i = 0; i &lt; ownKeys.length; ++i) {
-                                        var key = ownKeys[i];
-                                        if (IGNORE.indexOf(key) &gt;= 0) {
-                                            continue;
+                                        return true;
+                                    },
+                                    /**
+                                     * Gets aggregated validation errors.
+                                     * @property {Object} errors
+                                     */                                
+                                    getErrors: function () {
+                                        if (_summary) {
+                                            return _summary;
                                         }
-                                        var result = this[key],
-                                            errors = (result instanceof ValidationResult) &amp;&amp; result.getErrors();
-                                        if (errors) {
-                                            _summary = _summary || {};
-                                            for (name in errors) {
-                                                var named    = errors[name],
-                                                    existing = _summary[name];
-                                                for (var ii = 0; ii &lt; named.length; ++ii) {
-                                                    var error = pcopy(named[ii]);
-                                                    error.key = error.key ? (key + &quot;.&quot; + error.key) : key;
-                                                    if (existing) {
-                                                        existing.push(error);
-                                                    } else {
-                                                        _summary[name] = existing = [error];
+                                        if (_errors) {
+                                            _summary = {};
+                                            for (var name in _errors) {
+                                                _summary[name] = _errors[name].slice(0);
+                                            }
+                                        }
+                                        var ownKeys = Object.getOwnPropertyNames(this);
+                                        for (var i = 0; i &lt; ownKeys.length; ++i) {
+                                            var key = ownKeys[i];
+                                            if (IGNORE.indexOf(key) &gt;= 0) {
+                                                continue;
+                                            }
+                                            var result = this[key],
+                                                errors = (result instanceof ValidationResult) &amp;&amp; result.getErrors();
+                                            if (errors) {
+                                                _summary = _summary || {};
+                                                for (name in errors) {
+                                                    var named    = errors[name],
+                                                        existing = _summary[name];
+                                                    for (var ii = 0; ii &lt; named.length; ++ii) {
+                                                        var error = pcopy(named[ii]);
+                                                        error.key = error.key ? (key + &quot;.&quot; + error.key) : key;
+                                                        if (existing) {
+                                                            existing.push(error);
+                                                        } else {
+                                                            _summary[name] = existing = [error];
+                                                        }
                                                     }
                                                 }
                                             }
                                         }
-                                    }
-                                    return _summary;
-                                },
-                               /**
-                                * Gets or adds validation results for the key.
-                                * @method addKey
-                                * @param  {string} key  -  property name
-                                * @results {miruken.validate.ValidationResult} named validation results.
-                                */                
-                                addKey: function (key) {
-                                    return this[key] || (this[key] = new ValidationResult);
-                                },
-                               /**
-                                * Adds a named validation error.
-                                * @method addError
-                                * @param  {string}  name   -  validator name
-                                * @param  {Object}  error  -  literal error details
-                                * @example
-                                *     Standard Keys:
-                                *        key      =&gt; contains the invalid key
-                                *        message  =&gt; contains the error message
-                                *        value    =&gt; contains the invalid valid
-                                */
-                                addError: function (name, error) {
-                                    var errors = (_errors || (_errors = {})),
-                                        named  = errors[name];
-                                    if (named) {
-                                        named.push(error);
-                                    } else {
-                                        errors[name] = [error];
-                                    }
-                                    _summary = null;
-                                    return this;
-                                },
-                                /**
-                                 * Clears all validation results.
-                                 * @method reset
-                                 * @returns {miruken.validate.ValidationResult} receiving results
-                                 * @chainable
-                                 */
-                                reset: function () { 
-                                    _errors = _summary = undefined;
-                                    var ownKeys = Object.getOwnPropertyNames(this);
-                                    for (var i = 0; i &lt; ownKeys.length; ++i) {
-                                        var key = ownKeys[i];
-                                        if (IGNORE.indexOf(key) &gt;= 0) {
-                                            continue;
+                                        return _summary;
+                                    },
+                                   /**
+                                    * Gets or adds validation results for the key.
+                                    * @method addKey
+                                    * @param  {string} key  -  property name
+                                    * @results {miruken.validate.ValidationResult} named validation results.
+                                    */                
+                                    addKey: function (key) {
+                                        return this[key] || (this[key] = new ValidationResult);
+                                    },
+                                   /**
+                                    * Adds a named validation error.
+                                    * @method addError
+                                    * @param  {string}  name   -  validator name
+                                    * @param  {Object}  error  -  literal error details
+                                    * @example
+                                    *     Standard Keys:
+                                    *        key      =&gt; contains the invalid key
+                                    *        message  =&gt; contains the error message
+                                    *        value    =&gt; contains the invalid valid
+                                    */
+                                    addError: function (name, error) {
+                                        var errors = (_errors || (_errors = {})),
+                                            named  = errors[name];
+                                        if (named) {
+                                            named.push(error);
+                                        } else {
+                                            errors[name] = [error];
                                         }
-                                        var result = this[key];
-                                        if ((result instanceof ValidationResult)) {
-                                            delete this[key];
+                                        _summary = null;
+                                        return this;
+                                    },
+                                    /**
+                                     * Clears all validation results.
+                                     * @method reset
+                                     * @returns {miruken.validate.ValidationResult} receiving results
+                                     * @chainable
+                                     */
+                                    reset: function () { 
+                                        _errors = _summary = undefined;
+                                        var ownKeys = Object.getOwnPropertyNames(this);
+                                        for (var i = 0; i &lt; ownKeys.length; ++i) {
+                                            var key = ownKeys[i];
+                                            if (IGNORE.indexOf(key) &gt;= 0) {
+                                                continue;
+                                            }
+                                            var result = this[key];
+                                            if ((result instanceof ValidationResult)) {
+                                                delete this[key];
+                                            }
                                         }
+                                        return this;
                                     }
-                                    return this;
-                                }
-                            });
-                        }
-                    });
-                
-                    /**
-                     * CallbackHandler for performing validation.
-                     * &lt;p&gt;
-                     * Once an object is validated, it will receive a **$validation** property containing the validation results.
-                     * &lt;/p&gt;
-                     * @class ValidationCallbackHandler
-                     * @extends miruken.callback.CallbackHandler
-                     * @uses miruken.validate.Validator
-                     * @uses miruken.validate.Validating
-                     */        
-                    var ValidationCallbackHandler = CallbackHandler.extend(Validator, {
-                        validate: function (object, scope, results) {
-                            var validation = new Validation(object, false, scope, results);
-                            $composer.handle(validation, true);
-                            results = validation.results;
-                            _bindValidationResults(object, results);
-                            _validateThat(validation, null, $composer);
-                            return results;
-                        },
-                        validateAsync: function (object, scope, results) {
-                            var validation = new Validation(object, true, scope, results),
-                                composer   = $composer;
-                            return composer.deferAll(validation).then(function () {
+                                });
+                            }
+                        });
+                    
+                        /**
+                         * CallbackHandler for performing validation.
+                         * &lt;p&gt;
+                         * Once an object is validated, it will receive a **$validation** property containing the validation results.
+                         * &lt;/p&gt;
+                         * @class ValidationCallbackHandler
+                         * @extends miruken.callback.CallbackHandler
+                         * @uses miruken.validate.Validator
+                         * @uses miruken.validate.Validating
+                         */        
+                        var ValidationCallbackHandler = CallbackHandler.extend(Validator, {
+                            validate: function (object, scope, results) {
+                                var validation = new Validation(object, false, scope, results);
+                                $composer.handle(validation, true);
                                 results = validation.results;
                                 _bindValidationResults(object, results);
-                                var asyncResults = [];
-                                _validateThat(validation, asyncResults, composer);
-                                return asyncResults.length &gt; 0
-                                     ? Promise.all(asyncResults).return(results)
-                                     : results;
-                            });
-                        }
-                    });
-                
-                    $handle(CallbackHandler, Validation, function (validation, composer) {
-                        var target = validation.object,
-                            source = $classOf(target);
-                        if (source) {
-                            $validate.dispatch(this, validation, source, composer, true, validation.addAsyncResult);
-                            var asyncResults = validation.asyncResults;
-                            if (asyncResults) {
-                                return Promise.all(asyncResults);
-                            }
-                        }
-                    });
-                
-                    /**
-                     * Metamacro for class-based validation.
-                     * @class $validateThat
-                     * @extends miruken.MetaMacro
-                     */    
-                    var $validateThat = MetaMacro.extend({
-                        apply: function _(step, metadata, target, definition) {
-                            var validateThat = definition[&#x27;$validateThat&#x27;];
-                            if ($isFunction(validateThat)) {
-                                validateThat = validateThat();
-                            }
-                            if (validateThat) {
-                                var validators = {};
-                                for (var name in validateThat) {
-                                    var validator = validateThat[name];
-                                    if (validator instanceof Array) {
-                                        var dependencies = validator.slice(0);
-                                        validator = dependencies.pop();
-                                        if (!$isFunction(validator)) {
-                                            continue;
-                                        }
-                                        if (dependencies.length &gt; 0) {
-                                            validator = (function (nm, val, deps) {
-                                                return function (validation, composer) {
-                                                    var d = Array2.concat(deps, Array2.map(arguments, $use));
-                                                    return Invoking(composer).invoke(val, d, this);
-                                                }
-                                            })(name, validator, dependencies);
-                                        }
-                                    }
-                                    if ($isFunction(validator)) {
-                                        name = &#x27;validateThat&#x27; + name.charAt(0).toUpperCase() + name.slice(1);
-                                        validators[name] = validator;
-                                    }
-                                    if (step == MetaStep.Extend) {
-                                        target.extend(validators);
-                                    } else {
-                                        metadata.getClass().implement(validators);
-                                    }
-                                }
-                                delete target[&#x27;$validateThat&#x27;];
-                            }
-                        },
-                        /**
-                         * Determines if the macro should be inherited
-                         * @method shouldInherit
-                         * @returns {boolean} true
-                         */         
-                        shouldInherit: True,
-                        /**
-                         * Determines if the macro should be applied on extension.
-                         * @method isActive
-                         * @returns {boolean} true
-                         */
-                        isActive: True
-                    });
-                
-                    function _validateThat(validation, asyncResults, composer) {
-                        var object = validation.object;
-                        for (var key in object) {
-                            if (key.lastIndexOf(&#x27;validateThat&#x27;, 0) == 0) {
-                                var validator   = object[key],
-                                    returnValue = validator.call(object, validation, composer);
-                                if (asyncResults &amp;&amp; $isPromise(returnValue)) {
-                                    asyncResults.push(returnValue);
-                                }
-                            }
-                        }
-                    }
-                
-                    function _bindValidationResults(object, results) {
-                        var spec = _bindValidationResults.spec || 
-                            (_bindValidationResults.spec = {
-                                enumerable:   false,
-                                configurable: true,
-                                writable:     false
-                        });
-                        spec.value = results;
-                        Object.defineProperty(object, &#x27;$validation&#x27;, spec);
-                        delete spec.value;
-                    }
-                
-                    CallbackHandler.implement({
-                        $valid: function (target, scope) {
-                            return this.aspect(function (_, composer) {
-                                return Validator(composer).validate(target, scope).valid;
-                            });
-                        },
-                        $validAsync: function (target, scope) {
-                            return this.aspect(function (_, composer) {
-                                return Validator(composer).validateAsync(target, scope).then(function (results) {
-                                    return results.valid;
+                                _validateThat(validation, null, $composer);
+                                return results;
+                            },
+                            validateAsync: function (object, scope, results) {
+                                var validation = new Validation(object, true, scope, results),
+                                    composer   = $composer;
+                                return composer.deferAll(validation).then(function () {
+                                    results = validation.results;
+                                    _bindValidationResults(object, results);
+                                    var asyncResults = [];
+                                    _validateThat(validation, asyncResults, composer);
+                                    return asyncResults.length &gt; 0
+                                         ? Promise.all(asyncResults).return(results)
+                                         : results;
                                 });
+                            }
+                        });
+                    
+                        $handle(CallbackHandler, Validation, function (validation, composer) {
+                            var target = validation.object,
+                                source = $classOf(target);
+                            if (source) {
+                                $validate.dispatch(this, validation, source, composer, true, validation.addAsyncResult);
+                                var asyncResults = validation.asyncResults;
+                                if (asyncResults) {
+                                    return Promise.all(asyncResults);
+                                }
+                            }
+                        });
+                    
+                        /**
+                         * Metamacro for class-based validation.
+                         * @class $validateThat
+                         * @extends miruken.MetaMacro
+                         */    
+                        var $validateThat = MetaMacro.extend({
+                            apply: function _(step, metadata, target, definition) {
+                                var validateThat = definition[&#x27;$validateThat&#x27;];
+                                if ($isFunction(validateThat)) {
+                                    validateThat = validateThat();
+                                }
+                                if (validateThat) {
+                                    var validators = {};
+                                    for (var name in validateThat) {
+                                        var validator = validateThat[name];
+                                        if (validator instanceof Array) {
+                                            var dependencies = validator.slice(0);
+                                            validator = dependencies.pop();
+                                            if (!$isFunction(validator)) {
+                                                continue;
+                                            }
+                                            if (dependencies.length &gt; 0) {
+                                                validator = (function (nm, val, deps) {
+                                                    return function (validation, composer) {
+                                                        var d = Array2.concat(deps, Array2.map(arguments, $use));
+                                                        return Invoking(composer).invoke(val, d, this);
+                                                    }
+                                                })(name, validator, dependencies);
+                                            }
+                                        }
+                                        if ($isFunction(validator)) {
+                                            name = &#x27;validateThat&#x27; + name.charAt(0).toUpperCase() + name.slice(1);
+                                            validators[name] = validator;
+                                        }
+                                        if (step == MetaStep.Extend) {
+                                            target.extend(validators);
+                                        } else {
+                                            metadata.getClass().implement(validators);
+                                        }
+                                    }
+                                    delete target[&#x27;$validateThat&#x27;];
+                                }
+                            },
+                            /**
+                             * Determines if the macro should be inherited
+                             * @method shouldInherit
+                             * @returns {boolean} true
+                             */         
+                            shouldInherit: True,
+                            /**
+                             * Determines if the macro should be applied on extension.
+                             * @method isActive
+                             * @returns {boolean} true
+                             */
+                            isActive: True
+                        });
+                    
+                        function _validateThat(validation, asyncResults, composer) {
+                            var object = validation.object;
+                            for (var key in object) {
+                                if (key.lastIndexOf(&#x27;validateThat&#x27;, 0) == 0) {
+                                    var validator   = object[key],
+                                        returnValue = validator.call(object, validation, composer);
+                                    if (asyncResults &amp;&amp; $isPromise(returnValue)) {
+                                        asyncResults.push(returnValue);
+                                    }
+                                }
+                            }
+                        }
+                    
+                        function _bindValidationResults(object, results) {
+                            var spec = _bindValidationResults.spec || 
+                                (_bindValidationResults.spec = {
+                                    enumerable:   false,
+                                    configurable: true,
+                                    writable:     false
                             });
-                        }        
-                    });
-                
-                    if (typeof module !== &#x27;undefined&#x27; &amp;&amp; module.exports) {
-                        module.exports = exports = validate;
+                            spec.value = results;
+                            Object.defineProperty(object, &#x27;$validation&#x27;, spec);
+                            delete spec.value;
+                        }
+                    
+                        CallbackHandler.implement({
+                            $valid: function (target, scope) {
+                                return this.aspect(function (_, composer) {
+                                    return Validator(composer).validate(target, scope).valid;
+                                });
+                            },
+                            $validAsync: function (target, scope) {
+                                return this.aspect(function (_, composer) {
+                                    return Validator(composer).validateAsync(target, scope).then(function (results) {
+                                        return results.valid;
+                                    });
+                                });
+                            }        
+                        });
+                    
+                        if (typeof module !== &#x27;undefined&#x27; &amp;&amp; module.exports) {
+                            module.exports = exports = validate;
+                        }
+                    
+                        eval(this.exports);
+                    
                     }
-                
-                    eval(this.exports);
-                
-                }
-                
-                    </pre>
-                </div>
+                    
+                        </pre>
+                    </div>
                 </div>
             </div>
         </div>

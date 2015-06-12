@@ -188,416 +188,416 @@ projectAssets: ../assets
         <div class="apidocs">
             <div id="docs-main">
                 <div class="content">
-                <h1>miruken.error.Errors Class</h1>
-                <div class="box meta">
-                
-                        <div class="extends">
-                            Extends <a href="../classes/miruken.Protocol.html" class="crosslink">miruken.Protocol</a>
+                    <h1>miruken.error.Errors Class</h1>
+                    <div class="box meta">
+                    
+                            <div class="extends">
+                                Extends <a href="../classes/miruken.Protocol.html" class="crosslink">miruken.Protocol</a>
+                            </div>
+                    
+                            <div class="foundat">
+                                Defined in: <a href="../files/lib_error.js.html#l25"><code>lib\error.js:25</code></a>
+                            </div>
+                    
+                                Module: <a href="../modules/error.html">error</a><br>
+                                Parent Module: <a href="../modules/miruken.html">miruken</a>
+                    
+                    </div>
+                    
+                    
+                    <div class="box intro">
+                        <p>Protocol for handling and reporting errors.</p>
+                    
+                    </div>
+                    
+                    
+                    <div id="classdocs" class="tabview">
+                        <ul class="api-class-tabs">
+                            <li class="api-class-tab index"><a href="#index">Index</a></li>
+                    
+                                <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+                        </ul>
+                    
+                        <div>
+                            <div id="index" class="api-class-tabpanel index">
+                                <h2 class="off-left">Item Index</h2>
+                    
+                                    <div class="index-section methods">
+                                        <h3>Methods</h3>
+                    
+                                        <ul class="index-list methods extends">
+                                                <li class="index-item method">
+                                                    <a href="#method_handlerError">handlerError</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_handlerException">handlerException</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_reportError">reportError</a>
+                    
+                                                </li>
+                                                <li class="index-item method">
+                                                    <a href="#method_reportException">reportException</a>
+                    
+                                                </li>
+                                        </ul>
+                                    </div>
+                    
+                    
+                    
+                            </div>
+                    
+                                <div id="methods" class="api-class-tabpanel">
+                                    <h2 class="off-left">Methods</h2>
+                    
+                    <div id="method_handlerError" class="method item">
+                        <h3 class="name"><code>handlerError</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>error</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[context]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Promise</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_error.js.html#l31"><code>lib\error.js:31</code></a>
+                            </p>
+                    
+                    
+                    
                         </div>
-                
-                        <div class="foundat">
-                            Defined in: <a href="../files/lib_error.js.html#l25"><code>lib\error.js:25</code></a>
+                    
+                        <div class="description">
+                            <p>Handles an error.</p>
+                    
                         </div>
-                
-                            Module: <a href="../modules/error.html">error</a><br>
-                            Parent Module: <a href="../modules/miruken.html">miruken</a>
-                
-                </div>
-                
-                
-                <div class="box intro">
-                    <p>Protocol for handling and reporting errors.</p>
-                
-                </div>
-                
-                
-                <div id="classdocs" class="tabview">
-                    <ul class="api-class-tabs">
-                        <li class="api-class-tab index"><a href="#index">Index</a></li>
-                
-                            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">error</code>
+                                            <span class="type">Any</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>error (usually Error)</li>
                     </ul>
-                
-                    <div>
-                        <div id="index" class="api-class-tabpanel index">
-                            <h2 class="off-left">Item Index</h2>
-                
-                                <div class="index-section methods">
-                                    <h3>Methods</h3>
-                
-                                    <ul class="index-list methods extends">
-                                            <li class="index-item method">
-                                                <a href="#method_handlerError">handlerError</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_handlerException">handlerException</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_reportError">reportError</a>
-                
-                                            </li>
-                                            <li class="index-item method">
-                                                <a href="#method_reportException">reportException</a>
-                
-                                            </li>
-                                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[context]</code>
+                                            <span class="type">Any</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>scope of error</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Promise</span>:
+                                        <p>promise of handled error.</p>
+                    
                                 </div>
-                
-                
-                
-                        </div>
-                
-                            <div id="methods" class="api-class-tabpanel">
-                                <h2 class="off-left">Methods</h2>
-                
-                <div id="method_handlerError" class="method item">
-                    <h3 class="name"><code>handlerError</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>error</code>
-                                </li>
-                                <li class="arg">
-                                        <code class="optional">[context]</code>
-                                </li>
-                            </ul><span class="paren">)</span>
-                        </div>
-                
-                        <span class="returns-inline">
-                            <span class="type">Promise</span>
-                        </span>
-                
-                
-                
-                
-                
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_error.js.html#l31"><code>lib\error.js:31</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Handles an error.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">error</code>
-                                        <span class="type">Any</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>error (usually Error)</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                                <li class="param">
-                                        <code class="param-name optional">[context]</code>
-                                        <span class="type">Any</span>
-                                        <span class="flag optional" title="This parameter is optional.">optional</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>scope of error</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type">Promise</span>:
-                                    <p>promise of handled error.</p>
-                
                             </div>
-                        </div>
-                
-                
-                </div>
-                <div id="method_handlerException" class="method item">
-                    <h3 class="name"><code>handlerException</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>excption</code>
-                                </li>
-                                <li class="arg">
-                                        <code class="optional">[context]</code>
-                                </li>
-                            </ul><span class="paren">)</span>
-                        </div>
-                
-                        <span class="returns-inline">
-                            <span class="type">Promise</span>
-                        </span>
-                
-                
-                
-                
-                
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_error.js.html#l39"><code>lib\error.js:39</code></a>
-                        </p>
-                
-                
-                
+                    
+                    
                     </div>
-                
-                    <div class="description">
-                        <p>Handles an exception.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">excption</code>
-                                        <span class="type">Exception</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>exception</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                                <li class="param">
-                                        <code class="param-name optional">[context]</code>
-                                        <span class="type">Any</span>
-                                        <span class="flag optional" title="This parameter is optional.">optional</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>scope of error</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type">Promise</span>:
-                                    <p>of handled error.</p>
-                
+                    <div id="method_handlerException" class="method item">
+                        <h3 class="name"><code>handlerException</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>excption</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[context]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
                             </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Promise</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_error.js.html#l39"><code>lib\error.js:39</code></a>
+                            </p>
+                    
+                    
+                    
                         </div>
-                
-                
-                </div>
-                <div id="method_reportError" class="method item">
-                    <h3 class="name"><code>reportError</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>error</code>
-                                </li>
-                                <li class="arg">
-                                        <code class="optional">[context]</code>
-                                </li>
-                            </ul><span class="paren">)</span>
+                    
+                        <div class="description">
+                            <p>Handles an exception.</p>
+                    
                         </div>
-                
-                        <span class="returns-inline">
-                            <span class="type">Promise</span>
-                        </span>
-                
-                
-                
-                
-                
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_error.js.html#l47"><code>lib\error.js:47</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Reports an error.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">error</code>
-                                        <span class="type">Any</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>error (usually Error)</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                                <li class="param">
-                                        <code class="param-name optional">[context]</code>
-                                        <span class="type">Any</span>
-                                        <span class="flag optional" title="This parameter is optional.">optional</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>scope of error</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type">Promise</span>:
-                                    <p>of reported error.</p>
-                
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">excption</code>
+                                            <span class="type">Exception</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>exception</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[context]</code>
+                                            <span class="type">Any</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>scope of error</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                
-                
-                </div>
-                <div id="method_reportException" class="method item">
-                    <h3 class="name"><code>reportException</code></h3>
-                
-                        <div class="args">
-                            <span class="paren">(</span><ul class="args-list inline commas">
-                                <li class="arg">
-                                        <code>exception</code>
-                                </li>
-                                <li class="arg">
-                                        <code class="optional">[context]</code>
-                                </li>
-                            </ul><span class="paren">)</span>
-                        </div>
-                
-                        <span class="returns-inline">
-                            <span class="type">Promise</span>
-                        </span>
-                
-                
-                
-                
-                
-                
-                
-                    <div class="meta">
-                                <p>
-                                Defined in
-                        <a href="../files/lib_error.js.html#l55"><code>lib\error.js:55</code></a>
-                        </p>
-                
-                
-                
-                    </div>
-                
-                    <div class="description">
-                        <p>Reports an excepion.</p>
-                
-                    </div>
-                
-                        <div class="params">
-                            <h4>Parameters:</h4>
-                
-                            <ul class="params-list">
-                                <li class="param">
-                                        <code class="param-name">exception</code>
-                                        <span class="type">Exception</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>exception</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                                <li class="param">
-                                        <code class="param-name optional">[context]</code>
-                                        <span class="type">Any</span>
-                                        <span class="flag optional" title="This parameter is optional.">optional</span>
-                
-                
-                                    <div class="param-description">
-                                        <ul>
-                <li>scope of exception</li>
-                </ul>
-                
-                                    </div>
-                
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="returns">
-                            <h4>Returns:</h4>
-                
-                            <div class="returns-description">
-                                        <span class="type">Promise</span>:
-                                    <p>of reported exception.</p>
-                
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Promise</span>:
+                                        <p>of handled error.</p>
+                    
+                                </div>
                             </div>
-                        </div>
-                
-                
-                </div>
-                            </div>
-                
-                
-                
+                    
+                    
                     </div>
-                </div>
+                    <div id="method_reportError" class="method item">
+                        <h3 class="name"><code>reportError</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>error</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[context]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Promise</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_error.js.html#l47"><code>lib\error.js:47</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Reports an error.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">error</code>
+                                            <span class="type">Any</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>error (usually Error)</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[context]</code>
+                                            <span class="type">Any</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>scope of error</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Promise</span>:
+                                        <p>of reported error.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_reportException" class="method item">
+                        <h3 class="name"><code>reportException</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>exception</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[context]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Promise</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_error.js.html#l55"><code>lib\error.js:55</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Reports an excepion.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">exception</code>
+                                            <span class="type">Exception</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>exception</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[context]</code>
+                                            <span class="type">Any</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <ul>
+                    <li>scope of exception</li>
+                    </ul>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Promise</span>:
+                                        <p>of reported exception.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    
+                    </div>
+                                </div>
+                    
+                    
+                    
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
