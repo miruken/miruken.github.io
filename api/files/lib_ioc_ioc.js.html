@@ -38,7 +38,6 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.callback.$.html">miruken.callback.$</a></li>
                             <li><a href="../classes/miruken.callback.$callbacks.html">miruken.callback.$callbacks</a></li>
                             <li><a href="../classes/miruken.callback.CallbackHandler.html">miruken.callback.CallbackHandler</a></li>
-                            <li><a href="../classes/miruken.callback.CallbackHandlerx.html">miruken.callback.CallbackHandlerx</a></li>
                             <li><a href="../classes/miruken.callback.CascadeCallbackHandler.html">miruken.callback.CascadeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.CompositeCallbackHandler.html">miruken.callback.CompositeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.Composition.html">miruken.callback.Composition</a></li>
@@ -759,7 +758,7 @@ projectAssets: ../assets
                                     resolve: function (factory, composer) {
                                         var context = composer.resolve(Context);
                                         if (context) {
-                                            var id       = context.id,
+                                            var id       = assignID(context),
                                                 instance = _cache[id];
                                             if (!instance) {
                                                 var object = factory();
@@ -1137,35 +1136,57 @@ projectAssets: ../assets
                          * @extends Error
                          */
                         function DependencyResolutionError(dependency, message) {
-                            this.message    = message;
+                            /**
+                             * Gets the error message.
+                             * @property {string} message
+                             */
+                            this.message = message;
+                            /**
+                             * Gets the failing dependency resolution.
+                             * @property {miruken.ioc.DependencyResolution} dependency
+                             */
                             this.dependency = dependency;
-                            this.stack      = (new Error).stack;
+                            if (Error.captureStackTrace) {
+                                Error.captureStackTrace(this, this.constructor);
+                            } else {
+                                Error.call(this);
+                            }
                         }
-                        /**
-                         * Failing dependency resolution.
-                         * @property {miruken.ioc.DependencyResolution} dependency
-                         */
                         DependencyResolutionError.prototype             = new Error;
                         DependencyResolutionError.prototype.constructor = DependencyResolutionError;
                     
                         /**
                          * Identifies an invalid {{#crossLink &quot;miruken.ioc.ComponentModel&quot;}}{{/crossLink}}.
                          * @class ComponentModelError
-                         * @param {miruken.ioc.ComponentModel}        componentModel  -  invalid component model
-                         * @param {miruken.validate.ValidationResult} validation      -  validation failures
-                         * @param {string}                            message         -  error message
+                         * @constructor
+                         * @param {miruken.ioc.ComponentModel}        componentModel     -  invalid component model
+                         * @param {miruken.validate.ValidationResult} validationResults  -  validation results
+                         * @param {string}                            message            -  error message
                          * @extends Error
                          */
-                        function ComponentModelError(componentModel, validation, message) {
-                            this.message        = message || &quot;The component model contains one or more errors&quot;;
+                        function ComponentModelError(componentModel, validationResults, message) {
+                            /**
+                             * Gets the error message.
+                             * @property {string} message
+                             */
+                            this.message = message || &quot;The component model contains one or more errors&quot;;
+                            /**
+                             * Gets the invalid component model.
+                             * @property {miruken.ioc.ComponentModel} componentModel
+                             */         
                             this.componentModel = componentModel;
-                            this.validation     = validation;
-                            this.stack          = (new Error).stack;
+                            /**
+                             * Gets the failing validation results.
+                             * @property {miruken.validate.ValidationResult} validationResults
+                             */         
+                            this.validationResults = validationResults;
+                            
+                            if (Error.captureStackTrace) {
+                                Error.captureStackTrace(this, this.constructor);
+                            } else {
+                                Error.call(this);
+                            }
                         }
-                        /**
-                         * Invalid component model.
-                         * @property {miruken.ioc.ComponentModel} componentModel
-                         */    
                         ComponentModelError.prototype             = new Error;
                         ComponentModelError.prototype.constructor = ComponentModelError;
                     

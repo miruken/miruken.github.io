@@ -38,7 +38,6 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.callback.$.html">miruken.callback.$</a></li>
                             <li><a href="../classes/miruken.callback.$callbacks.html">miruken.callback.$callbacks</a></li>
                             <li><a href="../classes/miruken.callback.CallbackHandler.html">miruken.callback.CallbackHandler</a></li>
-                            <li><a href="../classes/miruken.callback.CallbackHandlerx.html">miruken.callback.CallbackHandlerx</a></li>
                             <li><a href="../classes/miruken.callback.CascadeCallbackHandler.html">miruken.callback.CascadeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.CompositeCallbackHandler.html">miruken.callback.CompositeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.Composition.html">miruken.callback.Composition</a></li>
@@ -546,7 +545,7 @@ projectAssets: ../assets
                         });
                     
                         /**
-                         * Marks a callback as composable.
+                         * Marks a callback as composed.
                          * @class Composition
                          * @constructor
                          * @param   {Object}  callback  -  callback to compose
@@ -676,9 +675,17 @@ projectAssets: ../assets
                          * Identifies a rejected callback.  This usually occurs from aspect processing.&lt;br/&gt;
                          * See {{#crossLink &quot;miruken.callback.CallbackHandlerAspect&quot;}}{{/crossLink}}
                          * @class RejectedError
+                         * @constructor
+                         * @param {Object}  callback  -  rejected callback
                          * @extends Error
                          */
-                        function RejectedError() {
+                        function RejectedError(callback) {
+                            /**
+                             * Gets the rejected callback.
+                             * @property {Object} callback
+                             */         
+                            this.callback = callback;
+                    
                             if (Error.captureStackTrace) {
                                 Error.captureStackTrace(this, this.constructor);
                             } else {
@@ -847,7 +854,7 @@ projectAssets: ../assets
                          * @param  {string}    methodName  -  method name
                          * @param  {Function}  method      -  method function
                          * @returns {miruken.callback.CallbackHandler} method handler.
-                         * @for miruken.callback.CallbackHandlerx
+                         * @for miruken.callback.CallbackHandler
                          */
                         CallbackHandler.implementing = function (methodName, method) {
                             if (!$isString(methodName) || methodName.length === 0 || !methodName.trim()) {

@@ -34,7 +34,6 @@ YUI.add("yuidoc-meta", function(Y) {
         "miruken.callback.$",
         "miruken.callback.$callbacks",
         "miruken.callback.CallbackHandler",
-        "miruken.callback.CallbackHandlerx",
         "miruken.callback.CascadeCallbackHandler",
         "miruken.callback.CompositeCallbackHandler",
         "miruken.callback.Composition",
