@@ -37,25 +37,17 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.ArrayManager.html">miruken.ArrayManager</a></li>
                             <li><a href="../classes/miruken.callback.$.html">miruken.callback.$</a></li>
                             <li><a href="../classes/miruken.callback.$callbacks.html">miruken.callback.$callbacks</a></li>
-                            <li><a href="../classes/miruken.callback.AcceptingCallbackHandler.html">miruken.callback.AcceptingCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.CallbackHandler.html">miruken.callback.CallbackHandler</a></li>
-                            <li><a href="../classes/miruken.callback.CallbackHandlerAspect.html">miruken.callback.CallbackHandlerAspect</a></li>
-                            <li><a href="../classes/miruken.callback.CallbackHandlerDecorator.html">miruken.callback.CallbackHandlerDecorator</a></li>
-                            <li><a href="../classes/miruken.callback.CallbackHandlerFilter.html">miruken.callback.CallbackHandlerFilter</a></li>
+                            <li><a href="../classes/miruken.callback.CallbackHandlerx.html">miruken.callback.CallbackHandlerx</a></li>
                             <li><a href="../classes/miruken.callback.CascadeCallbackHandler.html">miruken.callback.CascadeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.CompositeCallbackHandler.html">miruken.callback.CompositeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.Composition.html">miruken.callback.Composition</a></li>
-                            <li><a href="../classes/miruken.callback.CompositionScope.html">miruken.callback.CompositionScope</a></li>
-                            <li><a href="../classes/miruken.callback.ConditionalCallbackHandler.html">miruken.callback.ConditionalCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.Deferred.html">miruken.callback.Deferred</a></li>
                             <li><a href="../classes/miruken.callback.HandleMethod.html">miruken.callback.HandleMethod</a></li>
                             <li><a href="../classes/miruken.callback.InvocationDelegate.html">miruken.callback.InvocationDelegate</a></li>
                             <li><a href="../classes/miruken.callback.InvocationOptions.html">miruken.callback.InvocationOptions</a></li>
-                            <li><a href="../classes/miruken.callback.InvocationOptionsHandler.html">miruken.callback.InvocationOptionsHandler</a></li>
                             <li><a href="../classes/miruken.callback.InvocationSemantics.html">miruken.callback.InvocationSemantics</a></li>
                             <li><a href="../classes/miruken.callback.Lookup.html">miruken.callback.Lookup</a></li>
-                            <li><a href="../classes/miruken.callback.MethodCallbackHandler.html">miruken.callback.MethodCallbackHandler</a></li>
-                            <li><a href="../classes/miruken.callback.ProvidingCallbackHandler.html">miruken.callback.ProvidingCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.RejectedError.html">miruken.callback.RejectedError</a></li>
                             <li><a href="../classes/miruken.callback.Resolution.html">miruken.callback.Resolution</a></li>
                             <li><a href="../classes/miruken.ClassMeta.html">miruken.ClassMeta</a></li>
@@ -161,7 +153,7 @@ projectAssets: ../assets
         <div class="apidocs">
             <div id="docs-main">
                 <div class="content">
-                    <h1 class="file-heading">File: lib\callback.js</h1>
+                    <h1 class="file-heading">File: lib/callback.js</h1>
                     
                     <div class="file">
                         <pre class="code prettyprint linenums">
@@ -183,7 +175,7 @@ projectAssets: ../assets
                             version: miruken.version,
                             parent:  miruken,
                             imports: &quot;miruken&quot;,
-                            exports: &quot;CallbackHandler,CallbackHandlerDecorator,CallbackHandlerFilter,CallbackHandlerAspect,CascadeCallbackHandler,CompositeCallbackHandler,ConditionalCallbackHandler,AcceptingCallbackHandler,ProvidingCallbackHandler,MethodCallbackHandler,InvocationOptions,Resolution,Composition,HandleMethod,RejectedError,getEffectivePromise,$handle,$callbacks,$define,$provide,$lookup,$NOT_HANDLED&quot;
+                            exports: &quot;CallbackHandler,CascadeCallbackHandler,CompositeCallbackHandler,InvocationOptions,Resolution,Composition,HandleMethod,RejectedError,getEffectivePromise,$handle,$callbacks,$define,$provide,$lookup,$NOT_HANDLED&quot;
                         });
                     
                         eval(this.imports);
@@ -609,7 +601,14 @@ projectAssets: ../assets
                                     return false;
                                 }
                                 if ($isNothing(composer)) {
-                                    composer = new CompositionScope(this);
+                                    composer = this.decorate({
+                                        handleCallback: function (callback, greedy, composer) {
+                                            if (!(callback instanceof Composition)) {
+                                                callback = new Composition(callback);
+                                            }
+                                            return this.base(callback, greedy, composer);
+                                        }
+                                    });
                                 }
                                 return !!this.handleCallback(callback, !!greedy, composer);
                             },
@@ -641,11 +640,11 @@ projectAssets: ../assets
                                         var implied  = new _Node(key),
                                             delegate = this.delegate;
                                         if (delegate &amp;&amp; implied.match($classOf(delegate), Variance.Contravariant)) {
-                                            resolution.resolve(delegate);
+                                            resolution.resolve($decorated(delegate));
                                             resolved = true;
                                         }
                                         if ((!resolved || many) &amp;&amp; implied.match($classOf(this), Variance.Contravariant)) {
-                                            resolution.resolve(this);
+                                            resolution.resolve($decorated(this));
                                             resolved = true;
                                         }
                                     }
@@ -674,102 +673,6 @@ projectAssets: ../assets
                         });
                     
                         /**
-                         * Wraps all callbacks for composition and continues processing.
-                         * @class CompositionScope
-                         * @constructor
-                         * @param  {miruken.callback.CallbackHandler)  handler  -  forwarding handler
-                         * @extends miruken.callback.CallbackHandler
-                         */
-                        var CompositionScope = CallbackHandler.extend({
-                            constructor: function _(handler) {
-                                var spec = _.spec || (_.spec = {});
-                                spec.value = handler;
-                                /**
-                                 * Gets the composition handler.
-                                 * @property {miruken.callback.CallbackHandler} handler
-                                 * @readOnly
-                                 */                                    
-                                Object.defineProperty(this, &#x27;handler&#x27;, spec);
-                                delete spec.value;
-                            },
-                            handleCallback: function (callback, greedy, composer) {
-                                if (!(callback instanceof Composition)) {
-                                    callback = new Composition(callback);
-                                }
-                                return this.handler.handleCallback(callback, greedy, composer);
-                            }
-                        });
-                    
-                        /**
-                         * Base class for all CallbackHandler decorators.&lt;br/&gt;
-                         * See [Decorator Pattern](http://en.wikipedia.org/wiki/Decorator_pattern)
-                         * @class CallbackHandlerDecorator
-                         * @constructor
-                         * @param  {miruken.callback.CallbackHandler}  decoratee  -  decoratee
-                         * @extends miruken.callback.CallbackHandler
-                         */
-                        var CallbackHandlerDecorator = CallbackHandler.extend({
-                            constructor: function _(decoratee) {
-                                if ($isNothing(decoratee)) {
-                                    throw new TypeError(&quot;No decoratee specified.&quot;);
-                                }
-                                /**
-                                 * Gets/Sets the decoratee.
-                                 * @property {miruken.callback.CallbackHandler} decoratee
-                                 */                        
-                                Object.defineProperty(this, &#x27;decoratee&#x27;, {
-                                    get: function () { return decoratee; },
-                                    set: function (value) { decoratee = value.toCallbackHandler() }
-                                });
-                                this.decoratee = decoratee;
-                            },
-                            handleCallback: function (callback, greedy, composer) {
-                                return this.decoratee.handleCallback(callback, greedy, composer)
-                                    || this.base(callback, greedy, composer);
-                            }
-                        });
-                    
-                        /**
-                         * Represents a {{#crossLink &quot;miruken.callback.CallbackHandler&quot;}}{{/crossLink}} that can filter callbacks.
-                         * @class CallbackHandlerFilter
-                         * @constructor
-                         * @param  {miruken.callback.CallbackHandler}  decoratee  -  decoratee
-                         * @param  {Function}                          filter     -  callback filter
-                         * @extends miruken.callback.CallbackHandlerDecorator
-                         */
-                        var CallbackHandlerFilter = CallbackHandlerDecorator.extend({
-                            constructor: function _(decoratee, filter) {
-                                this.base(decoratee);
-                                if (!$isFunction(filter)) {
-                                    throw new TypeError(format(&quot;Invalid filter: %1 is not a function.&quot;, filter));
-                                }
-                                var spec = _.spec || (_.spec = {});
-                                spec.value = filter;
-                                /**
-                                 * Gets the callback filter.
-                                 * @property {Function} filter
-                                 * @readOnly
-                                 */                                    
-                                Object.defineProperty(this, &#x27;_filter&#x27;, spec);
-                                delete spec.value;
-                            },
-                            /**
-                             * Gets the filter reentrancy.  Reentrant filters will be applied during composition.
-                             * @property {boolean} true if reentrant, false otherwise.
-                             */
-                            isReentrant: function () { return false; },
-                            handleCallback: function (callback, greedy, composer) {
-                                var decoratee = this.decoratee;
-                                if (!this.isReentrant() &amp;&amp; (callback instanceof Composition)) {
-                                    return decoratee.handleCallback(callback, greedy, composer);
-                                }
-                                return this._filter(callback, composer, function () {
-                                    return decoratee.handleCallback(callback, greedy, composer);
-                                })
-                            }
-                        });                                                                   
-                    
-                        /**
                          * Identifies a rejected callback.  This usually occurs from aspect processing.&lt;br/&gt;
                          * See {{#crossLink &quot;miruken.callback.CallbackHandlerAspect&quot;}}{{/crossLink}}
                          * @class RejectedError
@@ -784,68 +687,6 @@ projectAssets: ../assets
                         }
                         RejectedError.prototype             = new Error;
                         RejectedError.prototype.constructor = RejectedError;
-                    
-                        /**
-                         * Represents a {{#crossLink &quot;miruken.callback.CallbackHandler&quot;}}{{/crossLink}}
-                         * that can apply pre/post actions.
-                         * @class CallbackHandlerAspect
-                         * @constructor
-                         * @param  {miruken.callback.CallbackHandler}  decoratee  -  decoratee
-                         * @param  {Function}                          before     -  before predicate
-                         * @param  {Function}                          after      -  after action
-                         * @extends miruken.callback.CallbackHandlerFilter
-                         */
-                        var CallbackHandlerAspect = CallbackHandlerFilter.extend({
-                            constructor: function (decoratee, before, after) {
-                                this.base(decoratee, function (callback, composer, proceed) {
-                                    if ($isFunction(before)) {
-                                        var test     = before(callback, composer),
-                                            isMethod = callback instanceof HandleMethod;
-                                        if ($isPromise(test)) {
-                                            var accept = test.then(function (accepted) {
-                                                if (accepted !== false) {
-                                                    _aspectProceed(callback, composer, proceed);
-                                                    return isMethod ? callback.getReturnValue() : true;
-                                                }
-                                                return Promise.reject(new RejectedError);
-                                            });
-                                            if (isMethod) {
-                                                callback.setReturnValue(accept);
-                                            } else if (callback instanceof Deferred) {
-                                                callback.track(accept);
-                                            }
-                                            return true;
-                                        } else if (test === false) {
-                                            return true;
-                                        }
-                                    }
-                                    return _aspectProceed(callback, composer, proceed, after);
-                                });
-                            }
-                        });
-                    
-                        function _aspectProceed(callback, composer, proceed, after) {
-                            var promise;
-                            try {
-                                var handled = proceed();
-                                if (handled &amp;&amp; (promise = getEffectivePromise(callback))) {
-                                    // Use &#x27;fulfilled&#x27; or &#x27;rejected&#x27; handlers instead of &#x27;finally&#x27; to ensure
-                                    // aspect boundary is consistent with synchronous invocations and avoid
-                                    // reentrancy issues.
-                                    if ($isFunction(after))
-                                        promise.then(function (result) {
-                                            after(callback, composer);
-                                        }, function (error) {
-                                            after(callback, composer);
-                                        });
-                                }
-                                return handled;
-                            } finally {
-                                if (!promise &amp;&amp; $isFunction(after)) {
-                                    after(callback, composer);
-                                }
-                            }
-                        }
                         
                         /**
                          * Represents a two-way {{#crossLink &quot;miruken.callback.CallbackHandler&quot;}}{{/crossLink}} path.
@@ -969,136 +810,61 @@ projectAssets: ../assets
                         });
                     
                         /**
-                         * {{#crossLink &quot;miruken.callback.CallbackHandler&quot;}}{{/crossLink}}
-                         * that tests a condition before handling callbacks.
-                         * @class ConditionalCallbackHandler
-                         * @constructor
-                         * @param  {miruken.callback.CallbackHandler}  decoratee  -  decoratee
-                         * @param  {Function}                          condition  -  condition predicate
-                         * @extends miruken.callback.CallbackHandlerDecorator
-                         */
-                        var ConditionalCallbackHandler = CallbackHandlerDecorator.extend({
-                            constructor: function _(decoratee, condition) {
-                                this.base(decoratee);
-                                if ($isNothing(condition)) {
-                                    throw new TypeError(&quot;No condition specified.&quot;);
-                                } else if (!$isFunction(condition)) {
-                                    throw new TypeError(format(
-                                        &quot;Invalid condition: %1 is not a function.&quot;, condition));
-                                }
-                                var spec = _.spec || (_.spec = {});
-                                spec.value = condition;
-                                /**
-                                 * Gets the callback condiition.
-                                 * @property {Function} condition
-                                 * @readOnly
-                                 */                                                                        
-                                Object.defineProperty(this, &#x27;condition&#x27;, spec);
-                                delete spec.value;
-                            },
-                            handleCallback: function (callback, greedy, composer) {
-                                return this.condition(callback)
-                                     ? this.base(callback, greedy, composer)
-                                     : false;
-                            }
-                        });
-                    
-                        /**
                          * Shortcut for handling a callback.
-                         * @class AcceptingCallbackHandler
-                         * @constructor
-                         * @param  {Function}  handler     -  handles callbacks
-                         * @param  {Any}       constraint  -  callback constraint
-                         * @extends miruken.callback.CallbackHandler
+                         * @method
+                         * @static
+                         * @param   {Function}  handler     -  handles callbacks
+                         * @param   {Any}       constraint  -  callback constraint
+                         * @returns {miruken.callback.CallbackHandler} callback handler.
+                         * @for miruken.callback.CallbackHandler
                          */
-                        var AcceptingCallbackHandler = CallbackHandler.extend({
-                            constructor: function (handler, constraint) {
-                                $handle(this, constraint, handler);
-                            }
-                        });
-                    
-                        if (Function.prototype.accepting === undefined)
-                            Function.prototype.accepting = function (constraint) {
-                                return new AcceptingCallbackHandler(this, constraint);
-                            };
-                    
                         CallbackHandler.accepting = function (handler, constraint) {
-                            return new AcceptingCallbackHandler(handler, constraint);
+                            var accepting = new CallbackHandler;
+                            $handle(accepting, constraint, handler);
+                            return accepting;
                         };
                     
                         /**
                          * Shortcut for providing a callback.
-                         * @class ProvidingCallbackHandler
-                         * @constructor
+                         * @method
+                         * @static
                          * @param  {Function}  provider    -  provides callbacks
                          * @param  {Any}       constraint  -  callback constraint
-                         * @extends miruken.callback.CallbackHandler
+                         * @returns {miruken.callback.CallbackHandler} callback provider.
+                         * @for miruken.callback.CallbackHandler
                          */
-                        var ProvidingCallbackHandler = CallbackHandler.extend({
-                            constructor: function (provider, constraint) {
-                                $provide(this, constraint, provider);
-                            }
-                        });
-                    
-                        if (Function.prototype.providing === undefined)
-                            Function.prototype.providing = function (constraint) {
-                                return new ProvidingCallbackHandler(this, constraint);
-                            };
-                    
                         CallbackHandler.providing = function (provider, constraint) {
-                            return new ProvidingCallbackHandler(provider, constraint);
+                            var providing = new CallbackHandler;
+                            $provide(providing, constraint, provider);
+                            return providing;
                         };
                     
                         /**
-                         * Shortcut for exposing a method as a
-                         * {{#crossLink &quot;miruken.callback.CallbackHandler&quot;}}{{/crossLink}}.
-                         * @class MethodCallbackHandler
-                         * @constructor
+                         * Shortcut for handling a 
+                         * {{#crossLink &quot;miruken.callback.HandleMethod&quot;}}{{/crossLink}} callback.
+                         * @method
+                         * @static
                          * @param  {string}    methodName  -  method name
                          * @param  {Function}  method      -  method function
-                         * @extends miruken.callback.CallbackHandler
+                         * @returns {miruken.callback.CallbackHandler} method handler.
+                         * @for miruken.callback.CallbackHandlerx
                          */
-                        var MethodCallbackHandler = CallbackHandler.extend({
-                            constructor: function _(methodName, method) {
-                                if (!$isString(methodName) || methodName.length === 0 || !methodName.trim()) {
-                                    throw new TypeError(&quot;No methodName specified.&quot;);
-                                } else if (!$isFunction(method)) {
-                                    throw new TypeError(format(&quot;Invalid method: %1 is not a function.&quot;, method));
-                                }
-                                var spec = _.spec || (_.spec = {});
-                                spec.value = methodName;
-                                /**
-                                 * Gets the method name.
-                                 * @property {string} methodName
-                                 * @readOnly
-                                 */
-                                Object.defineProperty(this, &#x27;methodName&#x27;, spec);
-                                spec.value = method;
-                                /**
-                                 * Gets the method function.
-                                 * @property {Function} method
-                                 * @readOnly
-                                 */            
-                                Object.defineProperty(this, &#x27;method&#x27;, spec);
-                                delete spec.value;
-                            },
-                            handleCallback: function (callback, greedy, composer) {
-                                if (callback instanceof HandleMethod) {
-                                    var target = new Object;
-                                    target[this.methodName] = this.method;
-                                    return callback.invokeOn(target);
-                                }
-                                return false;
-                            }
-                        });
-                    
-                        if (Function.prototype.implementing === undefined)
-                            Function.prototype.implementing = function (methodName) {
-                                return new MethodCallbackHandler(methodName, this);
-                            };
-                    
                         CallbackHandler.implementing = function (methodName, method) {
-                            return new MethodCallbackHandler(methodName, method);
+                            if (!$isString(methodName) || methodName.length === 0 || !methodName.trim()) {
+                                throw new TypeError(&quot;No methodName specified.&quot;);
+                            } else if (!$isFunction(method)) {
+                                throw new TypeError(format(&quot;Invalid method: %1 is not a function.&quot;, method));
+                            }
+                            return (new CallbackHandler).extend({
+                                handleCallback: function (callback, greedy, composer) {
+                                    if (callback instanceof HandleMethod) {
+                                        var target = new Object;
+                                        target[methodName] = method;
+                                        return callback.invokeOn(target);
+                                    }
+                                    return false;
+                                }
+                            });
                         };
                     
                         /**
@@ -1196,42 +962,6 @@ projectAssets: ../assets
                         });
                     
                         /**
-                         * Handles invocation semantics.
-                         * @class InvocationOptionsHandler
-                         * @constructor
-                         * @param   {miruken.callback.CallbackHandler}      handler  -  forwarding handler
-                         * @param   {miruken.callback.InvocationSemantics}  options  -  invocation semantics
-                         * @extends miruken.callback.CallbackHandler
-                         */
-                        var InvocationOptionsHandler = CallbackHandler.extend({
-                            constructor: function _(handler, options) {
-                                var spec = _.spec || (_.spec = {});
-                                spec.value = handler;
-                                /**
-                                 * Gets the forwarding handler.
-                                 * @property {miruken.callback.CallbackHandler} handler
-                                 * @readOnly
-                                 */                        
-                                Object.defineProperty(this, &#x27;handler&#x27;, spec);
-                                spec.value = new InvocationSemantics(options);
-                                /**
-                                 * Gets the invocation semantics.
-                                 * @property {miruken.callback.InvocationSemantics} semantics
-                                 * @readOnly
-                                 */                                    
-                                Object.defineProperty(this, &#x27;semantics&#x27;, spec);
-                                delete spec.value;
-                            },
-                            handleCallback: function (callback, greedy, composer) {
-                                if (callback instanceof InvocationSemantics) {
-                                    this.semantics.mergeInto(callback);
-                                    return true;
-                                }
-                                return this.handler.handleCallback(callback, greedy, composer);
-                            }
-                        });
-                    
-                        /**
                          * Delegates properties and methods to a callback handler using 
                          * {{#crossLink &quot;miruken.callback.HandleMethod&quot;}}{{/crossLink}}.
                          * @class InvocationDelegate
@@ -1281,21 +1011,21 @@ projectAssets: ../assets
                             /**
                              * Establishes strict invocation semantics.
                              * @method $strict
-                             * @returns {miruken.callback.InvocationOptionsHandler} strict semantics.
+                             * @returns {miruken.callback.CallbackHandler} strict semantics.
                              * @for miruken.callback.CallbackHandler
                              */
                             $strict: function () { return this.$callOptions(InvocationOptions.Strict); },
                             /**
                              * Establishes broadcast invocation semantics.
                              * @method $broadcast
-                             * @returns {miruken.callback.InvocationOptionsHandler} broadcast semanics.
+                             * @returns {miruken.callback.CallbackHandler} broadcast semanics.
                              * @for miruken.callback.CallbackHandler
                              */        
                             $broadcast: function () { return this.$callOptions(InvocationOptions.Broadcast); },
                             /**
                              * Establishes best-effort invocation semantics.
                              * @method $bestEffort
-                             * @returns {miruken.callback.InvocationOptionsHandler} best-effort semanics.
+                             * @returns {miruken.callback.CallbackHandler} best-effort semanics.
                              * @for miruken.callback.CallbackHandler
                              */                
                             $bestEffort: function () { return this.$callOptions(InvocationOptions.BestEffort); },
@@ -1310,10 +1040,21 @@ projectAssets: ../assets
                              * Establishes custom invocation semantics.
                              * @method $callOptions
                              * @param  {miruken.callback.InvocationOptions}  options  -  invocation semantics
-                             * @returns {miruken.callback.InvocationOptionsHandler} custom semanics.
+                             * @returns {miruken.callback.CallbackHandler} custom invocation semanics.
                              * @for miruken.callback.CallbackHandler
                              */                        
-                            $callOptions: function (options) { return new InvocationOptionsHandler(this, options); }
+                            $callOptions: function (options) {
+                                var semantics = new InvocationSemantics(options);
+                                return this.decorate({
+                                    handleCallback: function (callback, greedy, composer) {
+                                        if (callback instanceof InvocationSemantics) {
+                                            semantics.mergeInto(callback);
+                                            return true;
+                                        }
+                                        return this.base(callback, greedy, composer);
+                                    }
+                                });
+                            }
                         });
                     
                         CallbackHandler.implement({
@@ -1418,45 +1159,96 @@ projectAssets: ../assets
                                 return [];
                             },
                             /**
-                             * Creates a handler for the filtering callbacks.
+                             * Decorates the handler.
+                             * @method decorate
+                             * @param   {Object}  decorations  -  decorations
+                             * @returns {miruken.callback.CallbackHandler} decorated callback handler.
+                             * @for miruken.callback.CallbackHandler
+                             */        
+                            decorate: function (decorations) {
+                                return $decorate(this, decorations);
+                            },
+                            /**
+                             * Decorates the handler for filtering callbacks.
                              * @method filter
-                             * @param   {Function}  filter  -  filter
-                             * @returns {miruken.callback.CallbackHandlerFilter}  filtered callback handler.
+                             * @param   {Function}  filter     -  filter
+                             * @param   {boolean}   reentrant  -  true if reentrant, false otherwise
+                             * @returns {miruken.callback.CallbackHandler} filtered callback handler.
                              * @for miruken.callback.CallbackHandler
                              */                                                        
-                            filter: function (filter) {
-                                return $isNothing(filter) ? this : new CallbackHandlerFilter(this, filter);
+                            filter: function (filter, reentrant) {
+                                if (!$isFunction(filter)) {
+                                    throw new TypeError(format(&quot;Invalid filter: %1 is not a function.&quot;, filter));
+                                }
+                                return this.decorate({
+                                    handleCallback: function (callback, greedy, composer) {
+                                        if (!reentrant &amp;&amp; (callback instanceof Composition)) {
+                                            return this.base(callback, greedy, composer);
+                                        }
+                                        return filter(callback, composer, function () {
+                                            return this.base(callback, greedy, composer);
+                                        }.bind(this));
+                                    }
+                                });
                             },
                             /**
-                             * Creates a handler for applying aspects to callbacks.
+                             * Decorates the handler for applying aspects to callbacks.
                              * @method aspect
-                             * @param   {Function}  before  -  before predicate
-                             * @param   {Function}  action  -  after action
-                             * @returns {miruken.callback.CallbackHandlerAspect}  aspected callback handler.
+                             * @param   {Function}  before     -  before predicate
+                             * @param   {Function}  action     -  after action
+                             * @param   {boolean}   reentrant  -  true if reentrant, false otherwise
+                             * @returns {miruken.callback.CallbackHandler}  callback handler aspect.
                              * @for miruken.callback.CallbackHandler
                              */                                                                
-                            aspect: function (before, after) {
-                                return new CallbackHandlerAspect(this, before, after);
+                            aspect: function (before, after, reentrant) {
+                                return this.filter(function (callback, composer, proceed) {
+                                    if ($isFunction(before)) {
+                                        var test     = before(callback, composer),
+                                            isMethod = callback instanceof HandleMethod;
+                                        if ($isPromise(test)) {
+                                            var accept = test.then(function (accepted) {
+                                                if (accepted !== false) {
+                                                    _aspectProceed(callback, composer, proceed);
+                                                    return isMethod ? callback.getReturnValue() : true;
+                                                }
+                                                return Promise.reject(new RejectedError);
+                                            });
+                                            if (isMethod) {
+                                                callback.setReturnValue(accept);
+                                            } else if (callback instanceof Deferred) {
+                                                callback.track(accept);
+                                            }
+                                            return true;
+                                        } else if (test === false) {
+                                            return true;
+                                        }
+                                    }
+                                    return _aspectProceed(callback, composer, proceed, after);
+                                });
                             },
                             /**
-                             * Creates a handler for conditionally handling callbacks.
+                             * Decorates the handler to conditionally handle callbacks.
                              * @method when
                              * @param   {Any}  constraint  -  matching constraint
                              * @returns {miruken.callback.ConditionalCallbackHandler}  conditional callback handler.
                              * @for miruken.callback.CallbackHandler
                              */                                                                        
                             when: function (constraint) {
-                                var when      = new _Node(constraint),
+                                var when = new _Node(constraint),
                                     condition = function (callback) {
-                                    if (callback instanceof Deferred) {
-                                        return when.match($classOf(callback.getCallback()), Variance.Contravariant);
-                                    } else if (callback instanceof Resolution) {
-                                        return when.match(callback.getKey(), Variance.Covariant);
-                                    } else {
-                                        return when.match($classOf(callback), Variance.Contravariant);
+                                        if (callback instanceof Deferred) {
+                                            return when.match($classOf(callback.getCallback()), Variance.Contravariant);
+                                        } else if (callback instanceof Resolution) {
+                                            return when.match(callback.getKey(), Variance.Covariant);
+                                        } else {
+                                            return when.match($classOf(callback), Variance.Contravariant);
+                                        }
+                                    };
+                                return this.decorate({
+                                    handleCallback: function (callback, greedy, composer) {
+                                        return condition(callback) &amp;&amp; this.base(callback, greedy, composer);
                                     }
-                                };
-                                return new ConditionalCallbackHandler(this, condition);
+                                });
                             },
                             /**
                              * Builds a handler chain.
@@ -1473,6 +1265,29 @@ projectAssets: ../assets
                                 }
                             }
                         });
+                    
+                        function _aspectProceed(callback, composer, proceed, after) {
+                            var promise;
+                            try {
+                                var handled = proceed();
+                                if (handled &amp;&amp; (promise = getEffectivePromise(callback))) {
+                                    // Use &#x27;fulfilled&#x27; or &#x27;rejected&#x27; handlers instead of &#x27;finally&#x27; to ensure
+                                    // aspect boundary is consistent with synchronous invocations and avoid
+                                    // reentrancy issues.
+                                    if ($isFunction(after))
+                                        promise.then(function (result) {
+                                            after(callback, composer);
+                                        }, function (error) {
+                                            after(callback, composer);
+                                        });
+                                }
+                                return handled;
+                            } finally {
+                                if (!promise &amp;&amp; $isFunction(after)) {
+                                    after(callback, composer);
+                                }
+                            }
+                        }
                     
                         /**
                          * Defines a new handler grouping.  This is the main extensibility point for handling callbacks.

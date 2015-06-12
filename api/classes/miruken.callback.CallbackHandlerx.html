@@ -153,32 +153,19 @@ projectAssets: ../assets
         <div class="apidocs">
             <div id="docs-main">
                 <div class="content">
-                    <h1 class="word-break">miruken.graph.TraversingMixin Class</h1>
+                    <h1 class="word-break">miruken.callback.CallbackHandlerx Class</h1>
                     <div class="box meta">
-                            <div class="uses">
-                                Uses
-                                <ul class="inline commas">
-                                        <li><a href="miruken.graph.Traversing.html">miruken.graph.Traversing</a></li>
-                                </ul>
-                            </div>
                     
-                            <div class="extends">
-                                Extends Module
-                            </div>
                     
-                            <div class="foundat">
-                                Defined in: <a href="../files/lib_graph.js.html#l110"><code>lib&#x2F;graph.js:110</code></a>
-                            </div>
                     
-                                Module: <a href="../modules/graph.html">graph</a><br>
+                                Module: <a href="../modules/callback.html">callback</a><br>
                                 Parent Module: <a href="../modules/miruken.html">miruken</a>
                     
                     </div>
                     
                     
                     <div class="box intro">
-                        <p>Mixin for Traversing functionality.</p>
-                    
+                        
                     </div>
                     
                     
@@ -196,10 +183,11 @@ projectAssets: ../assets
                                     <div class="index-section methods">
                                         <h3>Methods</h3>
                     
-                                        <ul class="index-list methods extends">
-                                                <li class="index-item method inherited">
-                                                    <a href="#method_traverse">traverse</a>
+                                        <ul class="index-list methods">
+                                                <li class="index-item method">
+                                                    <a href="#method_"></a>
                     
+                                                        <span class="flag static">static</span>
                                                 </li>
                                         </ul>
                                     </div>
@@ -211,36 +199,37 @@ projectAssets: ../assets
                                 <div id="methods" class="api-class-tabpanel">
                                     <h2 class="off-left">Methods</h2>
                     
-                    <div id="method_traverse" class="method item inherited">
-                        <div class="name"><code>traverse</code></div>
+                    <div id="method_" class="method item">
+                        <div class="name"><code></code></div>
                     
                             <div class="args">
                                 <ul class="args-list inline commas">
                                     <li><span>(</span></li>
                                     <li class="arg">
-                                            <code>axis</code>
+                                            <code>methodName</code>
                                     </li>
                                     <li class="arg">
-                                            <code>visitor</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code class="optional">[context]</code>
+                                            <code>method</code>
                                     </li>
                                     <li><span>)</span></li>
                                 </ul>
                             </div>
                     
+                            <span class="returns-inline">
+                                <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>
+                            </span>
                     
                     
                     
                     
+                            <span class="flag static">static</span>
                     
                     
                     
                         <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/miruken.graph.Traversing.html#method_traverse">miruken.graph.Traversing</a>:
-                            <a href="../files/lib_graph.js.html#l100"><code>lib&#x2F;graph.js:100</code></a>
+                                    <p>
+                                    Defined in
+                            <a href="../files/lib_callback.js.html#l683"><code>lib&#x2F;callback.js:683</code></a>
                             </p>
                     
                     
@@ -248,7 +237,8 @@ projectAssets: ../assets
                         </div>
                     
                         <div class="description">
-                            <p>Traverse a graph of objects.</p>
+                            <p>Shortcut for handling a 
+                    <a href="../classes/miruken.callback.HandleMethod.html" class="crosslink">miruken.callback.HandleMethod</a> callback.</p>
                     
                         </div>
                     
@@ -257,40 +247,26 @@ projectAssets: ../assets
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">axis</code>
-                                            <span class="type"><a href="../classes/miruken.graph.TraversingAxis.html" class="crosslink">miruken.graph.TraversingAxis</a></span>
+                                            <code class="param-name">methodName</code>
+                                            <span class="type">String</span>
                     
                     
                                         <div class="param-description">
                                             <ul>
-                    <li>axis of traversal</li>
+                    <li>method name</li>
                     </ul>
                     
                                         </div>
                     
                                     </li>
                                     <li class="param">
-                                            <code class="param-name">visitor</code>
+                                            <code class="param-name">method</code>
                                             <span class="type">Function</span>
                     
                     
                                         <div class="param-description">
                                             <ul>
-                    <li>receives visited nodes</li>
-                    </ul>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name optional">[context]</code>
-                                            <span class="type">Object</span>
-                                            <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <ul>
-                    <li>visitor callback context</li>
+                    <li>method function</li>
                     </ul>
                     
                                         </div>
@@ -299,6 +275,15 @@ projectAssets: ../assets
                                 </ul>
                             </div>
                     
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="../classes/miruken.callback.CallbackHandler.html" class="crosslink">miruken.callback.CallbackHandler</a></span>:
+                                        <p>method handler.</p>
+                    
+                                </div>
+                            </div>
                     
                     
                     </div>

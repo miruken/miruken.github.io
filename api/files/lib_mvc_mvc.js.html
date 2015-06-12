@@ -37,25 +37,17 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.ArrayManager.html">miruken.ArrayManager</a></li>
                             <li><a href="../classes/miruken.callback.$.html">miruken.callback.$</a></li>
                             <li><a href="../classes/miruken.callback.$callbacks.html">miruken.callback.$callbacks</a></li>
-                            <li><a href="../classes/miruken.callback.AcceptingCallbackHandler.html">miruken.callback.AcceptingCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.CallbackHandler.html">miruken.callback.CallbackHandler</a></li>
-                            <li><a href="../classes/miruken.callback.CallbackHandlerAspect.html">miruken.callback.CallbackHandlerAspect</a></li>
-                            <li><a href="../classes/miruken.callback.CallbackHandlerDecorator.html">miruken.callback.CallbackHandlerDecorator</a></li>
-                            <li><a href="../classes/miruken.callback.CallbackHandlerFilter.html">miruken.callback.CallbackHandlerFilter</a></li>
+                            <li><a href="../classes/miruken.callback.CallbackHandlerx.html">miruken.callback.CallbackHandlerx</a></li>
                             <li><a href="../classes/miruken.callback.CascadeCallbackHandler.html">miruken.callback.CascadeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.CompositeCallbackHandler.html">miruken.callback.CompositeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.Composition.html">miruken.callback.Composition</a></li>
-                            <li><a href="../classes/miruken.callback.CompositionScope.html">miruken.callback.CompositionScope</a></li>
-                            <li><a href="../classes/miruken.callback.ConditionalCallbackHandler.html">miruken.callback.ConditionalCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.Deferred.html">miruken.callback.Deferred</a></li>
                             <li><a href="../classes/miruken.callback.HandleMethod.html">miruken.callback.HandleMethod</a></li>
                             <li><a href="../classes/miruken.callback.InvocationDelegate.html">miruken.callback.InvocationDelegate</a></li>
                             <li><a href="../classes/miruken.callback.InvocationOptions.html">miruken.callback.InvocationOptions</a></li>
-                            <li><a href="../classes/miruken.callback.InvocationOptionsHandler.html">miruken.callback.InvocationOptionsHandler</a></li>
                             <li><a href="../classes/miruken.callback.InvocationSemantics.html">miruken.callback.InvocationSemantics</a></li>
                             <li><a href="../classes/miruken.callback.Lookup.html">miruken.callback.Lookup</a></li>
-                            <li><a href="../classes/miruken.callback.MethodCallbackHandler.html">miruken.callback.MethodCallbackHandler</a></li>
-                            <li><a href="../classes/miruken.callback.ProvidingCallbackHandler.html">miruken.callback.ProvidingCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.RejectedError.html">miruken.callback.RejectedError</a></li>
                             <li><a href="../classes/miruken.callback.Resolution.html">miruken.callback.Resolution</a></li>
                             <li><a href="../classes/miruken.ClassMeta.html">miruken.ClassMeta</a></li>
@@ -161,7 +153,7 @@ projectAssets: ../assets
         <div class="apidocs">
             <div id="docs-main">
                 <div class="content">
-                    <h1 class="file-heading">File: lib\mvc\mvc.js</h1>
+                    <h1 class="file-heading">File: lib/mvc/mvc.js</h1>
                     
                     <div class="file">
                         <pre class="code prettyprint linenums">
@@ -319,7 +311,7 @@ projectAssets: ../assets
                         });
                     
                         /**
-                         * Protocol representing a region on the screen where a controller can be rendered.
+                         * Protocol representing an area on the screen where a controller can be rendered.
                          * @class ViewRegion
                          * @extends StrictProtocol
                          */
@@ -328,7 +320,7 @@ projectAssets: ../assets
                              * Renders the controller in the view region.
                              * @method presentController
                              * @param   {miruken.mvc.Controller} controller  -  controller
-                             * @returns {Promise} promise when rendering complete.
+                             * @returns {Promise} promise reflecting rendering.
                              */                                        
                             presentController: function (controller) {}
                         });
