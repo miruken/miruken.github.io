@@ -7,15 +7,19 @@ yuiGridsUrl: http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css
 yuiSeedUrl: http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js
 projectAssets: ../assets
 ---
-<div id="hd" class="yui3-g header row">
-    <div class="yui3-u-1-4 version medium-12 columns">
+<div id="hd" class="yui3-g header">
+    <div class="yui3-u-3-4">
+            <h1><img src="../assets/css/logo.png" title="miruken" width="117" height="52"></h1>
+    </div>
+    <div class="yui3-u-1-4 version">
         <em>API Docs for: 0.1.0</em>
     </div>
 </div>
-<div id="bd" class="yui3-g row">
-    <div class="yui3-u-1-4 medium-4 columns">
+<div id="bd" class="yui3-g">
+
+    <div class="yui3-u-1-4">
         <div id="docs-sidebar" class="sidebar apidocs">
-            <div id="api-list" class="panel">
+            <div id="api-list">
                 <h2 class="off-left">APIs</h2>
                 <div id="api-tabview" class="tabview">
                     <ul class="tabs">
@@ -27,8 +31,8 @@ projectAssets: ../assets
                         <input type="search" id="api-filter" placeholder="Type to filter APIs">
                     </div>
             
-                    <div id="api-tabview-panel" class="panel-overflow-hidden">
-                        <ul id="api-classes" class="apis classes no-bullet">
+                    <div id="api-tabview-panel">
+                        <ul id="api-classes" class="apis classes">
                             <li><a href="../classes/miruken.$.html">miruken.$</a></li>
                             <li><a href="../classes/miruken.$inferProperties.html">miruken.$inferProperties</a></li>
                             <li><a href="../classes/miruken.$inhertStatic.html">miruken.$inhertStatic</a></li>
@@ -37,16 +41,25 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.ArrayManager.html">miruken.ArrayManager</a></li>
                             <li><a href="../classes/miruken.callback.$.html">miruken.callback.$</a></li>
                             <li><a href="../classes/miruken.callback.$callbacks.html">miruken.callback.$callbacks</a></li>
+                            <li><a href="../classes/miruken.callback.AcceptingCallbackHandler.html">miruken.callback.AcceptingCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.CallbackHandler.html">miruken.callback.CallbackHandler</a></li>
+                            <li><a href="../classes/miruken.callback.CallbackHandlerAspect.html">miruken.callback.CallbackHandlerAspect</a></li>
+                            <li><a href="../classes/miruken.callback.CallbackHandlerDecorator.html">miruken.callback.CallbackHandlerDecorator</a></li>
+                            <li><a href="../classes/miruken.callback.CallbackHandlerFilter.html">miruken.callback.CallbackHandlerFilter</a></li>
                             <li><a href="../classes/miruken.callback.CascadeCallbackHandler.html">miruken.callback.CascadeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.CompositeCallbackHandler.html">miruken.callback.CompositeCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.Composition.html">miruken.callback.Composition</a></li>
+                            <li><a href="../classes/miruken.callback.CompositionScope.html">miruken.callback.CompositionScope</a></li>
+                            <li><a href="../classes/miruken.callback.ConditionalCallbackHandler.html">miruken.callback.ConditionalCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.Deferred.html">miruken.callback.Deferred</a></li>
                             <li><a href="../classes/miruken.callback.HandleMethod.html">miruken.callback.HandleMethod</a></li>
                             <li><a href="../classes/miruken.callback.InvocationDelegate.html">miruken.callback.InvocationDelegate</a></li>
                             <li><a href="../classes/miruken.callback.InvocationOptions.html">miruken.callback.InvocationOptions</a></li>
+                            <li><a href="../classes/miruken.callback.InvocationOptionsHandler.html">miruken.callback.InvocationOptionsHandler</a></li>
                             <li><a href="../classes/miruken.callback.InvocationSemantics.html">miruken.callback.InvocationSemantics</a></li>
                             <li><a href="../classes/miruken.callback.Lookup.html">miruken.callback.Lookup</a></li>
+                            <li><a href="../classes/miruken.callback.MethodCallbackHandler.html">miruken.callback.MethodCallbackHandler</a></li>
+                            <li><a href="../classes/miruken.callback.ProvidingCallbackHandler.html">miruken.callback.ProvidingCallbackHandler</a></li>
                             <li><a href="../classes/miruken.callback.RejectedError.html">miruken.callback.RejectedError</a></li>
                             <li><a href="../classes/miruken.callback.Resolution.html">miruken.callback.Resolution</a></li>
                             <li><a href="../classes/miruken.ClassMeta.html">miruken.ClassMeta</a></li>
@@ -132,7 +145,7 @@ projectAssets: ../assets
                             <li><a href="../classes/miruken.Variance.html">miruken.Variance</a></li>
                         </ul>
             
-                        <ul id="api-modules" class="apis modules no-bullet">
+                        <ul id="api-modules" class="apis modules">
                             <li><a href="../modules/callback.html">callback</a></li>
                             <li><a href="../modules/context.html">context</a></li>
                             <li><a href="../modules/error.html">error</a></li>
@@ -148,50 +161,73 @@ projectAssets: ../assets
             </div>
         </div>
     </div>
-    <div class="yui3-u-3-4 medium-8 columns">
+    <div class="yui3-u-3-4">
+            <div id="api-options">
+                Show:
+                <label for="api-show-inherited">
+                    <input type="checkbox" id="api-show-inherited" checked>
+                    Inherited
+                </label>
+        
+                <label for="api-show-protected">
+                    <input type="checkbox" id="api-show-protected">
+                    Protected
+                </label>
+        
+                <label for="api-show-private">
+                    <input type="checkbox" id="api-show-private">
+                    Private
+                </label>
+                <label for="api-show-deprecated">
+                    <input type="checkbox" id="api-show-deprecated">
+                    Deprecated
+                </label>
+        
+            </div>
+        
         <div class="apidocs">
             <div id="docs-main">
                 <div class="content">
-                    <h1 class="word-break">error Module</h1>
-                    <div class="box clearfix meta">
-                    
-                    
-                            <div class="foundat">
-                                Defined in: <a href="../files/lib_error.js.html#l65"><code>lib&#x2F;error.js:65</code></a>
-                            </div>
-                    
-                    </div>
-                    
-                    
-                    <div class="box intro">
-                        <p>Package providing generalized error support.<br/>
-                    Requires the <a href="../modules/miruken.html">miruken</a> and
-                    <a href="../modules/callback.html">callback</a> modules.</p>
-                    
-                    </div>
-                    
-                    
-                    <div class="yui3-g">
-                        <div class="yui3-u-1-2">
-                                <p>This module provides the following classes:</p>
-                    
-                                <ul class="module-classes">
-                                    <li class="module-class">
-                                        <a href="../classes/miruken.error.ErrorCallbackHandler.html">
-                                            miruken.error.ErrorCallbackHandler
-                                        </a>
-                                    </li>
-                                    <li class="module-class">
-                                        <a href="../classes/miruken.error.Errors.html">
-                                            miruken.error.Errors
-                                        </a>
-                                    </li>
-                                </ul>
+                <h1>error Module</h1>
+                <div class="box clearfix meta">
+                
+                
+                        <div class="foundat">
+                            Defined in: <a href="../files/lib_error.js.html#l65"><code>lib\error.js:65</code></a>
                         </div>
-                    
-                        <div class="yui3-u-1-2">
-                        </div>
+                
+                </div>
+                
+                
+                <div class="box intro">
+                    <p>Package providing generalized error support.<br/>
+                Requires the <a href="../modules/miruken.html">miruken</a> and
+                <a href="../modules/callback.html">callback</a> modules.</p>
+                
+                </div>
+                
+                
+                <div class="yui3-g">
+                    <div class="yui3-u-1-2">
+                            <p>This module provides the following classes:</p>
+                
+                            <ul class="module-classes">
+                                <li class="module-class">
+                                    <a href="../classes/miruken.error.ErrorCallbackHandler.html">
+                                        miruken.error.ErrorCallbackHandler
+                                    </a>
+                                </li>
+                                <li class="module-class">
+                                    <a href="../classes/miruken.error.Errors.html">
+                                        miruken.error.Errors
+                                    </a>
+                                </li>
+                            </ul>
                     </div>
+                
+                    <div class="yui3-u-1-2">
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
