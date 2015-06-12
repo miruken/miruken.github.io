@@ -170,7 +170,7 @@ projectAssets: ../assets
                     
                     
                     <div class="box intro">
-                        <p>Protocol representing an area on the screen where a controller can be rendered.</p>
+                        <p>Protocol representing an area on the screen where a controller or view can be rendered.</p>
                     
                     </div>
                     
@@ -191,7 +191,7 @@ projectAssets: ../assets
                     
                                         <ul class="index-list methods extends">
                                                 <li class="index-item method">
-                                                    <a href="#method_presentController">presentController</a>
+                                                    <a href="#method_present">present</a>
                     
                                                 </li>
                                         </ul>
@@ -204,14 +204,14 @@ projectAssets: ../assets
                                 <div id="methods" class="api-class-tabpanel">
                                     <h2 class="off-left">Methods</h2>
                     
-                    <div id="method_presentController" class="method item">
-                        <div class="name"><code>presentController</code></div>
+                    <div id="method_present" class="method item">
+                        <div class="name"><code>present</code></div>
                     
                             <div class="args">
                                 <ul class="args-list inline commas">
                                     <li><span>(</span></li>
                                     <li class="arg">
-                                            <code>controller</code>
+                                            <code>presentation</code>
                                     </li>
                                     <li><span>)</span></li>
                                 </ul>
@@ -238,7 +238,7 @@ projectAssets: ../assets
                         </div>
                     
                         <div class="description">
-                            <p>Renders the controller in the view region.</p>
+                            <p>Renders a controller or view in the region.</p>
                     
                         </div>
                     
@@ -247,13 +247,13 @@ projectAssets: ../assets
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">controller</code>
-                                            <span class="type"><a href="../classes/miruken.mvc.Controller.html" class="crosslink">miruken.mvc.Controller</a></span>
+                                            <code class="param-name">presentation</code>
+                                            <span class="type">Object</span>
                     
                     
                                         <div class="param-description">
                                             <ul>
-                    <li>controller</li>
+                    <li>presentation options</li>
                     </ul>
                     
                                         </div>
@@ -267,7 +267,7 @@ projectAssets: ../assets
                     
                                 <div class="returns-description">
                                             <span class="type">Promise</span>:
-                                        <p>promise reflecting rendering.</p>
+                                        <p>promise reflecting render.</p>
                     
                                 </div>
                             </div>

@@ -543,7 +543,7 @@
             "module": "miruken",
             "namespace": "",
             "file": "lib/callback.js",
-            "line": 813,
+            "line": 815,
             "description": "Package providing message handling support.<br/>\nRequires the {{#crossLinkModule \"miruken\"}}{{/crossLinkModule}} module."
         },
         "context": {
@@ -1273,7 +1273,7 @@
             "namespace": "miruken.mvc",
             "file": "lib/mvc/mvc.js",
             "line": 154,
-            "description": "Protocol representing an area on the screen where a controller can be rendered.",
+            "description": "Protocol representing an area on the screen where a controller or view can be rendered.",
             "extends": "StrictProtocol"
         },
         "miruken.mvc.Controller": {
@@ -1723,7 +1723,7 @@
             "submodule": "callback",
             "namespace": "miruken.callback",
             "file": "lib/callback.js",
-            "line": 411,
+            "line": 420,
             "description": "Base class for handling arbitrary callbacks.<br/>\nSee {{#crossLink \"miruken.callback.$callbacks\"}}{{/crossLink}}",
             "is_constructor": 1,
             "params": [
@@ -1748,7 +1748,7 @@
             "submodule": "callback",
             "namespace": "miruken.callback",
             "file": "lib/callback.js",
-            "line": 516,
+            "line": 518,
             "description": "Identifies a rejected callback.  This usually occurs from aspect processing.<br/>\nSee {{#crossLink \"miruken.callback.CallbackHandlerAspect\"}}{{/crossLink}}",
             "is_constructor": 1,
             "params": [
@@ -1772,7 +1772,7 @@
             "submodule": "callback",
             "namespace": "miruken.callback",
             "file": "lib/callback.js",
-            "line": 540,
+            "line": 542,
             "description": "Represents a two-way {{#crossLink \"miruken.callback.CallbackHandler\"}}{{/crossLink}} path.",
             "is_constructor": 1,
             "params": [
@@ -1801,7 +1801,7 @@
             "submodule": "callback",
             "namespace": "miruken.callback",
             "file": "lib/callback.js",
-            "line": 585,
+            "line": 587,
             "description": "Encapsulates zero or more {{#crossLink \"miruken.callback.CallbackHandler\"}}{{/crossLink}}.<br/>\nSee [Composite Pattern](http://en.wikipedia.org/wiki/Composite_pattern)",
             "is_constructor": 1,
             "params": [
@@ -1825,7 +1825,7 @@
             "submodule": "callback",
             "namespace": "miruken.callback",
             "file": "lib/callback.js",
-            "line": 719,
+            "line": 721,
             "description": "InvocationOptions flags enum",
             "extends": "miruken.Enum"
         },
@@ -1841,7 +1841,7 @@
             "submodule": "callback",
             "namespace": "miruken.callback",
             "file": "lib/callback.js",
-            "line": 752,
+            "line": 754,
             "description": "Captures invocation semantics.",
             "is_constructor": 1,
             "params": [
@@ -1865,7 +1865,7 @@
             "submodule": "callback",
             "namespace": "miruken.callback",
             "file": "lib/callback.js",
-            "line": 813,
+            "line": 815,
             "description": "Delegates properties and methods to a callback handler using \n{{#crossLink \"miruken.callback.HandleMethod\"}}{{/crossLink}}.",
             "is_constructor": 1,
             "params": [
@@ -4299,18 +4299,18 @@
         {
             "file": "lib/mvc/mvc.js",
             "line": 160,
-            "description": "Renders the controller in the view region.",
+            "description": "Renders a controller or view in the region.",
             "itemtype": "method",
-            "name": "presentController",
+            "name": "present",
             "params": [
                 {
-                    "name": "controller",
-                    "description": "-  controller",
-                    "type": "miruken.mvc.Controller"
+                    "name": "presentation",
+                    "description": "-  presentation options",
+                    "type": "Object"
                 }
             ],
             "return": {
-                "description": "promise reflecting rendering.",
+                "description": "promise reflecting render.",
                 "type": "Promise"
             },
             "class": "miruken.mvc.ViewRegion",
@@ -5411,7 +5411,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 424,
+            "line": 433,
             "description": "Gets the delegate.",
             "itemtype": "property",
             "name": "delegate",
@@ -5424,7 +5424,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 432,
+            "line": 441,
             "description": "Handles the callback.",
             "itemtype": "method",
             "name": "handle",
@@ -5459,7 +5459,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 456,
+            "line": 458,
             "description": "Handles the callback with all arguments populated.",
             "itemtype": "method",
             "name": "handleCallback",
@@ -5492,7 +5492,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 502,
+            "line": 504,
             "description": "Converts the callback handler to a {{#crossLink \"miruken.Delegate\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "toDelegate",
@@ -5507,7 +5507,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 525,
+            "line": 527,
             "description": "Gets the rejected callback.",
             "itemtype": "property",
             "name": "callback",
@@ -5519,7 +5519,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 557,
+            "line": 559,
             "description": "Gets the primary handler.",
             "itemtype": "property",
             "name": "handler",
@@ -5532,7 +5532,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 564,
+            "line": 566,
             "description": "Gets the secondary handler.",
             "itemtype": "property",
             "name": "cascadeToHandler",
@@ -5545,7 +5545,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 597,
+            "line": 599,
             "description": "Gets all participating callback handlers.",
             "itemtype": "method",
             "name": "getHandlers",
@@ -5560,7 +5560,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 603,
+            "line": 605,
             "description": "Adds the callback handlers to the composite.",
             "itemtype": "method",
             "name": "addHandlers",
@@ -5576,7 +5576,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 617,
+            "line": 619,
             "description": "Removes callback handlers from the composite.",
             "itemtype": "method",
             "name": "removeHandlers",
@@ -5592,7 +5592,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 661,
+            "line": 663,
             "description": "Shortcut for handling a callback.",
             "itemtype": "method",
             "name": "",
@@ -5620,7 +5620,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 676,
+            "line": 678,
             "description": "Shortcut for providing a callback.",
             "itemtype": "method",
             "name": "",
@@ -5648,7 +5648,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 691,
+            "line": 693,
             "description": "Shortcut for handling a \n{{#crossLink \"miruken.callback.HandleMethod\"}}{{/crossLink}} callback.",
             "itemtype": "method",
             "name": "",
@@ -5676,7 +5676,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 725,
+            "line": 727,
             "itemtype": "property",
             "name": "None",
             "type": "Number",
@@ -5687,7 +5687,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 729,
+            "line": 731,
             "description": "Delivers invocation to all handlers.  At least one must recognize it.",
             "itemtype": "property",
             "name": "Broadcast",
@@ -5699,7 +5699,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 734,
+            "line": 736,
             "description": "Marks invocation as optional.",
             "itemtype": "property",
             "name": "BestEffort",
@@ -5711,7 +5711,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 739,
+            "line": 741,
             "description": "Requires invocation to match conforming protocol.",
             "itemtype": "property",
             "name": "Strict",
@@ -5723,7 +5723,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 745,
+            "line": 747,
             "description": "Publishes invocation to all handlers.",
             "itemtype": "property",
             "name": "Notify",
@@ -5735,7 +5735,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 764,
+            "line": 766,
             "description": "Gets the invocation option.",
             "itemtype": "method",
             "name": "getOption",
@@ -5757,7 +5757,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 773,
+            "line": 775,
             "description": "Sets the invocation option.",
             "itemtype": "method",
             "name": "setOption",
@@ -5780,7 +5780,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 787,
+            "line": 789,
             "description": "Determines if the invocation option was specified.",
             "itemtype": "method",
             "name": "getOption",
@@ -5802,7 +5802,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 798,
+            "line": 800,
             "description": "Merges invocation options into the supplied constraints.",
             "itemtype": "method",
             "name": "mergeInto",
@@ -5820,7 +5820,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 825,
+            "line": 827,
             "description": "Gets the handler that handles the \n{{#crossLink \"miruken.callback.HandleMethod\"}}{{/crossLink}}.",
             "itemtype": "property",
             "name": "handler",
@@ -5833,7 +5833,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 860,
+            "line": 862,
             "description": "Establishes strict invocation semantics.",
             "itemtype": "method",
             "name": "$strict",
@@ -5848,7 +5848,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 867,
+            "line": 869,
             "description": "Establishes broadcast invocation semantics.",
             "itemtype": "method",
             "name": "$broadcast",
@@ -5863,7 +5863,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 874,
+            "line": 876,
             "description": "Establishes best-effort invocation semantics.",
             "itemtype": "method",
             "name": "$bestEffort",
@@ -5878,7 +5878,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 881,
+            "line": 883,
             "description": "Establishes notification invocation semantics.",
             "itemtype": "method",
             "name": "$notify",
@@ -5893,7 +5893,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 888,
+            "line": 890,
             "description": "Establishes custom invocation semantics.",
             "itemtype": "method",
             "name": "$callOptions",
@@ -5915,7 +5915,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 910,
+            "line": 912,
             "description": "Asynchronusly handles the callback.",
             "itemtype": "method",
             "name": "defer",
@@ -5938,7 +5938,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 924,
+            "line": 926,
             "description": "Asynchronusly handles the callback greedily.",
             "itemtype": "method",
             "name": "deferAll",
@@ -5961,7 +5961,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 938,
+            "line": 940,
             "description": "Resolves the key.",
             "itemtype": "method",
             "name": "resolve",
@@ -5984,7 +5984,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 955,
+            "line": 957,
             "description": "Resolves the key greedily.",
             "itemtype": "method",
             "name": "resolveAll",
@@ -6007,7 +6007,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 975,
+            "line": 977,
             "description": "Looks up the key.",
             "itemtype": "method",
             "name": "lookup",
@@ -6029,7 +6029,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 991,
+            "line": 993,
             "description": "Looks up the key greedily.",
             "itemtype": "method",
             "name": "lookupAll",
@@ -6051,7 +6051,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 1010,
+            "line": 1012,
             "description": "Decorates the handler.",
             "itemtype": "method",
             "name": "decorate",
@@ -6073,7 +6073,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 1020,
+            "line": 1022,
             "description": "Decorates the handler for filtering callbacks.",
             "itemtype": "method",
             "name": "filter",
@@ -6100,7 +6100,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 1043,
+            "line": 1045,
             "description": "Decorates the handler for applying aspects to callbacks.",
             "itemtype": "method",
             "name": "aspect",
@@ -6132,7 +6132,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 1078,
+            "line": 1080,
             "description": "Decorates the handler to conditionally handle callbacks.",
             "itemtype": "method",
             "name": "when",
@@ -6154,7 +6154,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 1102,
+            "line": 1104,
             "description": "Builds a handler chain.",
             "itemtype": "method",
             "name": "next",
@@ -6176,7 +6176,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 1141,
+            "line": 1143,
             "description": "Defines a new handler grouping.  This is the main extensibility point for handling callbacks.",
             "itemtype": "method",
             "name": "$define",
@@ -6206,7 +6206,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 1420,
+            "line": 1422,
             "description": "Gets the effective promise.  This could be the result of a method call.<br/>\nSee {{#crossLink \"miruken.callback.HandleMethod\"}}{{/crossLink}}",
             "itemtype": "method",
             "name": "getEffectivePromise",
@@ -6228,7 +6228,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 1435,
+            "line": 1437,
             "description": "Marks the callback handler for validation.",
             "itemtype": "method",
             "name": "$valid",
@@ -6255,7 +6255,7 @@
         },
         {
             "file": "lib/callback.js",
-            "line": 1444,
+            "line": 1446,
             "description": "Marks the callback handler for asynchronous validation.",
             "itemtype": "method",
             "name": "$validAsync",
@@ -9356,123 +9356,123 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:432"
+            "line": " lib/callback.js:441"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:456"
+            "line": " lib/callback.js:458"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:502"
+            "line": " lib/callback.js:504"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:597"
+            "line": " lib/callback.js:599"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:603"
+            "line": " lib/callback.js:605"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:617"
+            "line": " lib/callback.js:619"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:661"
+            "line": " lib/callback.js:663"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:676"
+            "line": " lib/callback.js:678"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:691"
+            "line": " lib/callback.js:693"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:764"
+            "line": " lib/callback.js:766"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:787"
+            "line": " lib/callback.js:789"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:860"
+            "line": " lib/callback.js:862"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:867"
+            "line": " lib/callback.js:869"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:874"
+            "line": " lib/callback.js:876"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:881"
+            "line": " lib/callback.js:883"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:888"
+            "line": " lib/callback.js:890"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:910"
+            "line": " lib/callback.js:912"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:924"
+            "line": " lib/callback.js:926"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:938"
+            "line": " lib/callback.js:940"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:955"
+            "line": " lib/callback.js:957"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:975"
+            "line": " lib/callback.js:977"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:991"
+            "line": " lib/callback.js:993"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:1010"
+            "line": " lib/callback.js:1012"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:1020"
+            "line": " lib/callback.js:1022"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:1043"
+            "line": " lib/callback.js:1045"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:1078"
+            "line": " lib/callback.js:1080"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:1102"
+            "line": " lib/callback.js:1104"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:1420"
+            "line": " lib/callback.js:1422"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:1435"
+            "line": " lib/callback.js:1437"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/callback.js:1444"
+            "line": " lib/callback.js:1446"
         },
         {
             "message": "replacing incorrect tag: returns with return",
