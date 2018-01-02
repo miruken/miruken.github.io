@@ -188,14 +188,14 @@ Navigate protocol. Navigate has two methods <code class="code docutils literal">
 As contexts end the views will be popped of the stack returning to the previous views.</p>
 <p>The next nethod transitions to a new view by unwinding the stack and then adding the view.</p>
 <p>In this simplified example:</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kr">const</span> <span class="nx">TeamsController</span><span class="o">=</span> <span class="nx">Controller</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">TeamsController</span><span class="o">=</span> <span class="nx">Controller</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">goToTeam</span><span class="p">(</span><span class="nx">team</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">TeamController</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">io</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">ctrl</span> <span class="o">=&gt;</span> <span class="nx">ctrl</span><span class="p">.</span><span class="nx">showTeam</span><span class="p">({</span> <span class="nx">id</span><span class="o">:</span> <span class="nx">team</span><span class="p">.</span><span class="nx">id</span> <span class="p">}));</span>
+            <span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">ctrl</span> <span class="p">=&gt;</span> <span class="nx">ctrl</span><span class="p">.</span><span class="nx">showTeam</span><span class="p">({</span> <span class="nx">id</span><span class="o">:</span> <span class="nx">team</span><span class="p">.</span><span class="nx">id</span> <span class="p">}));</span>
     <span class="p">},</span>
     <span class="nx">createTeam</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">CreateTeamController</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">io</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">ctrl</span> <span class="o">=&gt;</span> <span class="nx">ctrl</span><span class="p">.</span><span class="nx">createTeam</span><span class="p">());</span>
+            <span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">ctrl</span> <span class="p">=&gt;</span> <span class="nx">ctrl</span><span class="p">.</span><span class="nx">createTeam</span><span class="p">());</span>
     <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
@@ -206,12 +206,12 @@ passed an instance of the controller.  We are calling the showTeam method on the
 and passing in the the team id that we want shown.</p>
 <p>The createTeam method is very simular.  It is calling the createTeam method on the CreateTeamController, but it does not need to pass along any data.</p>
 <p>This example uses push:</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kr">const</span> <span class="nx">EditTeamController</span> <span class="o">=</span> <span class="nx">Controller</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">EditTeamController</span> <span class="o">=</span> <span class="nx">Controller</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">addPlayer</span><span class="p">()</span> <span class="p">{</span>
         <span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">io</span><span class="p">;</span>
         <span class="nx">ChoosePlayerController</span><span class="p">(</span><span class="nx">io</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">ctrl</span> <span class="o">=&gt;</span> <span class="nx">ctrl</span><span class="p">.</span><span class="nx">choosePlayer</span><span class="p">())</span>
-            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">players</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">ctrl</span> <span class="p">=&gt;</span> <span class="nx">ctrl</span><span class="p">.</span><span class="nx">choosePlayer</span><span class="p">())</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">players</span> <span class="p">=&gt;</span> <span class="p">{</span>
                 <span class="k">if</span> <span class="p">(</span><span class="nx">players</span><span class="p">)</span> <span class="p">{</span>
                     <span class="nx">TeamFeature</span><span class="p">(</span><span class="nx">io</span><span class="p">).</span><span class="nx">addPlayers</span><span class="p">(</span><span class="nx">players</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">team</span><span class="p">);</span>
                 <span class="p">}</span>

@@ -172,22 +172,22 @@
   <div class="section" id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
 <p>Powershell modules are installed by copying the powershell files into a known directory that is on the PSModulePath environment variable.  I like to use:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">C:\Users\&lt;USER_NAME&gt;\Documents\WindowsPowerShell\Modules</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">C:\Users\&lt;USER_NAME&gt;\Documents\WindowsPowerShell\Modules</span>
 </pre></div>
 </div>
 <p>Make sure the above directory is in the PSModulePath environment variable. You can read that variable using powershell:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Get-ChildItem Env:\PSModulePath</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Get-ChildItem Env:\PSModulePath</span>
 </pre></div>
 </div>
 <p>Install the module straight from git by:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">cd C:\Users\&lt;USER_NAME&gt;\Documents\WindowsPowerShell\Modules</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd C:\Users\&lt;USER_NAME&gt;\Documents\WindowsPowerShell\Modules</span>
 <span class="go">git clone https://github.com/Miruken-DotNet/SymbolDownloader.git</span>
 </pre></div>
 </div>
 <p>Now open a powershell window in a solution or project directory.
 You should be able to just use the module since it is in a known module folder.
 Older versions of powershell would force you to import the module explicitly:</p>
-<div class="highlight-powershell"><div class="highlight"><pre><span class="nb">Import-Module</span> <span class="n">SymbolDownloader</span>
+<div class="highlight-powershell"><div class="highlight"><pre><span></span><span class="nb">Import-Module</span> <span class="n">SymbolDownloader</span>
 </pre></div>
 </div>
 <p>SymbolDownloader is now ready to use.</p>

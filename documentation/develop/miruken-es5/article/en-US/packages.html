@@ -176,7 +176,7 @@
 <li>The list of objects to export</li>
 </ol>
 <p>For example:</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
         <span class="nx">name</span><span class="o">:</span>       <span class="s2">&quot;zoo&quot;</span><span class="p">,</span>
         <span class="nx">imports</span><span class="o">:</span>    <span class="s2">&quot;miruken&quot;</span><span class="p">,</span>
@@ -208,7 +208,7 @@
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
 <p>Using <cite>imports</cite> states that <em>names</em> of package(s) to be available in your closure. This is in essence makes classes defined in packages available in the closure. To start, you will need to bring in <em>miruken</em>. You will also need to run the <cite>eval</cite> function to actually import those classes.</p>
 <p>For example:</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
         <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;logging&quot;</span><span class="p">,</span>
         <span class="nx">imports</span><span class="o">:</span> <span class="s2">&quot;miruken&quot;</span>
@@ -224,41 +224,41 @@
 <h2>Exports<a class="headerlink" href="#exports" title="Permalink to this headline">¶</a></h2>
 <p>Using <cite>exports</cite> states that <em>classes</em> defined in the closure to be available for other closures. Similar to imports, you need to call the <cite>eval</cite> to actually export the classes.</p>
 <p>For example:</p>
-<div class="highlight-js"><div class="highlight"><pre>new function() {
-    base2.package(this, {
-        name: &quot;logging&quot;,
-        imports: &quot;miruken&quot;
-    });
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;logging&quot;</span><span class="p">,</span>
+        <span class="nx">imports</span><span class="o">:</span> <span class="s2">&quot;miruken&quot;</span>
+    <span class="p">});</span>
 
-    eval(this.imports);
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
 
-    const loggingProtocol = Protocol.extend({
-        debug(){},
-        error(){}
-    });
+    <span class="kr">const</span> <span class="nx">loggingProtocol</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">debug</span><span class="p">(){},</span>
+        <span class="nx">error</span><span class="p">(){}</span>
+    <span class="p">});</span>
 
-    const NullLogger = Base.extend(loggingProtocol, {
-        debug(){},
-        error(){}
-    });
+    <span class="kr">const</span> <span class="nx">NullLogger</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">loggingProtocol</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">debug</span><span class="p">(){},</span>
+        <span class="nx">error</span><span class="p">(){}</span>
+    <span class="p">});</span>
 
-    let nullLogger = new NullLogger();
-    const Logger = Base.extend(loggingProtocol, {
-        debug(message){
-            console.log(`DEBUG: ${message}`);
-        },
-        error(message){
-            console.log(`ERROR: ${message}`);
-        }
+    <span class="kd">let</span> <span class="nx">nullLogger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NullLogger</span><span class="p">();</span>
+    <span class="kr">const</span> <span class="nx">Logger</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">loggingProtocol</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`DEBUG: </span><span class="si">${</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+        <span class="p">},</span>
+        <span class="nx">error</span><span class="p">(</span><span class="nx">message</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`ERROR: </span><span class="si">${</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+        <span class="p">}</span>
 
-    }, {
-        get NullLogger(){
-            return nullLogger
-        }
-    });
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">get</span> <span class="nx">NullLogger</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="nx">nullLogger</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
 
-    eval(this.exports);
-}
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>When you list your objects under the <cite>exports</cite> property, just separate them with a comma. Order does not matter.</p>
@@ -273,7 +273,7 @@ name: company.http
 name: company.accounting
 name: company.security.cookies</div></blockquote>
 <p>Once you create the name, you can import as shown above.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
     <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
         <span class="nx">name</span>    <span class="o">:</span> <span class="s2">&quot;company.security.cookies&quot;</span><span class="p">,</span>
@@ -289,36 +289,36 @@ name: company.security.cookies</div></blockquote>
 <h2>File Separation<a class="headerlink" href="#file-separation" title="Permalink to this headline">¶</a></h2>
 <p>A file can have one object defined for a package or group objects. It is often best practice to keep objects in separate files. If you choose to use separate files for your objects, the name of the package is the same. When you call <cite>eval</cite>, it searches for all the files for a given package name.</p>
 <p>Person.js</p>
-<div class="highlight-js"><div class="highlight"><pre>new function() {
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-    base2.package(this, {
-        name   : &quot;person&quot;,
-        exports: &quot;Person&quot;
-    });
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span>   <span class="o">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
+        <span class="nx">exports</span><span class="o">:</span> <span class="s2">&quot;Person&quot;</span>
+    <span class="p">});</span>
 
-    eval(this.imports);
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
 
-    const Person = Base.extend({
-        $properties: {
-            firstName: null,
-            lastName : null,
-            gender   : null
-        },
-        get fullName(){
-            return `${this.firstName} ${this.lastName}`
-        }
-    }, {
-        male          : &quot;MALE&quot;,
-        female        : &quot;FEMALE&quot;,
-        itsComplicated: &quot;ITSCOMPLICATED&quot;
-    });
+    <span class="kr">const</span> <span class="nx">Person</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">$properties</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">firstName</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nx">lastName</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nx">gender</span>   <span class="o">:</span> <span class="kc">null</span>
+        <span class="p">},</span>
+        <span class="nx">get</span> <span class="nx">fullName</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="si">}</span><span class="sb">`</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">male</span>          <span class="o">:</span> <span class="s2">&quot;MALE&quot;</span><span class="p">,</span>
+        <span class="nx">female</span>        <span class="o">:</span> <span class="s2">&quot;FEMALE&quot;</span><span class="p">,</span>
+        <span class="nx">itsComplicated</span><span class="o">:</span> <span class="s2">&quot;ITSCOMPLICATED&quot;</span>
+    <span class="p">});</span>
 
-    eval(this.exports);
-};
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 <p>Patient.js</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
         <span class="nx">name</span>    <span class="o">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
         <span class="nx">imports</span> <span class="o">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
@@ -338,7 +338,7 @@ name: company.security.cookies</div></blockquote>
 </pre></div>
 </div>
 <p>Student.js</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
         <span class="nx">name</span>    <span class="o">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
         <span class="nx">imports</span> <span class="o">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>

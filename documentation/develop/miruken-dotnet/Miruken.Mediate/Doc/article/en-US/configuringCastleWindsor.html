@@ -179,7 +179,7 @@
   <div class="section" id="configuring-castle-windsor">
 <h1>Configuring Castle Windsor<a class="headerlink" href="#configuring-castle-windsor" title="Permalink to this headline">¶</a></h1>
 <p>The first thing we need to do when configuring Castle Windsor is add a reference to the Miruken.Castle nuget package:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">Miruken</span><span class="o">.</span><span class="n">Castle</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">Miruken</span><span class="o">.</span><span class="n">Castle</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -189,11 +189,11 @@
 <div class="section" id="installing-mediator">
 <h2>Installing Mediator<a class="headerlink" href="#installing-mediator" title="Permalink to this headline">¶</a></h2>
 <p>The MediatorInstaller lives in Miruken.Mediate.Castle so add a reference to its nuget package:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">Miruken</span><span class="o">.</span><span class="n">Mediate</span><span class="o">.</span><span class="n">Castle</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">Miruken</span><span class="o">.</span><span class="n">Mediate</span><span class="o">.</span><span class="n">Castle</span>
 </pre></div>
 </div>
 <p>In the Container.Install() method, add your feature assemblies, and then pass in an instance of MediatorInstaller.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">Configuration</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">Configuration</span>
 <span class="p">{</span>
     <span class="n">using</span> <span class="n">Castle</span><span class="o">.</span><span class="n">MicroKernel</span><span class="o">.</span><span class="n">Resolvers</span><span class="o">.</span><span class="n">SpecializedResolvers</span><span class="p">;</span>
     <span class="n">using</span> <span class="n">Castle</span><span class="o">.</span><span class="n">Windsor</span><span class="p">;</span>
@@ -221,11 +221,11 @@
 <div class="section" id="installing-validation-middleware">
 <h2>Installing Validation Middleware<a class="headerlink" href="#installing-validation-middleware" title="Permalink to this headline">¶</a></h2>
 <p>The ValidationInstalling lives in the Miruken.Validate.Castle so add a reference to its nuget package:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">Miruken</span><span class="o">.</span><span class="n">Validate</span><span class="o">.</span><span class="n">Castle</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">Miruken</span><span class="o">.</span><span class="n">Validate</span><span class="o">.</span><span class="n">Castle</span>
 </pre></div>
 </div>
 <p>In the Container.Install() method, add your feature assemblies, and then pass in an instance of ValidationInstaller.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">Configuration</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">Configuration</span>
 <span class="p">{</span>
     <span class="n">using</span> <span class="n">Castle</span><span class="o">.</span><span class="n">MicroKernel</span><span class="o">.</span><span class="n">Registration</span><span class="p">;</span>
     <span class="n">using</span> <span class="n">Castle</span><span class="o">.</span><span class="n">MicroKernel</span><span class="o">.</span><span class="n">Resolvers</span><span class="o">.</span><span class="n">SpecializedResolvers</span><span class="p">;</span>

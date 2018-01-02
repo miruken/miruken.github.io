@@ -173,7 +173,7 @@
 <p>Once the SymbolDownloader Powershell Module is installed you should be able to use from a command prompt in any directory.</p>
 <div class="section" id="download-a-single-package">
 <h2>Download a single package<a class="headerlink" href="#download-a-single-package" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-powershell"><div class="highlight"><pre><span class="nb">get-symbols</span> <span class="n">Miruken</span> <span class="n">1</span><span class="p">.</span><span class="n">4</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">3</span>
+<div class="highlight-powershell"><div class="highlight"><pre><span></span><span class="nb">get-symbols</span> <span class="n">Miruken</span> <span class="n">1</span><span class="p">.</span><span class="n">4</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">3</span>
 </pre></div>
 </div>
 <p>You must provide the package name, and the version number.  This can be done from the commandline in any directory.</p>
@@ -187,16 +187,16 @@
 <p>If you are in a directory that contains packages.config files such as a solution or project directory,
 SymbolDownloader can read the packages.config files and download the symbols for specific versions of
 the packages you specify.  It does a case insensitive contains on the package name.</p>
-<div class="highlight-powershell"><div class="highlight"><pre><span class="nb">get-symbols</span> <span class="n">miruken</span>
+<div class="highlight-powershell"><div class="highlight"><pre><span></span><span class="nb">get-symbols</span> <span class="n">miruken</span>
 </pre></div>
 </div>
 <p>Will download the symbols and source for miruken, miruken.castle, miruken.mvc, miruken.mediator, etc…</p>
-<div class="highlight-powershell"><div class="highlight"><pre><span class="nb">get-symbols</span> <span class="n">miruken</span><span class="p">.</span><span class="n">mediator</span>
+<div class="highlight-powershell"><div class="highlight"><pre><span></span><span class="nb">get-symbols</span> <span class="n">miruken</span><span class="p">.</span><span class="n">mediator</span>
 </pre></div>
 </div>
 <p>Will download the symbols for miruken.mediator and miruken.mediator.castle</p>
 <p>This is all provided that the packages.config files contain references to these packages.</p>
-<div class="highlight-powershell"><div class="highlight"><pre><span class="nb">get-symbols</span> <span class="n">castle</span>
+<div class="highlight-powershell"><div class="highlight"><pre><span></span><span class="nb">get-symbols</span> <span class="n">castle</span>
 </pre></div>
 </div>
 <p>Will download miruken.castle, castle.core, castle.windsor, etc</p>

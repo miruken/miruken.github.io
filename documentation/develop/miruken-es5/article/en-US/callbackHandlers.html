@@ -179,13 +179,13 @@ the current application context.</p>
 is something that calls your code.  Miruken is definately a framework.  Miruken calls your code, and the code that it calls resides in
 CallbackHandlers.</p>
 <p>Throughout this explaination of Callbackhandlers we will be using a very simple Logging Protocol.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kr">const</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">){}</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p>Now lets create a very simple LoggingHandler to discuss.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">LoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">LoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">//log message here</span>
     <span class="p">};</span>
@@ -201,14 +201,14 @@ literal that is passed in as the second parameter.</p>
 <p>Explicit Protocol adoption is done by passing one or more protocols into the extend method, and then implementing
 one or more of the members of each protocol. You do not have to implement all the members of a protocol.  The full
 implementation can be spread across many CallbackHandlers if it makes sense for your application.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">LoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">LoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">//log message here</span>
     <span class="p">};</span>
 <span class="p">});</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;LoggingHandler&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;explicitly adopts the Loggin Protocol&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;LoggingHandler&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;explicitly adopts the Loggin Protocol&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="nx">Logging</span><span class="p">.</span><span class="nx">adoptedBy</span><span class="p">(</span><span class="nx">LoggingHandler</span><span class="p">).</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">;</span>
     <span class="p">});</span>
 <span class="p">});</span>
@@ -220,14 +220,14 @@ implementation can be spread across many CallbackHandlers if it makes sense for 
 <h2>Implicit Protocol Implementations<a class="headerlink" href="#implicit-protocol-implementations" title="Permalink to this headline">¶</a></h2>
 <p>Implicit Protocol implementation does not require you to pass in the Protocols to the extend method.
 At runtime methods will be matched by method name only and will be ignored by StrictProtocols and strict method execution.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">LoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">LoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">//log message here</span>
     <span class="p">};</span>
 <span class="p">});</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;LoggingHandler&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;implicitly implements the Loggin Protocol&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;LoggingHandler&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;implicitly implements the Loggin Protocol&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="nx">Logging</span><span class="p">.</span><span class="nx">adoptedBy</span><span class="p">(</span><span class="nx">LoggingHandler</span><span class="p">).</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">false</span><span class="p">;</span>
     <span class="p">});</span>
 <span class="p">});</span>
@@ -240,13 +240,13 @@ At runtime methods will be matched by method name only and will be ignored by St
 <p>You can create multiple implementations for Protocols in your application.
 Using the Logging Protocol above, we could have a NullLogger that is simply a noop.
 This could be handy for running in production when you don’t want the app logging to the browser console.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">NullLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">NullLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{};</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p>We could also create an ObservableLoggingHandler to use during unit testing.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">debugCalled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">debugCalled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">ObservableLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">debugCalled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
@@ -256,7 +256,7 @@ This could be handy for running in production when you don’t want the app logg
 </div>
 <p>During development and debugging you will probably want a ConsoleLoggingHandler that just
 logs messages out to the browser console.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">ConsoleLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">ConsoleLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
     <span class="p">};</span>
@@ -265,7 +265,7 @@ logs messages out to the browser console.</p>
 </div>
 <p>Also, handy in production would be an HttpLoggingHandler that sends errors to the server to be logged.
 Lets add error to the Logging Protocol and implement http error logging.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">){},</span>
     <span class="nx">error</span><span class="p">(</span><span class="nx">message</span><span class="p">){}</span>
 <span class="p">});</span>
@@ -288,7 +288,7 @@ Lets add error to the Logging Protocol and implement http error logging.</p>
 <h3>Directly<a class="headerlink" href="#directly" title="Permalink to this headline">¶</a></h3>
 <p>CallbackHandlers have a toDelegate() method, so they can be passed directly into a Protocol and then executed.
 This is very usefull for unit testing of your CallbackHandlers.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">handler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ObservableLoggingHandler</span><span class="p">();</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">handler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ObservableLoggingHandler</span><span class="p">();</span>
 <span class="nx">Logging</span><span class="p">(</span><span class="nx">handler</span><span class="p">).</span><span class="nx">debug</span><span class="p">(</span><span class="s2">&quot;My Message&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -297,13 +297,13 @@ This is very usefull for unit testing of your CallbackHandlers.</p>
 <h3>In Context<a class="headerlink" href="#in-context" title="Permalink to this headline">¶</a></h3>
 <p>In production code however, most the time CallbackHandlers will be added to a context, and then
 the context will be passed in to the protocol.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">context</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Context</span><span class="p">();</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">context</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Context</span><span class="p">();</span>
 <span class="nx">context</span><span class="p">.</span><span class="nx">addHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">ObservableLoggingHandler</span><span class="p">());</span>
 <span class="nx">Logging</span><span class="p">(</span><span class="nx">context</span><span class="p">).</span><span class="nx">debug</span><span class="p">(</span><span class="s2">&quot;My Message&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Now in the setup portion of our application we could set up different loggers depending on the environment.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="k">switch</span> <span class="p">(</span><span class="nx">env</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="nx">env</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">case</span> <span class="s2">&quot;DEV&quot;</span><span class="o">:</span>
         <span class="nx">rootContext</span><span class="p">.</span><span class="nx">addHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">ConsoleLoggingHandler</span><span class="p">());</span>
     <span class="k">case</span> <span class="s2">&quot;PROD&quot;</span><span class="o">:</span>
@@ -319,7 +319,7 @@ the context will be passed in to the protocol.</p>
 <cite>Logging(context).error(“Something really bad happened”)</cite> would call the error method on the HttpLoggingHandler.</p>
 <p>If a Protocol member is called that has no implementation, an error will be thrown.
 For example, if debug is called, but no CallbackHandler is found that implements debug, you will see an error in the console with the following message:</p>
-<div class="highlight-text"><div class="highlight"><pre>&quot;CallbackHandler has no method &#39;debug&#39;&quot;
+<div class="highlight-text"><div class="highlight"><pre><span></span>&quot;CallbackHandler has no method &#39;debug&#39;&quot;
 </pre></div>
 </div>
 </div>
@@ -330,13 +330,13 @@ For example, if debug is called, but no CallbackHandler is found that implements
 <p>We just saw that CallbackHandlers are most often executed through a Protocol within a context, but what happens
 when you want to call a Protocol from within a CallbackHandler? What context should you use? That is where the $composer comes in.</p>
 <p>As an example, lets create an Http Protocol whose implementation will post messages to the server.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kr">const</span> <span class="nx">Http</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Http</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">post</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">data</span><span class="p">){}</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p>Now we can use the Http Protocol and $composer inside of the HttpLoggingHandler instead of $Http.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">HttpLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">HttpLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">error</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nx">Http</span><span class="p">(</span><span class="nx">$composer</span><span class="p">).</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/api/log&quot;</span><span class="p">,</span> <span class="p">{</span>
             <span class="nx">level</span>  <span class="o">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>

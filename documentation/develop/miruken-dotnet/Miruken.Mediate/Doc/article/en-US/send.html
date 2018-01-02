@@ -180,7 +180,7 @@
 <h1>Send<a class="headerlink" href="#send" title="Permalink to this headline">¶</a></h1>
 <p><code class="code docutils literal"><span class="pre">Send()</span></code> is an <code class="code docutils literal"><span class="pre">IHandler</span></code> extension method. It will traverse the context and stop after the first handler that successfully handles the message.  If the message is not handled it <em>will throw</em> a “not handled” exception.</p>
 <p>Here is an example of an Asp.net Web Api Controller. Context implements IHandler.  We call Send on the context passing in the CreateTeam request. Mediator will look through the handlers in the context to find one that can handle the CreateTeam message and return a TeamResult.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">Team</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">Team</span>
 <span class="p">{</span>
     <span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="o">.</span><span class="n">Tasks</span><span class="p">;</span>
     <span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Web</span><span class="o">.</span><span class="n">Http</span><span class="p">;</span>
@@ -193,22 +193,22 @@
         <span class="n">public</span> <span class="n">IContext</span> <span class="n">Context</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
 
         <span class="p">[</span><span class="n">HttpPost</span><span class="p">]</span>
-        <span class="n">public</span> <span class="n">async</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Team</span><span class="o">&gt;</span> <span class="n">CreateTeam</span><span class="p">(</span><span class="n">CreateTeam</span> <span class="n">request</span><span class="p">)</span>
+        <span class="n">public</span> <span class="k">async</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Team</span><span class="o">&gt;</span> <span class="n">CreateTeam</span><span class="p">(</span><span class="n">CreateTeam</span> <span class="n">request</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">var</span> <span class="n">result</span>  <span class="o">=</span> <span class="n">await</span> <span class="n">Context</span><span class="o">.</span><span class="n">Send</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+            <span class="n">var</span> <span class="n">result</span>  <span class="o">=</span> <span class="k">await</span> <span class="n">Context</span><span class="o">.</span><span class="n">Send</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
             <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">Team</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="p">[</span><span class="n">HttpDelete</span><span class="p">]</span>
-        <span class="n">public</span> <span class="n">async</span> <span class="n">Task</span> <span class="n">RemoveTeam</span><span class="p">(</span><span class="n">RemoveTeam</span> <span class="n">request</span><span class="p">)</span>
+        <span class="n">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="n">RemoveTeam</span><span class="p">(</span><span class="n">RemoveTeam</span> <span class="n">request</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">await</span> <span class="n">Context</span><span class="o">.</span><span class="n">Send</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+            <span class="k">await</span> <span class="n">Context</span><span class="o">.</span><span class="n">Send</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">League</span><span class="o">.</span><span class="n">Api</span><span class="o">.</span><span class="n">Team</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">League</span><span class="o">.</span><span class="n">Api</span><span class="o">.</span><span class="n">Team</span>
 <span class="p">{</span>
     <span class="n">using</span> <span class="n">Miruken</span><span class="o">.</span><span class="n">Mediate</span><span class="p">;</span>
 
@@ -219,7 +219,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">League</span><span class="o">.</span><span class="n">Api</span><span class="o">.</span><span class="n">Team</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">League</span><span class="o">.</span><span class="n">Api</span><span class="o">.</span><span class="n">Team</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="k">class</span> <span class="nc">RemoveTeam</span>
     <span class="p">{</span>
@@ -228,7 +228,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">League</span><span class="o">.</span><span class="n">Api</span><span class="o">.</span><span class="n">Team</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">League</span><span class="o">.</span><span class="n">Api</span><span class="o">.</span><span class="n">Team</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="k">class</span> <span class="nc">TeamResult</span>
     <span class="p">{</span>
@@ -239,7 +239,7 @@
 </div>
 <p>Send does not require a response.  Notice that the RemoveTeam request does not implement <code class="code docutils literal"><span class="pre">IRequest&lt;TResponse&gt;</span></code> and the handler does not return a response.</p>
 <p>If the request does not implement <code class="code docutils literal"><span class="pre">IRequest&lt;TResponse&gt;</span></code> and the handler returns a response, you can pass in the expected return type when you call send as demostrated below.</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">WithPureClasses</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">WithPureClasses</span>
 <span class="p">{</span>
     <span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="o">.</span><span class="n">Tasks</span><span class="p">;</span>
     <span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Web</span><span class="o">.</span><span class="n">Http</span><span class="p">;</span>
@@ -252,9 +252,9 @@
         <span class="n">public</span> <span class="n">Context</span> <span class="n">Context</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
 
         <span class="p">[</span><span class="n">HttpPost</span><span class="p">]</span>
-        <span class="n">public</span> <span class="n">async</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Team</span><span class="o">&gt;</span> <span class="n">CreateTeam</span><span class="p">(</span><span class="n">CreateTeam</span> <span class="n">request</span><span class="p">)</span>
+        <span class="n">public</span> <span class="k">async</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Team</span><span class="o">&gt;</span> <span class="n">CreateTeam</span><span class="p">(</span><span class="n">CreateTeam</span> <span class="n">request</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">var</span> <span class="n">result</span> <span class="o">=</span> <span class="n">await</span> <span class="n">Context</span><span class="o">.</span><span class="n">Send</span><span class="o">&lt;</span><span class="n">TeamResult</span><span class="o">&gt;</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+            <span class="n">var</span> <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Context</span><span class="o">.</span><span class="n">Send</span><span class="o">&lt;</span><span class="n">TeamResult</span><span class="o">&gt;</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
             <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">Team</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>

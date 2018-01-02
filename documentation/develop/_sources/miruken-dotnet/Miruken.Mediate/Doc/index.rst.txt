@@ -23,4 +23,3 @@ Mediator
    article/en-US/outline.rst
    article/en-US/configuringCastleWindsor.rst
    article/en-US/inspiration.rst
-

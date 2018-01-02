@@ -188,7 +188,7 @@
 <p>To begin, you can <cite>extend</cite> classes. <strong>Base</strong> is a class, therefore you should start by extending <strong>Base</strong> to create your classes. Afterwards, you can keep extending your classes to create additional classes as you would traditionally in class-based programming languages.</p>
 <p>We are going to create a zoo package where you start with an <strong>Animal</strong> class and extend it to be more specific, such as an <strong>Eagle</strong> and a <strong>Mouse</strong>.  Packages will be described later.</p>
 <p>For example, we will create a <cite>Logger</cite> object. Then extend it to be a <cite>ConsoleLogger</cite> and a <cite>NotificationLogger</cite>.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="c1">// we need a base logger to capture all the messages</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="c1">// we need a base logger to capture all the messages</span>
 <span class="kr">const</span> <span class="nx">Logger</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
 <span class="p">});</span>
 
@@ -207,7 +207,7 @@
 <h2>Working with Instances<a class="headerlink" href="#working-with-instances" title="Permalink to this headline">¶</a></h2>
 <p>Miruken doesn’t just help define additional attributes of classes. Because you can leverage the dynamic nature of JavaScript, you can modify instances after construction and it will not affect other instances of that class.</p>
 <p>For example, we have a <cite>Logger</cite> class that takes a name, just to differentiate the instances. You could theoretically have one logger that only does console logging while you create another instance to add an alert capability.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="k">new</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
   <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">name</span>   <span class="o">:</span> <span class="s2">&quot;instances&quot;</span><span class="p">,</span>
@@ -255,7 +255,7 @@
 <h2>Working with Static Methods<a class="headerlink" href="#working-with-static-methods" title="Permalink to this headline">¶</a></h2>
 <p>You can also modify objects with functions that are static and accessible to all instances of that class.</p>
 <p>For example:</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
     <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">({</span>
         <span class="nx">name</span><span class="o">:</span>       <span class="s2">&quot;instrumentation&quot;</span><span class="p">,</span>
@@ -301,7 +301,7 @@
 <h2>Creating Mixins<a class="headerlink" href="#creating-mixins" title="Permalink to this headline">¶</a></h2>
 <p>Mixins provides a clean way for code reuse without inheritance. The power of composition makes sense when you have an object that needs a diverse sets of functionality, but you don’t want to do this through a lot of extending or inheritance. In this way, Miruken can provide multiple inheritance of various objects.</p>
 <p>For example:</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kr">const</span> <span class="nx">ErrorIconMixin</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">ErrorIconMixin</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">showErrorIcon</span><span class="p">()</span><span class="o">:</span> <span class="p">{</span>
     <span class="p">}</span>
 <span class="p">});</span>
@@ -324,72 +324,72 @@
 <h2>Creating Properties<a class="headerlink" href="#creating-properties" title="Permalink to this headline">¶</a></h2>
 <p>One of the features of Miruken is <cite>$properties</cite>. As the name implies, it creates the get/set operations for a given key and type.</p>
 <p>For example:</p>
-<div class="highlight-js"><div class="highlight"><pre>new function() {
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-    base2.package(this, {
-        name   : &quot;members&quot;,
-        exports: &quot;Person,Doctor&quot;
-    });
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span>   <span class="o">:</span> <span class="s2">&quot;members&quot;</span><span class="p">,</span>
+        <span class="nx">exports</span><span class="o">:</span> <span class="s2">&quot;Person,Doctor&quot;</span>
+    <span class="p">});</span>
 
-    eval(this.imports);
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
 
-    const Person = Base.extend({
-        $properties: {
-            firstName: null,
-            lastName: null,
-            gender: null
-        },
-        get fullName(){
-            return `${this.firstName} ${this.lastName}`
-        }
-    }, {
-        male: &quot;MALE&quot;,
-        female: &quot;FEMALE&quot;,
-        itsComplicated: &quot;ITSCOMPLICATED&quot;
-    });
+    <span class="kr">const</span> <span class="nx">Person</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">$properties</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">firstName</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nx">lastName</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nx">gender</span><span class="o">:</span> <span class="kc">null</span>
+        <span class="p">},</span>
+        <span class="nx">get</span> <span class="nx">fullName</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="si">}</span><span class="sb">`</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">male</span><span class="o">:</span> <span class="s2">&quot;MALE&quot;</span><span class="p">,</span>
+        <span class="nx">female</span><span class="o">:</span> <span class="s2">&quot;FEMALE&quot;</span><span class="p">,</span>
+        <span class="nx">itsComplicated</span><span class="o">:</span> <span class="s2">&quot;ITSCOMPLICATED&quot;</span>
+    <span class="p">});</span>
 
-    const Doctor = Person.extend({
-        $properties: {
-            specialty: null
-        },
-        get fullName(){
-            return `Dr. ${this.base()}, ${this.specialty}`
-        }
-    }, {
-        earNoseThroat:  &quot;ENT&quot;,
-        familyPractice: &quot;FP&quot;,
-        spinalSurgeon:  &quot;OSS&quot;
-    });
+    <span class="kr">const</span> <span class="nx">Doctor</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">$properties</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">specialty</span><span class="o">:</span> <span class="kc">null</span>
+        <span class="p">},</span>
+        <span class="nx">get</span> <span class="nx">fullName</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="sb">`Dr. </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">base</span><span class="p">()</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">specialty</span><span class="si">}</span><span class="sb">`</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">earNoseThroat</span><span class="o">:</span>  <span class="s2">&quot;ENT&quot;</span><span class="p">,</span>
+        <span class="nx">familyPractice</span><span class="o">:</span> <span class="s2">&quot;FP&quot;</span><span class="p">,</span>
+        <span class="nx">spinalSurgeon</span><span class="o">:</span>  <span class="s2">&quot;OSS&quot;</span>
+    <span class="p">});</span>
 
-    eval(this.exports);
-};
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+<span class="p">};</span>
 
-new function() {
+<span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-    base2.package({
-        name: &#39;community&#39;,
-        imports: &#39;common&#39;
-    });
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">({</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;community&#39;</span><span class="p">,</span>
+        <span class="nx">imports</span><span class="o">:</span> <span class="s1">&#39;common&#39;</span>
+    <span class="p">});</span>
 
-    eval(this.imports);
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
 
-    let member = new Person({
-        firstName: &#39;John&#39;,
-        lastName: &#39;Smith&#39;
-    });
+    <span class="kd">let</span> <span class="nx">member</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">({</span>
+        <span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span>
+        <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;Smith&#39;</span>
+    <span class="p">});</span>
 
-    var personName = member.fullName; // &quot;John Smith&quot;
+    <span class="kd">var</span> <span class="nx">personName</span> <span class="o">=</span> <span class="nx">member</span><span class="p">.</span><span class="nx">fullName</span><span class="p">;</span> <span class="c1">// &quot;John Smith&quot;</span>
 
-    let specialist = new Doctor({
-        firstName: &#39;John&#39;,
-        lastName: &#39;Smith&#39;,
-        gender: Person.male,
-        specialty: Doctor.earNoseThroat
-    });
+    <span class="kd">let</span> <span class="nx">specialist</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Doctor</span><span class="p">({</span>
+        <span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span>
+        <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;Smith&#39;</span><span class="p">,</span>
+        <span class="nx">gender</span><span class="o">:</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">male</span><span class="p">,</span>
+        <span class="nx">specialty</span><span class="o">:</span> <span class="nx">Doctor</span><span class="p">.</span><span class="nx">earNoseThroat</span>
+    <span class="p">});</span>
 
-    var specialistName = specialist.fullName; // &quot;Dr. John Smith, ENT&quot;
+    <span class="kd">var</span> <span class="nx">specialistName</span> <span class="o">=</span> <span class="nx">specialist</span><span class="p">.</span><span class="nx">fullName</span><span class="p">;</span> <span class="c1">// &quot;Dr. John Smith, ENT&quot;</span>
 
-};
+<span class="p">};</span>
 </pre></div>
 </div>
 </div>

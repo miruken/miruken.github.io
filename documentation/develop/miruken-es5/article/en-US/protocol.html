@@ -177,14 +177,14 @@
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <p>As an example lets create a Logging Protocol with a debug method.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kr">const</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p>Parameters included in the Protocol definitions are not actually used, but are very helpful in describing how the member should be called.</p>
 <p>Now lets adopt the Logging Protocol by a class</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">debugCalled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">debugCalled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">ObservableLoggingHandler</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">debugCalled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
@@ -196,7 +196,7 @@
 <p>For example, here I am passing an instance of the ObservableLoggingHandler, into the Logging Protocol
 and when the debug method is called on the protocol
 the debug method on ObservableLoggingHandler will be called.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kr">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ObservableLoggingHandler</span><span class="p">();</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ObservableLoggingHandler</span><span class="p">();</span>
 <span class="nx">Logging</span><span class="p">(</span><span class="nx">handler</span><span class="p">).</span><span class="nx">debug</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -204,7 +204,7 @@ the debug method on ObservableLoggingHandler will be called.</p>
 <div class="section" id="properties">
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
 <p>Protocols also support properties using standard getter and setter methods.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">Logging</span>  <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">Logging</span>  <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">get</span> <span class="nx">level</span><span class="p">()</span> <span class="p">{},</span>
     <span class="nx">set</span> <span class="nx">level</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">});</span>
@@ -216,15 +216,15 @@ the debug method on ObservableLoggingHandler will be called.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-<div class="highlight-js"><div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Protocols with getter and setter properties&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Protocols with getter and setter properties&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">handler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LoggingHandler</span><span class="p">();</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns the property value&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns the property value&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="nx">Logging</span><span class="p">(</span><span class="nx">handler</span><span class="p">).</span><span class="nx">level</span>
             <span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="s2">&quot;debug&quot;</span><span class="p">);</span>
     <span class="p">});</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;sets and returns values&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;sets and returns values&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="nx">Logging</span><span class="p">(</span><span class="nx">context</span><span class="p">).</span><span class="nx">level</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span><span class="p">;</span>
 
         <span class="nx">Logging</span><span class="p">(</span><span class="nx">handler</span><span class="p">).</span><span class="nx">level</span>
@@ -238,7 +238,7 @@ the debug method on ObservableLoggingHandler will be called.</p>
 <h2>StrictProtocol<a class="headerlink" href="#strictprotocol" title="Permalink to this headline">¶</a></h2>
 <p>StrictProtocols restrict invocations to implementations conforming to the StrictProtocol.  In other words, calling a member of StrictProtocol with only succeed if both the name of the member matches and the class adopted the StrictProtocol.</p>
 <p>Here is a new Loggin Protocol and this time it extends from StrictProtocol.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kr">const</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">StrictProtocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">StrictProtocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">});</span>
 
@@ -266,7 +266,7 @@ It gives the ability to override, modify, and extend behavior at any level of th
 <div class="section" id="methods-for-working-with-protocols">
 <h2>Methods for working with Protocols<a class="headerlink" href="#methods-for-working-with-protocols" title="Permalink to this headline">¶</a></h2>
 <p>Given the following Protocols and instances</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">});</span>
 
@@ -283,7 +283,7 @@ It gives the ability to override, modify, and extend behavior at any level of th
 <div class="section" id="isprotocol-target">
 <h3>$isProtocol(target)<a class="headerlink" href="#isprotocol-target" title="Permalink to this headline">¶</a></h3>
 <p>A function in miruken that returns true if the target is a Protocol</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="nx">$isProtocol</span><span class="p">(</span><span class="nx">Logging</span><span class="p">)</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">$isProtocol</span><span class="p">(</span><span class="nx">Logging</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -291,7 +291,7 @@ It gives the ability to override, modify, and extend behavior at any level of th
 <div class="section" id="protocol-isprotocol-target">
 <h3>Protocol.isProtocol(target)<a class="headerlink" href="#protocol-isprotocol-target" title="Permalink to this headline">¶</a></h3>
 <p>A method on Protocol that return true if the target is a Protocol</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="nx">Protocol</span><span class="p">.</span><span class="nx">isProtocol</span><span class="p">(</span><span class="nx">Logging</span><span class="p">)</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">Protocol</span><span class="p">.</span><span class="nx">isProtocol</span><span class="p">(</span><span class="nx">Logging</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -299,7 +299,7 @@ It gives the ability to override, modify, and extend behavior at any level of th
 <div class="section" id="protocol-adoptedby-target">
 <h3>Protocol.adoptedBy(target)<a class="headerlink" href="#protocol-adoptedby-target" title="Permalink to this headline">¶</a></h3>
 <p>Returns true if the Protocol is impmented by the target.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="nx">Logging</span><span class="p">.</span><span class="nx">adoptedBy</span><span class="p">(</span><span class="nx">ObservableLoggingHandler</span><span class="p">)</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">Logging</span><span class="p">.</span><span class="nx">adoptedBy</span><span class="p">(</span><span class="nx">ObservableLoggingHandler</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -307,7 +307,7 @@ It gives the ability to override, modify, and extend behavior at any level of th
 <div class="section" id="object-conformsto-protocol">
 <h3>object.conformsTo(protocol)<a class="headerlink" href="#object-conformsto-protocol" title="Permalink to this headline">¶</a></h3>
 <p>Returns true if the object implements the Protocol.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="nx">ObservableLoggingHandler</span><span class="p">.</span><span class="nx">conformsTo</span><span class="p">(</span><span class="nx">Logging</span><span class="p">)</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">ObservableLoggingHandler</span><span class="p">.</span><span class="nx">conformsTo</span><span class="p">(</span><span class="nx">Logging</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">;</span>
 </pre></div>
 </div>
