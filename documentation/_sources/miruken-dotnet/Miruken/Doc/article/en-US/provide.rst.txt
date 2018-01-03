@@ -1,5 +1,0 @@
-=======
-Provide
-=======
-
-:code:`[Provide]`
