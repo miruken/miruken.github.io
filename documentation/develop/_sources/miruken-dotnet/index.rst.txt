@@ -1,15 +1,14 @@
-==============
-Miruken-DotNet
-==============
+======
+DotNet
+======
 
-.. image:: /img/miruken_logo_horiz_bw.png
+.. image:: /img/miruken_circle_net.png
 
-Miruken handle()'s your application!
+Miruken-DotNet is the Microsoft .Net implementation of the Miruken specification.
 
 .. toctree::
    :titlesonly:
-   :caption:  Table of Contents
-   :maxdepth: 2
+   :caption:  Documentation
 
    Miruken/Doc/index.rst
    Miruken.Mediate/Doc/index.rst
