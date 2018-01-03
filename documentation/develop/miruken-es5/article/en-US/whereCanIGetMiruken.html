@@ -37,8 +37,8 @@
         <link rel="search" title="Search" href="../../../search.html"/>
     <link rel="top" title="Miruken  documentation" href="../../../index.html"/>
         <link rel="up" title="ES5" href="../../index.html"/>
-        <link rel="next" title="MVC" href="mvc/index.html"/>
-        <link rel="prev" title="Delegates" href="delegate.html"/> 
+        <link rel="next" title="Miruken" href="miruken/index.html"/>
+        <link rel="prev" title="ES5" href="../../index.html"/> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -90,22 +90,24 @@
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">ES5</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="about.html">About</a></li>
-<li class="toctree-l2"><a class="reference internal" href="objects.html">Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="packages.html">Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="protocol.html">Protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="callbackHandlers.html">Callback Handlers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
-<li class="toctree-l2"><a class="reference internal" href="delegate.html">Delegates</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Where Can I Get Miruken-ES5?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mvc/index.html">MVC</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mvc/controller.html">Controller</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mvc/angular/index.html">Angular</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mvc/angular/controller.html">Controller</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mvc/angular/navigation.html">Navigation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mvc/angular/viewRegion.html">ViewRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="miruken/index.html">Miruken</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="miruken/objects.html">Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="miruken/packages.html">Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="miruken/protocol.html">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="miruken/callbackHandlers.html">Callback Handlers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="miruken/context.html">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="miruken/delegate.html">Delegates</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="mvc/index.html">MVC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mvc/controller.html">Controller</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="angular/index.html">Angular</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="angular/controller.html">Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="angular/navigation.html">Navigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="angular/viewRegion.html">ViewRegion</a></li>
 </ul>
 </li>
 </ul>
@@ -210,10 +212,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="mvc/index.html" class="btn btn-neutral float-right" title="MVC" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="miruken/index.html" class="btn btn-neutral float-right" title="Miruken" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="delegate.html" class="btn btn-neutral" title="Delegates" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../index.html" class="btn btn-neutral" title="ES5" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -224,24 +226,39 @@
             
   <div class="section" id="where-can-i-get-miruken-es5">
 <h1>Where Can I Get Miruken-ES5?<a class="headerlink" href="#where-can-i-get-miruken-es5" title="Permalink to this headline">¶</a></h1>
-<p>It may be obvious by the name, but Miruken-ES5 packages do not use any or
-the new ES2015 syntax and do not need to be transpiled.</p>
-<div class="section" id="bower">
-<h2>Bower<a class="headerlink" href="#bower" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">bower</span> <span class="nx">install</span> <span class="nx">miruken</span><span class="o">-</span><span class="nx">es5</span>
+<p>The <code class="code docutils literal"><span class="pre">miruken-es5</span></code> package is just the miruken library.</p>
+<p>The <code class="code docutils literal"><span class="pre">miruken-es5-angular</span></code> package is the miruken library and the angular integration.</p>
+<div class="section" id="yarn">
+<h2>Yarn<a class="headerlink" href="#yarn" title="Permalink to this headline">¶</a></h2>
+<p>We love Yarn so much and recommend you use it too!</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">yarn</span> <span class="nx">add</span> <span class="nx">miruken</span><span class="o">-</span><span class="nx">es5</span>
 </pre></div>
 </div>
-<p>Brings in just the miruken library.</p>
-<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">bower</span> <span class="nx">install</span> <span class="nx">miruken</span><span class="o">-</span><span class="nx">es5</span><span class="o">-</span><span class="nx">angular</span>
+<p>or</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">yarn</span> <span class="nx">add</span> <span class="nx">miruken</span><span class="o">-</span><span class="nx">es5</span><span class="o">-</span><span class="nx">angular</span>
 </pre></div>
 </div>
-<p>Brings in the miruken library and the angular integration.</p>
 </div>
 <div class="section" id="npm">
 <h2>NPM<a class="headerlink" href="#npm" title="Permalink to this headline">¶</a></h2>
-<p>We do plan to publish miruken-es5 packages to npm but have not done so yet.
-If you need these for your project please ask and we will move it up in
-priority.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">miruken</span><span class="o">-</span><span class="nx">es5</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">miruken</span><span class="o">-</span><span class="nx">es5</span><span class="o">-</span><span class="nx">angular</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bower">
+<h2>Bower<a class="headerlink" href="#bower" title="Permalink to this headline">¶</a></h2>
+<p>Bower works, but even they recommend you use Yarn:)</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">bower</span> <span class="nx">install</span> <span class="nx">miruken</span><span class="o">-</span><span class="nx">es5</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">bower</span> <span class="nx">install</span> <span class="nx">miruken</span><span class="o">-</span><span class="nx">es5</span><span class="o">-</span><span class="nx">angular</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -255,10 +272,10 @@ priority.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mvc/index.html" class="btn btn-neutral float-right" title="MVC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="miruken/index.html" class="btn btn-neutral float-right" title="Miruken" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="delegate.html" class="btn btn-neutral" title="Delegates" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../index.html" class="btn btn-neutral" title="ES5" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
