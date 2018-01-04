@@ -9,6 +9,7 @@ Miruken handle()'s your application!
    :titlesonly:
    :caption: Documentation 
 
+   /miruken/Specification/doc/index.rst
    /miruken-es5/index.rst
    /miruken-dotnet/index.rst
 
