@@ -160,8 +160,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../article/en-US/Environment/index.html">Environment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/python.html">Installing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/jspm.html">JSPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/node.html">Installing Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/python.html">Installing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/sphinx.html">Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/yarn.html">Yarn</a></li>
 </ul>
 </li>
 </ul>
@@ -312,7 +315,7 @@ At runtime methods will be matched by method name only and will be ignored by St
 <h2>Polymorphism<a class="headerlink" href="#polymorphism" title="Permalink to this headline">¶</a></h2>
 <p>You can create multiple implementations for Protocols in your application.
 Using the Logging Protocol above, we could have a NullLogger that is simply a noop.
-This could be handy for running in production when you don’t want the app logging to the browser console.</p>
+This could be handy for running in production when you don&#8217;t want the app logging to the browser console.</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">NullLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{};</span>
 <span class="p">});</span>
@@ -388,8 +391,8 @@ the context will be passed in to the protocol.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In prod, calling <cite>Logging(context).debug(“My debug message”)</cite> would call the debug method on the NullLoggingHandler, but calling
-<cite>Logging(context).error(“Something really bad happened”)</cite> would call the error method on the HttpLoggingHandler.</p>
+<p>In prod, calling <cite>Logging(context).debug(&#8220;My debug message&#8221;)</cite> would call the debug method on the NullLoggingHandler, but calling
+<cite>Logging(context).error(&#8220;Something really bad happened&#8221;)</cite> would call the error method on the HttpLoggingHandler.</p>
 <p>If a Protocol member is called that has no implementation, an error will be thrown.
 For example, if debug is called, but no CallbackHandler is found that implements debug, you will see an error in the console with the following message:</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>&quot;CallbackHandler has no method &#39;debug&#39;&quot;

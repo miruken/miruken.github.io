@@ -160,8 +160,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../article/en-US/Environment/index.html">Environment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../article/en-US/Environment/python.html">Installing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../article/en-US/Environment/jspm.html">JSPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../article/en-US/Environment/node.html">Installing Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../article/en-US/Environment/python.html">Installing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../article/en-US/Environment/sphinx.html">Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../article/en-US/Environment/yarn.html">Yarn</a></li>
 </ul>
 </li>
 </ul>
@@ -242,7 +245,7 @@
             
   <div class="section" id="send">
 <h1>Send<a class="headerlink" href="#send" title="Permalink to this headline">¶</a></h1>
-<p><code class="code docutils literal"><span class="pre">Send()</span></code> is an <code class="code docutils literal"><span class="pre">IHandler</span></code> extension method. It will traverse the context and stop after the first handler that successfully handles the message.  If the message is not handled it <em>will throw</em> a “not handled” exception.</p>
+<p><code class="code docutils literal"><span class="pre">Send()</span></code> is an <code class="code docutils literal"><span class="pre">IHandler</span></code> extension method. It will traverse the context and stop after the first handler that successfully handles the message.  If the message is not handled it <em>will throw</em> a &#8220;not handled&#8221; exception.</p>
 <p>Here is an example of an Asp.net Web Api Controller. Context implements IHandler.  We call Send on the context passing in the CreateTeam request. Mediator will look through the handlers in the context to find one that can handle the CreateTeam message and return a TeamResult.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">namespace</span> <span class="n">Example</span><span class="o">.</span><span class="n">Team</span>
 <span class="p">{</span>

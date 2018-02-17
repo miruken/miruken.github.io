@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Packages &mdash; Miruken-ES5  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Miruken-ES5  documentation" href="../../../index.html"/>
+        <link rel="up" title="Miruken" href="index.html"/>
+        <link rel="next" title="Protocol" href="protocol.html"/>
+        <link rel="prev" title="Objects" href="objects.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Miruken-ES5
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whereCanIGetMiruken.html">Where Can I Get Miruken-ES5?</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Miruken</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html">Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="callbackHandlers.html">Callback Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delegate.html">Delegates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mvc/index.html">MVC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../angular/index.html">Angular</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Miruken-ES5</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Miruken</a> &raquo;</li>
+        
+      <li>Packages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/article/en-US/miruken/packages.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="packages">
+<h1>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h1>
+<p>Packages is the means to provide inversion of control. The basic package simply has:</p>
+<ol class="arabic simple">
+<li>A name</li>
+<li>A list of names to import</li>
+<li>The list of objects to export</li>
+</ol>
+<p>For example:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span>       <span class="s2">&quot;zoo&quot;</span><span class="p">,</span>
+        <span class="nx">imports</span><span class="o">:</span>    <span class="s2">&quot;miruken&quot;</span><span class="p">,</span>
+        <span class="nx">exports</span><span class="o">:</span>    <span class="s2">&quot;Animal,Eagle,Mouse&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="nx">imports</span><span class="p">);</span>
+
+    <span class="kr">const</span> <span class="nx">Animal</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="p">});</span>
+
+    <span class="kr">const</span> <span class="nx">Eagle</span> <span class="o">=</span> <span class="nx">Animal</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">shriek</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// make a sound</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="kr">const</span> <span class="nx">Mouse</span> <span class="o">=</span> <span class="nx">Animal</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">squeak</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">// make a sound</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="nx">exports</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="section" id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<p>Using <cite>imports</cite> states that <em>names</em> of package(s) to be available in your closure. This is in essence makes classes defined in packages available in the closure. To start, you will need to bring in <em>miruken</em>. You will also need to run the <cite>eval</cite> function to actually import those classes.</p>
+<p>For example:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;logging&quot;</span><span class="p">,</span>
+        <span class="nx">imports</span><span class="o">:</span> <span class="s2">&quot;miruken&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If you need to import multiple names under the <cite>imports</cite> property, just separate them with a comma. Order does not matter.</p>
+</div>
+<div class="section" id="exports">
+<h2>Exports<a class="headerlink" href="#exports" title="Permalink to this headline">¶</a></h2>
+<p>Using <cite>exports</cite> states that <em>classes</em> defined in the closure to be available for other closures. Similar to imports, you need to call the <cite>eval</cite> to actually export the classes.</p>
+<p>For example:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;logging&quot;</span><span class="p">,</span>
+        <span class="nx">imports</span><span class="o">:</span> <span class="s2">&quot;miruken&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+
+    <span class="kr">const</span> <span class="nx">loggingProtocol</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">debug</span><span class="p">(){},</span>
+        <span class="nx">error</span><span class="p">(){}</span>
+    <span class="p">});</span>
+
+    <span class="kr">const</span> <span class="nx">NullLogger</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">loggingProtocol</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">debug</span><span class="p">(){},</span>
+        <span class="nx">error</span><span class="p">(){}</span>
+    <span class="p">});</span>
+
+    <span class="kd">let</span> <span class="nx">nullLogger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NullLogger</span><span class="p">();</span>
+    <span class="kr">const</span> <span class="nx">Logger</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">loggingProtocol</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`DEBUG: </span><span class="si">${</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+        <span class="p">},</span>
+        <span class="nx">error</span><span class="p">(</span><span class="nx">message</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`ERROR: </span><span class="si">${</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+        <span class="p">}</span>
+
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">get</span> <span class="nx">NullLogger</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="nx">nullLogger</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When you list your objects under the <cite>exports</cite> property, just separate them with a comma. Order does not matter.</p>
+</div>
+<div class="section" id="naming">
+<h2>Naming<a class="headerlink" href="#naming" title="Permalink to this headline">¶</a></h2>
+<p>The name is similar to namespace, meaning how would you organize or categorize your objects. The name is used during import to get a collection of objects for a given namespace and make them available for the particular closure.</p>
+<p>For example:</p>
+<blockquote>
+<div>name: company.security
+name: company.http
+name: company.accounting
+name: company.security.cookies</div></blockquote>
+<p>Once you create the name, you can import as shown above.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span>    <span class="o">:</span> <span class="s2">&quot;company.security.cookies&quot;</span><span class="p">,</span>
+        <span class="nx">imports</span> <span class="o">:</span> <span class="s2">&quot;miruken,company.security,company.http&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-separation">
+<h2>File Separation<a class="headerlink" href="#file-separation" title="Permalink to this headline">¶</a></h2>
+<p>A file can have one object defined for a package or group objects. It is often best practice to keep objects in separate files. If you choose to use separate files for your objects, the name of the package is the same. When you call <cite>eval</cite>, it searches for all the files for a given package name.</p>
+<p>Person.js</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span>   <span class="o">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
+        <span class="nx">exports</span><span class="o">:</span> <span class="s2">&quot;Person&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+
+    <span class="kr">const</span> <span class="nx">Person</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">$properties</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">firstName</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nx">lastName</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nx">gender</span>   <span class="o">:</span> <span class="kc">null</span>
+        <span class="p">},</span>
+        <span class="nx">get</span> <span class="nx">fullName</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="si">}</span><span class="sb">`</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">male</span>          <span class="o">:</span> <span class="s2">&quot;MALE&quot;</span><span class="p">,</span>
+        <span class="nx">female</span>        <span class="o">:</span> <span class="s2">&quot;FEMALE&quot;</span><span class="p">,</span>
+        <span class="nx">itsComplicated</span><span class="o">:</span> <span class="s2">&quot;ITSCOMPLICATED&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Patient.js</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span>    <span class="o">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
+        <span class="nx">imports</span> <span class="o">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
+        <span class="nx">exports</span> <span class="o">:</span> <span class="s2">&quot;Patient&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+
+    <span class="kr">const</span> <span class="nx">Patient</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">$properties</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">exams</span><span class="o">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Student.js</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span>    <span class="o">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
+        <span class="nx">imports</span> <span class="o">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
+        <span class="nx">exports</span> <span class="o">:</span> <span class="s2">&quot;Student&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+
+    <span class="kr">const</span> <span class="nx">Student</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">$properties</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">grade</span><span class="o">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+    <span class="p">});</span><span class="nx">S</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="protocol.html" class="btn btn-neutral float-right" title="Protocol" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="objects.html" class="btn btn-neutral" title="Objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Miruken.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: 2.0.26
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Tags</dt>
+            <dd><a href="../../../../2.0.24/article/en-US/miruken/packages.html">2.0.24</a></dd>
+            <dd><a href="../../../../2.0.25/article/en-US/miruken/packages.html">2.0.25</a></dd>
+            <dd><a href="packages.html">2.0.26</a></dd>
+            <dd><a href="../../../../2.0.28/article/en-US/miruken/packages.html">2.0.28</a></dd>
+            <dd><a href="../../../../2.0.29/article/en-US/miruken/packages.html">2.0.29</a></dd>
+            <dd><a href="../../../../2.0.31/article/en-US/miruken/packages.html">2.0.31</a></dd>
+            <dd><a href="../../../../2.0.32/article/en-US/miruken/packages.html">2.0.32</a></dd>
+            <dd><a href="../../../../2.0.33/article/en-US/miruken/packages.html">2.0.33</a></dd>
+            <dd><a href="../../../../2.0.34/article/en-US/miruken/packages.html">2.0.34</a></dd>
+            <dd><a href="../../../../2.0.4/article/en-US/miruken/packages.html">2.0.4</a></dd>
+        </dl>
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../../../develop/article/en-US/miruken/packages.html">develop</a></dd>
+            <dd><a href="../../../../master/article/en-US/miruken/packages.html">master</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

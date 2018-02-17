@@ -8,6 +8,9 @@ Instructions on setting up different tools in your development environment.
    :titlesonly:
    :caption: Documentation 
 
-   python.rst
+   jspm.rst
    node.rst
+   python.rst
+   sphinx.rst
+   yarn.rst
 

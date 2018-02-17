@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Callback Handlers &mdash; Miruken-ES5  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Miruken-ES5  documentation" href="../../../index.html"/>
+        <link rel="up" title="Miruken" href="index.html"/>
+        <link rel="next" title="Context" href="context.html"/>
+        <link rel="prev" title="Protocol" href="protocol.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Miruken-ES5
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whereCanIGetMiruken.html">Where Can I Get Miruken-ES5?</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Miruken</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packages.html">Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html">Protocol</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Callback Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delegate.html">Delegates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mvc/index.html">MVC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../angular/index.html">Angular</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Miruken-ES5</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Miruken</a> &raquo;</li>
+        
+      <li>Callback Handlers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/article/en-US/miruken/callbackHandlers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="callback-handlers">
+<h1>Callback Handlers<a class="headerlink" href="#callback-handlers" title="Permalink to this headline">¶</a></h1>
+<p><strong>Namespace</strong>
+&gt;miruken.callback</p>
+<p>CallbackHandlers are where you implement the business logic for your Protocols.
+They play a key role in the polymorphic behavior of miruken because
+you can have multiple implementations of the same protocol, and the appropriate implementation will be chosen at runtime base on
+the current application context.</p>
+<p>It is often said that the difference between a <strong>framework</strong> and a <strong>library</strong> is that a library is something you call in your code and a framework
+is something that calls your code.  Miruken is definately a framework.  Miruken calls your code, and the code that it calls resides in
+CallbackHandlers.</p>
+<p>Throughout this explaination of Callbackhandlers we will be using a very simple Logging Protocol.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">){}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Now lets create a very simple LoggingHandler to discuss.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">LoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//log message here</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Here we are creating a LoggingHandler and there are three things to notice.  First, CallbackHandlers extend from CallbackHandler.
+Second, they can explicitly adopt a Protocol by passing in that Protocol to the extend function. Here LoggingHandler explicitly
+adopts the Logging protocol by passing Logging in to extend. Third, the implementation for the debug method is done with an object
+literal that is passed in as the second parameter.</p>
+<div class="section" id="explicit-protocol-adoption">
+<h2>Explicit Protocol Adoption<a class="headerlink" href="#explicit-protocol-adoption" title="Permalink to this headline">¶</a></h2>
+<p>Explicit Protocol adoption is done by passing one or more protocols into the extend method, and then implementing
+one or more of the members of each protocol. You do not have to implement all the members of a protocol.  The full
+implementation can be spread across many CallbackHandlers if it makes sense for your application.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">LoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//log message here</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;LoggingHandler&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;explicitly adopts the Loggin Protocol&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">Logging</span><span class="p">.</span><span class="nx">adoptedBy</span><span class="p">(</span><span class="nx">LoggingHandler</span><span class="p">).</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>You can see in the test above that Logging is adopted by LoggingHandler.</p>
+</div>
+<div class="section" id="implicit-protocol-implementations">
+<h2>Implicit Protocol Implementations<a class="headerlink" href="#implicit-protocol-implementations" title="Permalink to this headline">¶</a></h2>
+<p>Implicit Protocol implementation does not require you to pass in the Protocols to the extend method.
+At runtime methods will be matched by method name only and will be ignored by StrictProtocols and strict method execution.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">LoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//log message here</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;LoggingHandler&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;implicitly implements the Loggin Protocol&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">Logging</span><span class="p">.</span><span class="nx">adoptedBy</span><span class="p">(</span><span class="nx">LoggingHandler</span><span class="p">).</span><span class="nx">should</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">false</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>See the [Protocol](Protocol.md) documentation for more information on StrictProtocols.</p>
+</div>
+<div class="section" id="polymorphism">
+<h2>Polymorphism<a class="headerlink" href="#polymorphism" title="Permalink to this headline">¶</a></h2>
+<p>You can create multiple implementations for Protocols in your application.
+Using the Logging Protocol above, we could have a NullLogger that is simply a noop.
+This could be handy for running in production when you don&#8217;t want the app logging to the browser console.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">NullLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>We could also create an ObservableLoggingHandler to use during unit testing.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">debugCalled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">ObservableLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">debugCalled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>During development and debugging you will probably want a ConsoleLoggingHandler that just
+logs messages out to the browser console.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">ConsoleLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Also, handy in production would be an HttpLoggingHandler that sends errors to the server to be logged.
+Lets add error to the Logging Protocol and implement http error logging.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">Logging</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">){},</span>
+    <span class="nx">error</span><span class="p">(</span><span class="nx">message</span><span class="p">){}</span>
+<span class="p">});</span>
+
+<span class="kd">let</span> <span class="nx">HttpLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">error</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">$http</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/api/log&quot;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="nx">level</span>  <span class="o">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+            <span class="nx">message</span><span class="o">:</span> <span class="nx">message</span>
+        <span class="p">})</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><em>$http is the http provider in angular</em></p>
+</div>
+<div class="section" id="executing-callbackhandler-methods">
+<h2>Executing CallbackHandler Methods<a class="headerlink" href="#executing-callbackhandler-methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="directly">
+<h3>Directly<a class="headerlink" href="#directly" title="Permalink to this headline">¶</a></h3>
+<p>CallbackHandlers have a toDelegate() method, so they can be passed directly into a Protocol and then executed.
+This is very usefull for unit testing of your CallbackHandlers.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">handler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ObservableLoggingHandler</span><span class="p">();</span>
+<span class="nx">Logging</span><span class="p">(</span><span class="nx">handler</span><span class="p">).</span><span class="nx">debug</span><span class="p">(</span><span class="s2">&quot;My Message&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="in-context">
+<h3>In Context<a class="headerlink" href="#in-context" title="Permalink to this headline">¶</a></h3>
+<p>In production code however, most the time CallbackHandlers will be added to a context, and then
+the context will be passed in to the protocol.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">context</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Context</span><span class="p">();</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">addHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">ObservableLoggingHandler</span><span class="p">());</span>
+<span class="nx">Logging</span><span class="p">(</span><span class="nx">context</span><span class="p">).</span><span class="nx">debug</span><span class="p">(</span><span class="s2">&quot;My Message&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Now in the setup portion of our application we could set up different loggers depending on the environment.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="nx">env</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s2">&quot;DEV&quot;</span><span class="o">:</span>
+        <span class="nx">rootContext</span><span class="p">.</span><span class="nx">addHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">ConsoleLoggingHandler</span><span class="p">());</span>
+    <span class="k">case</span> <span class="s2">&quot;PROD&quot;</span><span class="o">:</span>
+        <span class="nx">rootContext</span><span class="p">.</span><span class="nx">addHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">NullLoggingHandler</span><span class="p">());</span>
+        <span class="nx">rootContext</span><span class="p">.</span><span class="nx">addHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">HttpLoggingHandler</span><span class="p">());</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="nx">rootContext</span><span class="p">.</span><span class="nx">addHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">NullLoggingHandler</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In prod, calling <cite>Logging(context).debug(&#8220;My debug message&#8221;)</cite> would call the debug method on the NullLoggingHandler, but calling
+<cite>Logging(context).error(&#8220;Something really bad happened&#8221;)</cite> would call the error method on the HttpLoggingHandler.</p>
+<p>If a Protocol member is called that has no implementation, an error will be thrown.
+For example, if debug is called, but no CallbackHandler is found that implements debug, you will see an error in the console with the following message:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&quot;CallbackHandler has no method &#39;debug&#39;&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="composition-with-composer">
+<h2>Composition With $composer<a class="headerlink" href="#composition-with-composer" title="Permalink to this headline">¶</a></h2>
+<p>$composer represents the current execution context.</p>
+<p>We just saw that CallbackHandlers are most often executed through a Protocol within a context, but what happens
+when you want to call a Protocol from within a CallbackHandler? What context should you use? That is where the $composer comes in.</p>
+<p>As an example, lets create an Http Protocol whose implementation will post messages to the server.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Http</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="nx">post</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">data</span><span class="p">){}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Now we can use the Http Protocol and $composer inside of the HttpLoggingHandler instead of $Http.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">HttpLoggingHandler</span> <span class="o">=</span> <span class="nx">CallbackHandler</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Logging</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">error</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">Http</span><span class="p">(</span><span class="nx">$composer</span><span class="p">).</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/api/log&quot;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="nx">level</span>  <span class="o">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+            <span class="nx">message</span><span class="o">:</span> <span class="nx">message</span>
+        <span class="p">});</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="not-handled">
+<h2>$NOT_HANDLED<a class="headerlink" href="#not-handled" title="Permalink to this headline">¶</a></h2>
+<p>If for any reason your CallbackHandler cannot handle the request, you can always <cite>return $NOT_HANDLED;</cite>
+and miruken will continue looking for another CallbackHandler that can handle the request.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="context.html" class="btn btn-neutral float-right" title="Context" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="protocol.html" class="btn btn-neutral" title="Protocol" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Miruken.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: 2.0.29
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Tags</dt>
+            <dd><a href="../../../../2.0.24/article/en-US/miruken/callbackHandlers.html">2.0.24</a></dd>
+            <dd><a href="../../../../2.0.25/article/en-US/miruken/callbackHandlers.html">2.0.25</a></dd>
+            <dd><a href="../../../../2.0.26/article/en-US/miruken/callbackHandlers.html">2.0.26</a></dd>
+            <dd><a href="../../../../2.0.28/article/en-US/miruken/callbackHandlers.html">2.0.28</a></dd>
+            <dd><a href="callbackHandlers.html">2.0.29</a></dd>
+            <dd><a href="../../../../2.0.31/article/en-US/miruken/callbackHandlers.html">2.0.31</a></dd>
+            <dd><a href="../../../../2.0.32/article/en-US/miruken/callbackHandlers.html">2.0.32</a></dd>
+            <dd><a href="../../../../2.0.33/article/en-US/miruken/callbackHandlers.html">2.0.33</a></dd>
+            <dd><a href="../../../../2.0.34/article/en-US/miruken/callbackHandlers.html">2.0.34</a></dd>
+            <dd><a href="../../../../2.0.4/article/en-US/miruken/callbackHandlers.html">2.0.4</a></dd>
+        </dl>
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../../../develop/article/en-US/miruken/callbackHandlers.html">develop</a></dd>
+            <dd><a href="../../../../master/article/en-US/miruken/callbackHandlers.html">master</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

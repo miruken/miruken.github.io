@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Objects &mdash; Miruken-ES5  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Miruken-ES5  documentation" href="../../../index.html"/>
+        <link rel="up" title="Miruken" href="index.html"/>
+        <link rel="next" title="Packages" href="packages.html"/>
+        <link rel="prev" title="Miruken" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Miruken-ES5
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whereCanIGetMiruken.html">Where Can I Get Miruken-ES5?</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Miruken</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packages.html">Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html">Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="callbackHandlers.html">Callback Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delegate.html">Delegates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mvc/index.html">MVC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../angular/index.html">Angular</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Miruken-ES5</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Miruken</a> &raquo;</li>
+        
+      <li>Objects</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/article/en-US/miruken/objects.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="objects">
+<h1>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h1>
+<p>Miruken&#8217;s object-oriented approach gives power to development teams who have worked with class-based languages to quickly build and manage models and controllers in MVC applications. Miruken&#8217;s goal is to simplify development using the existing protypical nature of the JavaScript framework, but use simple syntax and common understanding of object-oriented programming.</p>
+<p>To begin, it is important to understand how JavaScript objects work compared to other object-oriented languages. If you are not familiar how JavaScript is a classless object-oriented programming language, refer to <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">Introduction to ObjectOriented JavaScript</a>.</p>
+<div class="section" id="base-objects">
+<h2>Base Objects<a class="headerlink" href="#base-objects" title="Permalink to this headline">¶</a></h2>
+<p><strong>Base</strong> is the base class for all objects in Miruken. This object is what provides the object-oriented features in Miruken. For now, let&#8217;s discuss the two (2) functions Base provides: <strong>extend</strong> and <strong>implement</strong>.</p>
+<p><strong>Extend</strong> is the function with which derived classes and objects are created. You can use it to extend <em>classes</em> and <em>instances</em>.  Extend can receive many arguments as you will see, but it&#8217;s most frequently use is one to two arguments</p>
+<ol class="arabic simple">
+<li>An object whose members are available on instances.</li>
+<li>An object whose members are available on the class itself.</li>
+</ol>
+<p>The last argument is <em>optional</em> and will be explained later in this section.</p>
+<p><strong>NOTE:</strong> This is <em>not</em> to be confused with the ECMAScript 6 <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#Sub_classing_with_extends">extends</a> keyword. Miruken provides additional functionality that is not available with <cite>extends</cite>.</p>
+<p><strong>Implement</strong> is similar to <em>extend</em> where all you want to do is add additional static functionality to your class. The difference between <cite>extend</cite> and <cite>implement</cite> is you only need to pass an object with member functions or a single function you wish to add.</p>
+</div>
+<div class="section" id="working-with-classes">
+<h2>Working with Classes<a class="headerlink" href="#working-with-classes" title="Permalink to this headline">¶</a></h2>
+<p>To begin, you can <cite>extend</cite> classes. <strong>Base</strong> is a class, therefore you should start by extending <strong>Base</strong> to create your classes. Afterwards, you can keep extending your classes to create additional classes as you would traditionally in class-based programming languages.</p>
+<p>We are going to create a zoo package where you start with an <strong>Animal</strong> class and extend it to be more specific, such as an <strong>Eagle</strong> and a <strong>Mouse</strong>.  Packages will be described later.</p>
+<p>For example, we will create a <cite>Logger</cite> object. Then extend it to be a <cite>ConsoleLogger</cite> and a <cite>NotificationLogger</cite>.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="c1">// we need a base logger to capture all the messages</span>
+<span class="kr">const</span> <span class="nx">Logger</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<span class="p">});</span>
+
+<span class="c1">// now extend to create a console logger</span>
+<span class="kr">const</span> <span class="nx">ConsoleLogger</span> <span class="o">=</span> <span class="nx">Logger</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<span class="p">});</span>
+
+<span class="c1">// now extend to create a notification logger</span>
+<span class="kr">const</span> <span class="nx">NotificationLogger</span> <span class="o">=</span> <span class="nx">Logger</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>As you can see, creating and extending classes is very straight forward. Provide a class name and use <cite>extend</cite>.</p>
+</div>
+<div class="section" id="working-with-instances">
+<h2>Working with Instances<a class="headerlink" href="#working-with-instances" title="Permalink to this headline">¶</a></h2>
+<p>Miruken doesn&#8217;t just help define additional attributes of classes. Because you can leverage the dynamic nature of JavaScript, you can modify instances after construction and it will not affect other instances of that class.</p>
+<p>For example, we have a <cite>Logger</cite> class that takes a name, just to differentiate the instances. You could theoretically have one logger that only does console logging while you create another instance to add an alert capability.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+  <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">name</span>   <span class="o">:</span> <span class="s2">&quot;instances&quot;</span><span class="p">,</span>
+    <span class="nx">exports</span><span class="o">:</span> <span class="s2">&quot;Logger&quot;</span>
+  <span class="p">});</span>
+
+  <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+
+  <span class="kr">const</span> <span class="nx">Logger</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="c1">// hold the name for this logger</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+
+    <span class="nx">constructor</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+  <span class="p">});</span>
+
+  <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+
+<span class="p">};</span>
+
+<span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span>       <span class="s2">&quot;instrumentation&quot;</span><span class="p">,</span>
+        <span class="nx">imports</span><span class="o">:</span>    <span class="s2">&quot;miruken,instances&quot;</span>
+    <span class="p">});</span>
+
+    <span class="kd">let</span> <span class="nx">myLogger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="s2">&quot;console&quot;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">alertLogger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="s2">&quot;alert&quot;</span><span class="p">);</span>
+
+    <span class="nx">alertLogger</span><span class="p">.</span><span class="nx">implement</span><span class="p">({</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="nx">alertLogger</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Whoops!&quot;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="working-with-static-methods">
+<h2>Working with Static Methods<a class="headerlink" href="#working-with-static-methods" title="Permalink to this headline">¶</a></h2>
+<p>You can also modify objects with functions that are static and accessible to all instances of that class.</p>
+<p>For example:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">({</span>
+        <span class="nx">name</span><span class="o">:</span>       <span class="s2">&quot;instrumentation&quot;</span><span class="p">,</span>
+        <span class="nx">imports</span><span class="o">:</span>    <span class="s2">&quot;miruken&quot;</span><span class="p">,</span>
+        <span class="nx">exports</span><span class="o">:</span>    <span class="s2">&quot;NullLogger&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+
+    <span class="c1">//A null object implementation</span>
+    <span class="kd">let</span> <span class="nx">nullLoggerInstance</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">NullLogger</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">debug</span><span class="p">(){},</span>
+        <span class="nx">error</span><span class="p">(){}</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">get</span> <span class="nx">instance</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="nx">nullLoggerInstance</span> <span class="o">=</span> <span class="nx">nullLoggerInstance</span> <span class="o">||</span> <span class="k">new</span> <span class="nx">NullLogger</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">({</span>
+        <span class="nx">name</span><span class="o">:</span>       <span class="s2">&quot;logging&quot;</span><span class="p">,</span>
+        <span class="nx">imports</span><span class="o">:</span>    <span class="s2">&quot;instrumentation&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+
+    <span class="kd">let</span> <span class="nx">logger</span> <span class="o">=</span> <span class="nx">NullLogger</span><span class="p">.</span><span class="nx">instance</span><span class="p">;</span>
+
+    <span class="c1">// now just use the logger</span>
+    <span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">();</span>
+
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-mixins">
+<h2>Creating Mixins<a class="headerlink" href="#creating-mixins" title="Permalink to this headline">¶</a></h2>
+<p>Mixins provides a clean way for code reuse without inheritance. The power of composition makes sense when you have an object that needs a diverse sets of functionality, but you don&#8217;t want to do this through a lot of extending or inheritance. In this way, Miruken can provide multiple inheritance of various objects.</p>
+<p>For example:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">ErrorIconMixin</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="nx">showErrorIcon</span><span class="p">()</span><span class="o">:</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kr">const</span> <span class="nx">ErrorMessageMixin</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="nx">showErrorMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span><span class="o">:</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kr">const</span> <span class="nx">Validation</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">ErrorIconMixin</span><span class="p">,</span> <span class="nx">ErrorMessageMixin</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">show</span><span class="p">()</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">ErrorIconMixin</span><span class="p">.</span><span class="nx">showErrorIcon</span><span class="p">();</span>
+        <span class="nx">ErrorMessageMixin</span><span class="p">.</span><span class="nx">showErrorMessage</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-properties">
+<h2>Creating Properties<a class="headerlink" href="#creating-properties" title="Permalink to this headline">¶</a></h2>
+<p>One of the features of Miruken is <cite>$properties</cite>. As the name implies, it creates the get/set operations for a given key and type.</p>
+<p>For example:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">name</span>   <span class="o">:</span> <span class="s2">&quot;members&quot;</span><span class="p">,</span>
+        <span class="nx">exports</span><span class="o">:</span> <span class="s2">&quot;Person,Doctor&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+
+    <span class="kr">const</span> <span class="nx">Person</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">$properties</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">firstName</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nx">lastName</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nx">gender</span><span class="o">:</span> <span class="kc">null</span>
+        <span class="p">},</span>
+        <span class="nx">get</span> <span class="nx">fullName</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="si">}</span><span class="sb">`</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">male</span><span class="o">:</span> <span class="s2">&quot;MALE&quot;</span><span class="p">,</span>
+        <span class="nx">female</span><span class="o">:</span> <span class="s2">&quot;FEMALE&quot;</span><span class="p">,</span>
+        <span class="nx">itsComplicated</span><span class="o">:</span> <span class="s2">&quot;ITSCOMPLICATED&quot;</span>
+    <span class="p">});</span>
+
+    <span class="kr">const</span> <span class="nx">Doctor</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">$properties</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">specialty</span><span class="o">:</span> <span class="kc">null</span>
+        <span class="p">},</span>
+        <span class="nx">get</span> <span class="nx">fullName</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="sb">`Dr. </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">base</span><span class="p">()</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">specialty</span><span class="si">}</span><span class="sb">`</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">earNoseThroat</span><span class="o">:</span>  <span class="s2">&quot;ENT&quot;</span><span class="p">,</span>
+        <span class="nx">familyPractice</span><span class="o">:</span> <span class="s2">&quot;FP&quot;</span><span class="p">,</span>
+        <span class="nx">spinalSurgeon</span><span class="o">:</span>  <span class="s2">&quot;OSS&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">({</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;community&#39;</span><span class="p">,</span>
+        <span class="nx">imports</span><span class="o">:</span> <span class="s1">&#39;common&#39;</span>
+    <span class="p">});</span>
+
+    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+
+    <span class="kd">let</span> <span class="nx">member</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">({</span>
+        <span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span>
+        <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;Smith&#39;</span>
+    <span class="p">});</span>
+
+    <span class="kd">var</span> <span class="nx">personName</span> <span class="o">=</span> <span class="nx">member</span><span class="p">.</span><span class="nx">fullName</span><span class="p">;</span> <span class="c1">// &quot;John Smith&quot;</span>
+
+    <span class="kd">let</span> <span class="nx">specialist</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Doctor</span><span class="p">({</span>
+        <span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span>
+        <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;Smith&#39;</span><span class="p">,</span>
+        <span class="nx">gender</span><span class="o">:</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">male</span><span class="p">,</span>
+        <span class="nx">specialty</span><span class="o">:</span> <span class="nx">Doctor</span><span class="p">.</span><span class="nx">earNoseThroat</span>
+    <span class="p">});</span>
+
+    <span class="kd">var</span> <span class="nx">specialistName</span> <span class="o">=</span> <span class="nx">specialist</span><span class="p">.</span><span class="nx">fullName</span><span class="p">;</span> <span class="c1">// &quot;Dr. John Smith, ENT&quot;</span>
+
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://dean.edwards.name/weblog/2006/03/base/">A Base Class for JavaScript Inheritance</a></li>
+<li><a class="reference external" href="http://dean.edwards.name/weblog/2007/12/base2-intro/">base2 an Introduction</a></li>
+<li><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Developer Network</a></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="packages.html" class="btn btn-neutral float-right" title="Packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Miruken" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Miruken.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: master
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Tags</dt>
+            <dd><a href="../../../2.0.24/article/en-US/miruken/objects.html">2.0.24</a></dd>
+            <dd><a href="../../../2.0.25/article/en-US/miruken/objects.html">2.0.25</a></dd>
+            <dd><a href="../../../2.0.26/article/en-US/miruken/objects.html">2.0.26</a></dd>
+            <dd><a href="../../../2.0.28/article/en-US/miruken/objects.html">2.0.28</a></dd>
+            <dd><a href="../../../2.0.29/article/en-US/miruken/objects.html">2.0.29</a></dd>
+            <dd><a href="../../../2.0.31/article/en-US/miruken/objects.html">2.0.31</a></dd>
+            <dd><a href="../../../2.0.32/article/en-US/miruken/objects.html">2.0.32</a></dd>
+            <dd><a href="../../../2.0.33/article/en-US/miruken/objects.html">2.0.33</a></dd>
+            <dd><a href="../../../2.0.34/article/en-US/miruken/objects.html">2.0.34</a></dd>
+            <dd><a href="../../../2.0.4/article/en-US/miruken/objects.html">2.0.4</a></dd>
+        </dl>
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../../develop/article/en-US/miruken/objects.html">develop</a></dd>
+            <dd><a href="../../../master/article/en-US/miruken/objects.html">master</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

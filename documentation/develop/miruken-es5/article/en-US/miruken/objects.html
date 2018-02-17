@@ -160,8 +160,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../article/en-US/Environment/index.html">Environment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/python.html">Installing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/jspm.html">JSPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/node.html">Installing Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/python.html">Installing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/sphinx.html">Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../article/en-US/Environment/yarn.html">Yarn</a></li>
 </ul>
 </li>
 </ul>
@@ -242,12 +245,12 @@
             
   <div class="section" id="objects">
 <h1>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h1>
-<p>Miruken’s object-oriented approach gives power to development teams who have worked with class-based languages to quickly build and manage models and controllers in MVC applications. Miruken’s goal is to simplify development using the existing protypical nature of the JavaScript framework, but use simple syntax and common understanding of object-oriented programming.</p>
+<p>Miruken&#8217;s object-oriented approach gives power to development teams who have worked with class-based languages to quickly build and manage models and controllers in MVC applications. Miruken&#8217;s goal is to simplify development using the existing protypical nature of the JavaScript framework, but use simple syntax and common understanding of object-oriented programming.</p>
 <p>To begin, it is important to understand how JavaScript objects work compared to other object-oriented languages. If you are not familiar how JavaScript is a classless object-oriented programming language, refer to <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">Introduction to ObjectOriented JavaScript</a>.</p>
 <div class="section" id="base-objects">
 <h2>Base Objects<a class="headerlink" href="#base-objects" title="Permalink to this headline">¶</a></h2>
-<p><strong>Base</strong> is the base class for all objects in Miruken. This object is what provides the object-oriented features in Miruken. For now, let’s discuss the two (2) functions Base provides: <strong>extend</strong> and <strong>implement</strong>.</p>
-<p><strong>Extend</strong> is the function with which derived classes and objects are created. You can use it to extend <em>classes</em> and <em>instances</em>.  Extend can receive many arguments as you will see, but it’s most frequently use is one to two arguments</p>
+<p><strong>Base</strong> is the base class for all objects in Miruken. This object is what provides the object-oriented features in Miruken. For now, let&#8217;s discuss the two (2) functions Base provides: <strong>extend</strong> and <strong>implement</strong>.</p>
+<p><strong>Extend</strong> is the function with which derived classes and objects are created. You can use it to extend <em>classes</em> and <em>instances</em>.  Extend can receive many arguments as you will see, but it&#8217;s most frequently use is one to two arguments</p>
 <ol class="arabic simple">
 <li>An object whose members are available on instances.</li>
 <li>An object whose members are available on the class itself.</li>
@@ -278,7 +281,7 @@
 </div>
 <div class="section" id="working-with-instances">
 <h2>Working with Instances<a class="headerlink" href="#working-with-instances" title="Permalink to this headline">¶</a></h2>
-<p>Miruken doesn’t just help define additional attributes of classes. Because you can leverage the dynamic nature of JavaScript, you can modify instances after construction and it will not affect other instances of that class.</p>
+<p>Miruken doesn&#8217;t just help define additional attributes of classes. Because you can leverage the dynamic nature of JavaScript, you can modify instances after construction and it will not affect other instances of that class.</p>
 <p>For example, we have a <cite>Logger</cite> class that takes a name, just to differentiate the instances. You could theoretically have one logger that only does console logging while you create another instance to add an alert capability.</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
@@ -372,7 +375,7 @@
 </div>
 <div class="section" id="creating-mixins">
 <h2>Creating Mixins<a class="headerlink" href="#creating-mixins" title="Permalink to this headline">¶</a></h2>
-<p>Mixins provides a clean way for code reuse without inheritance. The power of composition makes sense when you have an object that needs a diverse sets of functionality, but you don’t want to do this through a lot of extending or inheritance. In this way, Miruken can provide multiple inheritance of various objects.</p>
+<p>Mixins provides a clean way for code reuse without inheritance. The power of composition makes sense when you have an object that needs a diverse sets of functionality, but you don&#8217;t want to do this through a lot of extending or inheritance. In this way, Miruken can provide multiple inheritance of various objects.</p>
 <p>For example:</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">ErrorIconMixin</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">showErrorIcon</span><span class="p">()</span><span class="o">:</span> <span class="p">{</span>

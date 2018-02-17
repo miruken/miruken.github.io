@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Delegates &mdash; Miruken-ES5  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/banner.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Miruken-ES5  documentation" href="../../../index.html"/>
+        <link rel="up" title="Miruken" href="index.html"/>
+        <link rel="next" title="MVC" href="../mvc/index.html"/>
+        <link rel="prev" title="Context" href="context.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Miruken-ES5
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whereCanIGetMiruken.html">Where Can I Get Miruken-ES5?</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Miruken</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packages.html">Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html">Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="callbackHandlers.html">Callback Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Delegates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mvc/index.html">MVC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../angular/index.html">Angular</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Miruken-ES5</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Miruken</a> &raquo;</li>
+        
+      <li>Delegates</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/article/en-US/miruken/delegate.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="delegates">
+<h1>Delegates<a class="headerlink" href="#delegates" title="Permalink to this headline">¶</a></h1>
+<p>Delegates extend from Delegate and implement get, set, and invoke functions.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">Delegate</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">protocol</span><span class="p">,</span> <span class="nx">propertyName</span><span class="p">,</span> <span class="nx">strict</span><span class="p">)</span> <span class="p">{},</span>
+    <span class="nx">set</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">protocol</span><span class="p">,</span> <span class="nx">propertyName</span><span class="p">,</span> <span class="nx">propertyValue</span><span class="p">,</span> <span class="nx">strict</span><span class="p">)</span> <span class="p">{},</span>
+    <span class="nx">invoke</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">protocol</span><span class="p">,</span> <span class="nx">methodName</span><span class="p">,</span> <span class="nx">args</span><span class="p">,</span> <span class="nx">strict</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>You could make you own if you wanted to, but almost always you will be using
+one of mirukens build in delegates. There are several objects in Miruken
+that are Delegates.  At the lowest level, there are InvocationDelegate, ObjectDelegate, and
+ArrayDelegate. But mostly in your application you will be using a Context which is a Delegate,
+and in your testing, you will be using CallbackHandlers, which are also Delegates.</p>
+<p>Protocol will also accept an object that has a <cite>toDelegate()</cite> function that returns a delegate.
+That is how CallbackHandlers work. They have a toDelegate() function that returns an
+InvocationDelegate.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mvc/index.html" class="btn btn-neutral float-right" title="MVC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="context.html" class="btn btn-neutral" title="Context" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Miruken.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: 2.0.33
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Tags</dt>
+            <dd><a href="../../../../2.0.24/article/en-US/miruken/delegate.html">2.0.24</a></dd>
+            <dd><a href="../../../../2.0.25/article/en-US/miruken/delegate.html">2.0.25</a></dd>
+            <dd><a href="../../../../2.0.26/article/en-US/miruken/delegate.html">2.0.26</a></dd>
+            <dd><a href="../../../../2.0.28/article/en-US/miruken/delegate.html">2.0.28</a></dd>
+            <dd><a href="../../../../2.0.29/article/en-US/miruken/delegate.html">2.0.29</a></dd>
+            <dd><a href="../../../../2.0.31/article/en-US/miruken/delegate.html">2.0.31</a></dd>
+            <dd><a href="../../../../2.0.32/article/en-US/miruken/delegate.html">2.0.32</a></dd>
+            <dd><a href="delegate.html">2.0.33</a></dd>
+            <dd><a href="../../../../2.0.34/article/en-US/miruken/delegate.html">2.0.34</a></dd>
+            <dd><a href="../../../../2.0.4/article/en-US/miruken/delegate.html">2.0.4</a></dd>
+        </dl>
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../../../develop/article/en-US/miruken/delegate.html">develop</a></dd>
+            <dd><a href="../../../../master/article/en-US/miruken/delegate.html">master</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
