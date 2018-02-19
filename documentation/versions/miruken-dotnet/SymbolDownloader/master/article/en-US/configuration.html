@@ -91,9 +91,18 @@
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#download-a-single-package">Download a single package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#download-symbols-in-a-solution">Download symbols in a solution</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="teamCity.html">Team City</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teamCity.html">Team City</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="teamCity.html#debug-and-release-build-configuration">Debug and Release Build Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teamCity.html#build-output">Build Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teamCity.html#symbol-indexer">Symbol Indexer</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -152,6 +161,15 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="teamCity.html" class="btn btn-neutral float-right" title="Team City" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usage.html" class="btn btn-neutral" title="Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -164,15 +182,15 @@ by changing <code class="code docutils literal"><span class="pre">Source/config.
 nuget servers and mirukens own nuget server.  You can add your own servers
 to the list.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">{</span>
-<span class="go">        symbolFolder: &quot;c:/temp/symbols&quot;,</span>
-<span class="go">        nugetServers: [</span>
-<span class="go">                &quot;https://www.nuget.org/api/v2/&quot;,</span>
+<span class="go">    symbolFolder: &quot;c:/temp/symbols&quot;,</span>
+<span class="go">    nugetServers: [</span>
+<span class="go">        &quot;https://www.nuget.org/api/v2/&quot;,</span>
 <span class="go">        &quot;http://build.miruken.com/guestAuth/app/nuget/v1/FeedService.svc/&quot;,</span>
-<span class="go">        ],</span>
-<span class="go">        symbolServers: [</span>
-<span class="go">                &quot;https://nuget.smbsrc.net&quot;,</span>
+<span class="go">    ],</span>
+<span class="go">    symbolServers: [</span>
+<span class="go">        &quot;https://nuget.smbsrc.net&quot;,</span>
 <span class="go">        &quot;http://build.miruken.com/app/symbols&quot;,</span>
-<span class="go">        ]</span>
+<span class="go">    ]</span>
 <span class="go">}</span>
 </pre></div>
 </div>
@@ -200,7 +218,7 @@ to the list.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Michael Dudley.
+        &copy; Copyright 2017-2018, Miruken.
 
     </p>
   </div>

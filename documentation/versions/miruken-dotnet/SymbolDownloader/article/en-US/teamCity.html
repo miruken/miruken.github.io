@@ -90,7 +90,11 @@
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#download-a-single-package">Download a single package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#download-symbols-in-a-solution">Download symbols in a solution</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Team City</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#debug-and-release-build-configuration">Debug and Release Build Configuration</a></li>
@@ -156,6 +160,13 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+      
+        <a href="configuration.html" class="btn btn-neutral" title="Configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -180,13 +191,17 @@ not the default <strong>bin/debug</strong> and <strong>bin/release</strong></p>
 <p>Prerelease builds need the <strong>Symbol Indexer</strong> build feature turned on.  It is what adds symbol information
 to the pdb file.  If this is not run successfully symbols will not be downloadable.
 You know it runs when you see something similar to the following in the build output.</p>
-<dl class="docutils">
-<dt>..important::</dt>
-<dd>Do not add the <strong>Symbol Indexer</strong> to release builds that are being pushed to nuget and SymbolSource.org.
+<div class="highlight-text"><div class="highlight"><pre><span></span>Indexing sources appeared in file C:\TeamCity\BuildAgents\BuildAgent03\work\ebeb9ff100c9190e\Source\Improving.DbUp\bin\Improving.DbUp.pdb
+[15:52:06]Information about 6 source files was updated
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Do not add the <strong>Symbol Indexer</strong> to release builds that are being pushed to nuget and SymbolSource.org.
 Dll&#8217;s have 2 fields that uniquely itentify them.  The <strong>signature</strong> and the <strong>age</strong>.  Running the Symbol Indexer
 will increment the age in the dll and then <code class="code docutils literal"><span class="pre">nuget.exe</span></code> with increment the age again.  The dll age will no longer
-match and you will not be able to download symbols.</dd>
-</dl>
+match and you will not be able to download symbols.</p>
+</div>
 </div>
 </div>
 
@@ -210,7 +225,7 @@ match and you will not be able to download symbols.</dd>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Michael Dudley.
+        &copy; Copyright 2017-2018, Miruken.
 
     </p>
   </div>

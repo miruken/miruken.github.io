@@ -101,8 +101,16 @@
 <li class="toctree-l2"><a class="reference internal" href="delegate.html">Delegates</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../mvc/index.html">MVC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../angular/index.html">Angular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mvc/index.html">MVC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mvc/controller.html">Controller</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../angular/index.html">Angular</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../angular/controller.html">Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../angular/navigation.html">Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../angular/viewRegion.html">ViewRegion</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -162,6 +170,15 @@
     
   </ul>
 
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="protocol.html" class="btn btn-neutral float-right" title="Protocol" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="objects.html" class="btn btn-neutral" title="Objects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
   
   <hr/>
 </div>
@@ -225,41 +242,41 @@
 <h2>Exports<a class="headerlink" href="#exports" title="Permalink to this headline">¶</a></h2>
 <p>Using <cite>exports</cite> states that <em>classes</em> defined in the closure to be available for other closures. Similar to imports, you need to call the <cite>eval</cite> to actually export the classes.</p>
 <p>For example:</p>
-<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
-        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;logging&quot;</span><span class="p">,</span>
-        <span class="nx">imports</span><span class="o">:</span> <span class="s2">&quot;miruken&quot;</span>
-    <span class="p">});</span>
+<div class="highlight-guess"><div class="highlight"><pre><span></span>new function() {
+    base2.package(this, {
+        name: &quot;logging&quot;,
+        imports: &quot;miruken&quot;
+    });
 
-    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+    eval(this.imports);
 
-    <span class="kr">const</span> <span class="nx">loggingProtocol</span> <span class="o">=</span> <span class="nx">Protocol</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-        <span class="nx">debug</span><span class="p">(){},</span>
-        <span class="nx">error</span><span class="p">(){}</span>
-    <span class="p">});</span>
+    const loggingProtocol = Protocol.extend({
+        debug(){},
+        error(){}
+    });
 
-    <span class="kr">const</span> <span class="nx">NullLogger</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">loggingProtocol</span><span class="p">,</span> <span class="p">{</span>
-        <span class="nx">debug</span><span class="p">(){},</span>
-        <span class="nx">error</span><span class="p">(){}</span>
-    <span class="p">});</span>
+    const NullLogger = Base.extend(loggingProtocol, {
+        debug(){},
+        error(){}
+    });
 
-    <span class="kd">let</span> <span class="nx">nullLogger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NullLogger</span><span class="p">();</span>
-    <span class="kr">const</span> <span class="nx">Logger</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">loggingProtocol</span><span class="p">,</span> <span class="p">{</span>
-        <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="p">){</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`DEBUG: </span><span class="si">${</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-        <span class="p">},</span>
-        <span class="nx">error</span><span class="p">(</span><span class="nx">message</span><span class="p">){</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`ERROR: </span><span class="si">${</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-        <span class="p">}</span>
+    let nullLogger = new NullLogger();
+    const Logger = Base.extend(loggingProtocol, {
+        debug(message){
+            console.log(`DEBUG: <span class="cp">${</span><span class="n">message</span><span class="cp">}</span>`);
+        },
+        error(message){
+            console.log(`ERROR: <span class="cp">${</span><span class="n">message</span><span class="cp">}</span>`);
+        }
 
-    <span class="p">},</span> <span class="p">{</span>
-        <span class="nx">get</span> <span class="nx">NullLogger</span><span class="p">(){</span>
-            <span class="k">return</span> <span class="nx">nullLogger</span>
-        <span class="p">}</span>
-    <span class="p">});</span>
+    }, {
+        get NullLogger(){
+            return nullLogger
+        }
+    });
 
-    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
-<span class="p">}</span>
+    eval(this.exports);
+}
 </pre></div>
 </div>
 <p>When you list your objects under the <cite>exports</cite> property, just separate them with a comma. Order does not matter.</p>
@@ -290,32 +307,32 @@ name: company.security.cookies</div></blockquote>
 <h2>File Separation<a class="headerlink" href="#file-separation" title="Permalink to this headline">¶</a></h2>
 <p>A file can have one object defined for a package or group objects. It is often best practice to keep objects in separate files. If you choose to use separate files for your objects, the name of the package is the same. When you call <cite>eval</cite>, it searches for all the files for a given package name.</p>
 <p>Person.js</p>
-<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-guess"><div class="highlight"><pre><span></span>new function() {
 
-    <span class="nx">base2</span><span class="p">.</span><span class="kr">package</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span>
-        <span class="nx">name</span>   <span class="o">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
-        <span class="nx">exports</span><span class="o">:</span> <span class="s2">&quot;Person&quot;</span>
-    <span class="p">});</span>
+    base2.package(this, {
+        name   : &quot;person&quot;,
+        exports: &quot;Person&quot;
+    });
 
-    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">imports</span><span class="p">);</span>
+    eval(this.imports);
 
-    <span class="kr">const</span> <span class="nx">Person</span> <span class="o">=</span> <span class="nx">Base</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-        <span class="nx">$properties</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">firstName</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-            <span class="nx">lastName</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-            <span class="nx">gender</span>   <span class="o">:</span> <span class="kc">null</span>
-        <span class="p">},</span>
-        <span class="nx">get</span> <span class="nx">fullName</span><span class="p">(){</span>
-            <span class="k">return</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="si">}</span><span class="sb">`</span>
-        <span class="p">}</span>
-    <span class="p">},</span> <span class="p">{</span>
-        <span class="nx">male</span>          <span class="o">:</span> <span class="s2">&quot;MALE&quot;</span><span class="p">,</span>
-        <span class="nx">female</span>        <span class="o">:</span> <span class="s2">&quot;FEMALE&quot;</span><span class="p">,</span>
-        <span class="nx">itsComplicated</span><span class="o">:</span> <span class="s2">&quot;ITSCOMPLICATED&quot;</span>
-    <span class="p">});</span>
+    const Person = Base.extend({
+        <span class="nv">$properties</span>: {
+            firstName: null,
+            lastName : null,
+            gender   : null
+        },
+        get fullName(){
+            return `<span class="cp">${</span><span class="n">this</span><span class="o">.</span><span class="n">firstName</span><span class="cp">}</span> <span class="cp">${</span><span class="n">this</span><span class="o">.</span><span class="n">lastName</span><span class="cp">}</span>`
+        }
+    }, {
+        male          : &quot;MALE&quot;,
+        female        : &quot;FEMALE&quot;,
+        itsComplicated: &quot;ITSCOMPLICATED&quot;
+    });
 
-    <span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
-<span class="p">};</span>
+    eval(this.exports);
+};
 </pre></div>
 </div>
 <p>Patient.js</p>
@@ -383,7 +400,7 @@ name: company.security.cookies</div></blockquote>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Miruken.
+        &copy; Copyright 2014-2018, Miruken.
 
     </p>
   </div>
@@ -416,6 +433,7 @@ name: company.security.cookies</div></blockquote>
             <dd><a href="../../../../2.0.32/article/en-US/miruken/packages.html">2.0.32</a></dd>
             <dd><a href="../../../../2.0.33/article/en-US/miruken/packages.html">2.0.33</a></dd>
             <dd><a href="../../../../2.0.34/article/en-US/miruken/packages.html">2.0.34</a></dd>
+            <dd><a href="../../../../2.0.35/article/en-US/miruken/packages.html">2.0.35</a></dd>
             <dd><a href="../../../../2.0.4/article/en-US/miruken/packages.html">2.0.4</a></dd>
         </dl>
         <dl>

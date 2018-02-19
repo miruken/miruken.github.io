@@ -9,14 +9,14 @@ to the list.
 
 .. code-block:: console
 
-	{
-		symbolFolder: "c:/temp/symbols",
-		nugetServers: [
-			"https://www.nuget.org/api/v2/",
-	        "http://build.miruken.com/guestAuth/app/nuget/v1/FeedService.svc/",
-		],
-		symbolServers: [
-			"https://nuget.smbsrc.net",
-	        "http://build.miruken.com/app/symbols",
-		]
-	}
+    {
+        symbolFolder: "c:/temp/symbols",
+        nugetServers: [
+            "https://www.nuget.org/api/v2/",
+            "http://build.miruken.com/guestAuth/app/nuget/v1/FeedService.svc/",
+        ],
+        symbolServers: [
+            "https://nuget.smbsrc.net",
+            "http://build.miruken.com/app/symbols",
+        ]
+    }
