@@ -1,15 +1,17 @@
+=======
 Miruken
 =======
 
-.. image:: /img/miruken_logo_horiz_bw.png
+.. image:: /img/miruken_bug.png
 
 Miruken handle()'s your application!
 
 .. toctree::
    :titlesonly:
-   :caption:  Table of Contents
-   :maxdepth: 2
+   :caption: Documentation 
 
-   /miruken-es5/index.rst
+   /miruken/Specification/doc/index.rst
    /miruken-dotnet/index.rst
+   /miruken-es5/index.rst
+   /article/en-US/Environment/index.rst
 
