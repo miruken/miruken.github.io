@@ -249,21 +249,22 @@
 <h1>Visual Studio<a class="headerlink" href="#visual-studio" title="Permalink to this headline">¶</a></h1>
 <p>Debugging with symbols is not enabled by default.  These are the settings that have proven to work with Miruken and SymbolDownloader.</p>
 <p>Tools &gt; Options &gt; Debugging &gt; General</p>
-<blockquote>
-<div><p>Uncheck &#8220;Enable Just My Code&#8221;</p>
-<p>Check   &#8220;Enable Source Server Support&#8221;
-Check   &#8220;Print source server diagnostics to the Output window&#8221;
-Check   &#8220;Allow source server for partial trust assemblies&#8221;
-Check   &#8220;Always run untrusted source server command without prompting&#8221;
-check   &#8220;Supress JIT optimization on module load&#8221;</p>
-</div></blockquote>
+<ul class="simple">
+<li>Uncheck &#8220;Enable Just My Code&#8221;</li>
+<li>Check   &#8220;Enable Source Server Support&#8221;</li>
+<li>Check   &#8220;Print source server diagnostics to the Output window&#8221;</li>
+<li>Check   &#8220;Allow source server for partial trust assemblies&#8221;</li>
+<li>Check   &#8220;Always run untrusted source server command without prompting&#8221;</li>
+<li>Check   &#8220;Supress JIT optimization on module load&#8221;</li>
+</ul>
 <p>Tools &gt; Options &gt; Debugging &gt; Symbols</p>
-<blockquote>
-<div><p>Set &#8220;Cache Symbols in this directory&#8221; to c:tempsymbols</p>
-<p>Select &#8220;Load only specified modules&#8221; option</p>
-<p>Click &#8220;Specify included modules&#8221;</p>
-<p>Add &#8220;Miruken.dll&#8221; and &#8220;Miruken.*.dll&#8221; to the list</p>
-</div></blockquote>
+<ul class="simple">
+<li>Add &#8220;<a class="reference external" href="https://nuget.smbsrc.net">https://nuget.smbsrc.net</a>&#8221; to the &#8220;Symbol file (.pdb) locations:&#8221; list</li>
+<li>Set &#8220;Cache Symbols in this directory&#8221; to c:\temp\symbols</li>
+<li>Select &#8220;Load only specified modules&#8221; option</li>
+<li>Click &#8220;Specify included modules&#8221;</li>
+<li>Add &#8220;Miruken.dll&#8221; and &#8220;Miruken.*.dll&#8221; to the list</li>
+</ul>
 <p>The &#8220;Cache Symbols in this directory&#8221; setting must match the &#8220;symbolFolder&#8221; setting in <code class="code docutils literal"><span class="pre">Source/config.json</span></code>.
 You can set it to any folder, but they need to match.</p>
 </div>
