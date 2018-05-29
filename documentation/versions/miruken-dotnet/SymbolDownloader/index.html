@@ -175,13 +175,14 @@
   <div class="section" id="symbol-downloader">
 <h1>Symbol Downloader<a class="headerlink" href="#symbol-downloader" title="Permalink to this headline">¶</a></h1>
 <img alt="_images/miruken_circle_net.png" src="_images/miruken_circle_net.png" />
-<p>Visual Studio (VS) supports debugging with symbol files out of the box.  Resharper also supports debuging with symbol files.  However, the process of downloading the files has proven to be frustrating and unreliable.  There are at least 3 major issues we&#8217;ve identified when trying to download symbols and source files with Visual Studio and they all require restarting Visual Studio.</p>
+<p>Visual Studio (VS) supports debugging with symbol files and the feature has to be enabled.  It is not enabled by default.  Resharper also supports debuging with symbol files.  However, the process of downloading the files has proven to be frustrating and unreliable.  There are at least 4 major issues we&#8217;ve identified when trying to download symbols and source files with Visual Studio and they all require restarting Visual Studio.</p>
 <ol class="arabic simple">
 <li>VS will stop trying to download symbols if it has already tried once and failed.</li>
 <li>VS will hange trying to download the .pdb file and never ask for the .pd_ file which is what <a class="reference external" href="https://nuget.smbsrc.net">https://nuget.smbsrc.net</a> actually serves.</li>
 <li>VS will not try to load symbols immediately after a new package is added.</li>
+<li>VS will tell you the symbols are not available even though it prints a valid uri to output log, and the uri can be downloaded without issue in a browser and postman.</li>
 </ol>
-<p>To solve these problem, SymbolDownloader downloads .pdb, .pd_ files,  and all associated source files for a nuget package independently of Visual Studio.</p>
+<p>To solve these problems, SymbolDownloader downloads .pdb, .pd_ files,  and all associated source files for a nuget package independently of Visual Studio.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
