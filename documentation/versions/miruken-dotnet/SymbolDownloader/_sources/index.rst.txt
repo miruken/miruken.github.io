@@ -21,7 +21,7 @@ To solve these problems, SymbolDownloader downloads .pdb, .pd_ files,  and all a
    :caption: Table of Contents
 
    article/en-US/install.rst
-   article/en-Us/visualStudio.rst
+   article/en-US/visualStudio.rst
    article/en-US/usage.rst
    article/en-US/configuration.rst
    article/en-US/teamCity.rst
