@@ -9,3 +9,12 @@
 .carousel-inner img {
 	width: 220px;
 }
+
+.sponsor img {
+	width: 200px;
+	margin: auto;
+}
+
+.landing-page .contact {
+	margin-top: 0;
+}
